@@ -19,53 +19,107 @@ class ExploreItemWidget extends StatelessWidget {
       alignment: Alignment.center,
       child: GestureDetector(
         onTap: () {
+          // print("tapped");
           onTapTypeRoundedC?.call();
         },
         child: Container(
-          decoration: AppDecoration.gradientRed700RedA70002.copyWith(
-            borderRadius: BorderRadiusStyle.roundedBorder20,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: getPadding(
-                  top: 21,
-                  bottom: 76,
-                ),
-                child: Obx(
-                  () => Text(
-                    exploreItemModelObj.categoriesTxt.value,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.left,
-                    style: AppStyle.txtUrbanistRomanBold18WhiteA700.copyWith(
-                      letterSpacing: getHorizontalSize(
-                        0.2,
+          // decoration: AppDecoration.gradientRed700RedA70002.copyWith(
+          //   borderRadius: BorderRadiusStyle.roundedBorder20,
+          // ),
+          child: SingleChildScrollView(
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.end,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Padding(
+                //   padding: getPadding(
+                //     top: 21,
+                //     bottom: 76,
+                //   ),
+                // Obx(
+                //   () => Text(
+                //     exploreItemModelObj.categoriesTxt.value,
+                //     overflow: TextOverflow.ellipsis,
+                //     textAlign: TextAlign.right,
+                //     style: AppStyle.txtUrbanistRomanBold18WhiteA700.copyWith(
+                //       letterSpacing: getHorizontalSize(
+                //         0.2,
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // ),
+                Stack(children: [
+                  CustomImageView(
+                    imagePath: ImageConstant.imgImage160x1601,
+                    height: getVerticalSize(
+                      250,
+                    ),
+                    width: getSize(
+                      600,
+                    ),
+                    radius: BorderRadius.circular(
+                      getHorizontalSize(
+                        5,
+                      ),
+                    ),
+                    // fit: BoxFit.fill,
+                    margin: getMargin(
+                      left: 0,
+                      right: 0,
+                      top: 29,
+                    ),
+                  ),
+                  Positioned(
+                    top: 20,
+                    left: 0,
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(8),
+                      color: Colors.transparent,
+                      child: Text(
+                        exploreItemModelObj.categoriesTxt.value,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
-              CustomImageView(
-                imagePath: ImageConstant.imgImage91x81,
-                height: getVerticalSize(
-                  91,
-                ),
-                width: getHorizontalSize(
-                  81,
-                ),
-                radius: BorderRadius.circular(
-                  getHorizontalSize(
-                    20,
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      color: Colors.transparent,
+                      child: Text(
+                        'duration', // Replace with your time data
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-                margin: getMargin(
-                  left: 27,
-                  top: 29,
-                ),
-              ),
-            ],
+                  Positioned(
+                    top: 8,
+                    right: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      color: Colors.transparent,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_forward),
+                        color: Colors.white,
+                        onPressed: () {
+                          onTapTypeRoundedC?.call();
+                          // Add your button's onPressed logic here
+                        },
+                      ),
+                    ),
+                  )
+                ])
+              ],
+            ),
           ),
         ),
       ),

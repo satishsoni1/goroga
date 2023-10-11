@@ -1,6 +1,5 @@
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
-import 'package:country_pickers/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/custom_text_form_field.dart';

@@ -1,5 +1,7 @@
-import 'package:get/get.dart';class ExploreItemModel {Rx<String> categoriesTxt = Rx("Charts");
+import 'package:get/get.dart';
 
-Rx<String>? id = Rx("");
+class ExploreItemModel {
+  Rx<String> categoriesTxt = Rx("Charts");
 
- }
+  Rx<String>? id = Rx("");
+}

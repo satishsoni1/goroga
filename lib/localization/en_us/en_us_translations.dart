@@ -79,6 +79,7 @@ final Map<String, String> enUs = {
   "lbl_48_26_mins": "48:26 mins",
   "lbl_podcasters": "Podcasters",
   "lbl_payment_success": "Payment Success",
+
   "msg_follow_your_fav":
       "Follow your favorite artists. Or you can skip it for now.",
   "lbl_go_to_album": "Go to Album",
@@ -170,7 +171,7 @@ final Map<String, String> enUs = {
   "lbl5": "⚫",
   "lbl2": "•••• ••••",
   "lbl3": "••••/••••",
-  "lbl_home": "Home",
+  "lbl_home": "Sessions",
   "lbl_top_hits": "TOP HITS",
   "lbl_10_07_2026": "10/07/2026",
   "msg_recently_downlo": "Recently Downloaded",
@@ -410,7 +411,7 @@ final Map<String, String> enUs = {
   "msg_search_result_profile": "Search Result Profile - Tab Container",
   "msg_data_cellular_s": "Data Cellular Streaming",
   "lbl_the_sappear": "The Sappear",
-  "lbl_explore": "Explore",
+  "lbl_explore": "Programs",
   "msg_fill_your_profi": "Fill Your Profile",
   "msg_forever_after_a": "Forever After All - Luke Combs",
   "lbl_just_lowkey": "Just Lowkey",
@@ -562,5 +563,13 @@ final Map<String, String> enUs = {
   "msg_reset_password_successful": "Reset Password Successful",
   "lbl_remember_me": "Remember me",
   "lbl_ania_szarmarch": "Ania Szarmarch",
-  "lbl_full_name": "Full Name"
+  "lbl_full_name": "Full Name",
+  "lbl_workplace_wellbeing": "Workplace Wellbeing",
+  "lbl_guided_meditations" : "Guided Meditations",
+  "lbl_timer":"Timer (no audio)",
+  "lbl_understanding_stress":"Understanding Stress",
+  "lbl_soundscapes" :"Soundscapes & Sound Baths",
+  "lbl_feeling_stressed":"I'm Feeling Stressed",
+  "lbl_short_moments" : "Short Moments",
+"lbl_fav": "Favorites"
 };

@@ -9,16 +9,16 @@ class CustomBottomBar extends StatelessWidget {
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
       icon: ImageConstant.imgHome,
-      title: "lbl_home".tr,
+      title: "lbl_home".tr, 
       type: BottomBarEnum.Home,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgClock,
+      icon: ImageConstant.imgMenu,
       title: "lbl_explore".tr,
       type: BottomBarEnum.Explore,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgMenu,
+      icon: ImageConstant.imgClock1,
       title: "lbl_library".tr,
       type: BottomBarEnum.Library,
     ),

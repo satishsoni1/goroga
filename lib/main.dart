@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:goroga/core/app_export.dart';
 
-import 'core/app_export.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      
+    
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.standard,
@@ -31,6 +34,7 @@ class MyApp extends StatelessWidget {
       //for setting localization strings
       fallbackLocale: const Locale('en', 'US'),
       title: 'goroga',
+      
       initialBinding: InitialBindings(),
       initialRoute: AppRoutes.initialRoute,
       getPages: AppRoutes.pages,

@@ -1,0 +1,1398 @@
+{
+  "programs":[
+  {
+    "id": 1,
+    "title": "Welcome & FAQ",
+    "author":"Jamie Magruder",
+    "description": "Welcome to Roga ",
+    "imageUrl": "assets/images/program_thumbnails/1_Welcome_and_Faq.png",
+    "duration": "8 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Getting Started",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S113.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S113+explainer_video_full.mp4+(1080p).mp4",
+        "duration": "5 min"
+      },
+      {
+        "id": 2,
+        "title": "What is Roga?",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S114.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S114+What+is+Roga.mp4",
+        "duration": "3 min"
+      },
+      {
+        "id": 3,
+        "title": "How to setup the pads/electrodes?",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S115.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S115+How+to+setup+the+padselectrodes.mp4",
+        "duration": "1 min"
+      },
+      {
+        "id": 4,
+        "title": "How to use the device?",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S116.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S116+How+to+use+the+device.mp4",
+        "duration": "1 min"
+      },
+      {
+        "id": 5,
+        "title": "How does the App work",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S117.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S115+How+to+setup+the+padselectrodes.mp4",
+        "duration": "0 min"
+      },
+      {
+        "id": 6,
+        "title": "How often should I use Roga?",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S118.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S118+Treatment+recommendation.mp4",
+        "duration": "0 min"
+      },
+      {
+        "id": 7,
+        "title": "After using the device",
+        "author":"Jamie Magruder",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S119.png",
+        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S119+after+finnishing+your+session.mp4",
+        "duration": "0 min"
+      },
+      {
+        "id": 8,
+        "title": "Roga Electrode Tips",
+        "author":"Alison Smith",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S145.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Workplace Wellbeing Series: Getting to Know Yourself at work.",
+    "author":"Lori Schwanbeck",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/2_Workplace_Wellbeing_Series_1.png",
+    "duration": "10 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Program 1 intro",
+    "author":"Lori Schwanbeck",
+
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S133.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 2,
+        "title": "How do I harness my attention to focus on what matters most?",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S134.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 3,
+        "title": "I want to be more aware of my emotions at work",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S135.png",
+        "videoUrl":"",
+        "duration": "19 min"
+      },
+      {
+        "id": 4,
+        "title": "I want to shift my mindset to be more Challenge Ready",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S136.png",
+        "videoUrl":"",
+        "duration": "21 min"
+      },
+      {
+        "id": 5,
+        "title": "Invigorate Your Body to Sharpen Your mind",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S137.png",
+        "videoUrl":"",
+        "duration": "18 min"
+      },
+      {
+        "id": 6,
+        "title": "I want to say no but don't know how",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S138.png",
+        "videoUrl":"",
+        "duration": "18 min"
+      },
+      {
+        "id": 7,
+        "title": "I want to develop motivation",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S139.png",
+        "videoUrl":"",
+        "duration": "16 min"
+      },
+      {
+        "id": 8,
+        "title": "I want to Clarify my Values and Identity",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S140.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 9,
+        "title": "I want to be less hard on myself and apply self compassion",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S141.png",
+        "videoUrl":"",
+        "duration": "14 min"
+      },
+      {
+        "id": 10,
+        "title": "Power of Positive emotions",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S142.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Workplace Wellbeing Series: Working Well With Others",
+    "author":"Lori Schwanbeck",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/3_Workplace_Wellbeing_Series_2.png",
+    "duration": "10 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Introduction to Working Well With Others.",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S123.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 2,
+        "title": "How Do I show Up For Others?",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S124.png",
+        "videoUrl":"",
+        "duration": "14 min"
+      },
+      {
+        "id": 3,
+        "title": "How do I communicate in connecting ways?",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S125.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 4,
+        "title": "I want to be less reactive at work",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S126.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 5,
+        "title": "How Do I to foster belonging and inclusion at work? ",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S127.png",
+        "videoUrl":"",
+        "duration": "18 min"
+      },
+      {
+        "id": 6,
+        "title": "I want to build trust with my colleagues",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S128.png",
+        "videoUrl":"",
+        "duration": "12 min"
+      },
+      {
+        "id": 7,
+        "title": "How can empathy help me to be more successfule at work?",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S129.png",
+        "videoUrl":"",
+        "duration": "13 min"
+      },
+      {
+        "id": 8,
+        "title": "What is Emotional Contagion, and how can i prevent it?",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S130.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 9,
+        "title": "I need help navigating change",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S131.png",
+        "videoUrl":"",
+        "duration": "19 min"
+      },
+      {
+        "id": 10,
+        "title": "Program 2 - Outro",
+        "author":"Lori Schwanbeck",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S132.png",
+        "videoUrl":"",
+        "duration": "3 min"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Meditations",
+    "author":"Roga Facilitators",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/4_Meditations.png",
+    "duration": "10 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "We can use awareness and comapassion to soothe stress.",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S087.png",
+        "videoUrl":"",
+        "duration": "23 min"
+      },
+      {
+        "id": 2,
+        "title": "Pay attention",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S091.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 3,
+        "title": "Let Your breath be your anchor",
+        "author":"Jasleen Kaur",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S092.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 4,
+        "title": "Body Scan",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S093.png",
+        "videoUrl":"",
+        "duration": "25 min"
+      },
+      {
+        "id": 5,
+        "title": "Visualisation",
+        "author":"Jasleen Kaur",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S094.png",
+        "videoUrl":"",
+        "duration": "20 min"
+      },
+      {
+        "id": 6,
+        "title": "Dropping Below the Waves",
+        "author":"Adam Coelho",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S095.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 7,
+        "title": "Resting and feeling in enough",
+        "author":"Adam Coelho",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S096.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 8,
+        "title": "Rush: A meditation on water",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S153.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 9,
+        "title": "Wells: A meditation on gratitude",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S154.png",
+        "videoUrl":"",
+        "duration": "22 min"
+      },
+      {
+        "id": 10,
+        "title": "Lit: A meditation on fire",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S155.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Meditations II",
+    "author":"Roga Facilitators",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/5_Meditations_II.png",
+    "duration": "6 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Lit: A meditation on fire",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S155.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 2,
+        "title": "Grounded: A meditation on earth",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S156.png",
+        "videoUrl":"",
+        "duration": "13 min"
+      },
+      {
+        "id": 3,
+        "title": "Breath: A meditation on Air",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S157.png",
+        "videoUrl":"",
+        "duration": "13 min"
+      },
+      {
+        "id": 4,
+        "title": "Rooted: A tree meditation",
+        "author":"Amanda Kuehn",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S158.png",
+        "videoUrl":"",
+        "duration": "13 min"
+      },
+      {
+        "id": 5,
+        "title": "Progressive Muscle Relaxation for Sleep",
+        "author":"Jasleen Kaur",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S159.png",
+        "videoUrl":"",
+        "duration": "14 min"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Managing Stress",
+    "author":"Jamie Magruder",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/6_Managing_Stress.png",
+    "duration": "8 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I'm Distracted",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S049.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 2,
+        "title": "I'm Having FOMO",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S050.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 3,
+        "title": "I'm Overwhelmed",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S051.png",
+        "videoUrl":"",
+        "duration": "7 min"
+      },
+      {
+        "id": 4,
+        "title": "I'm stressed About Packing for a Trip",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S052.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 5,
+        "title": "I'm Caught in Perfectionism",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S053.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 6,
+        "title": "Scheduling is Making Me Stressed",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S054.png",
+        "videoUrl":"",
+        "duration": "7 min"
+      },
+      {
+        "id": 7,
+        "title": "My To-Do List is Too Much",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S055.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 8,
+        "title": "I'm Stressed About Tranportation",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S056.png",
+        "videoUrl":"",
+        "duration": "8 min"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Soundscapes",
+    "author":"",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/7_Soundscapes.png",
+    "duration": "6 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Meditate Unguided-Walking Voyage",
+        "author":"",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S085.png",
+        "videoUrl":"",
+        "duration": "0 min"
+      },
+      {
+        "id": 2,
+        "title": "Meditate Unguided - Vanilla Ballet",
+        "author":"",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S086.png",
+        "videoUrl":"",
+        "duration": "0 min"
+      },
+      {
+        "id": 3,
+        "title": "Meditate Unguided -Music from the Forest",
+        "author":"",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S059.png",
+        "videoUrl":"",
+        "duration": "0 min"
+      },
+      {
+        "id": 4,
+        "title": "Mountains and Sea (Soundscape)",
+        "author":"Roga Team",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S088.png",
+        "videoUrl":"",
+        "duration": "16 min"
+      },
+      {
+        "id": 5,
+        "title": "",
+        "author":"By Roga Team",
+        "description": "Aurora (Soundscape)",
+        "imageUrl": "assets/images/sessions_thumbnails/S089.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 6,
+        "title": "Fire Element (Soundscape)",
+        "author":"By Roga Team",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S090.png",
+        "videoUrl":"",
+        "duration": "14 min"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Relieve Panic",
+    "author":"Jamie Magruder",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/8_Relieve_Panic.png",
+    "duration": "6 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I'm Worried About Having A Panic Attack, Part 1",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S043.png",
+        "videoUrl":"",
+        "duration": "10 min"
+      },
+      {
+        "id": 2,
+        "title": "I'm Worried About Having A Panic Attack, Part 2",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S044.png",
+        "videoUrl":"",
+        "duration": "16 min"
+      },
+      {
+        "id": 3,
+        "title": "I'm Worried About Having A Panic Attack, Part 3",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S045.png",
+        "videoUrl":"",
+        "duration": "10 min"
+      },
+      {
+        "id": 4,
+        "title": "I'm Having A Panic Attack, Part 1 ",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S046.png",
+        "videoUrl":"",
+        "duration": "12 min"
+      },
+      {
+        "id": 5,
+        "title": "I'm Having A Panic Attack, Part 2",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S047.png",
+        "videoUrl":"",
+        "duration": "14 min"
+      },
+      {
+        "id": 6,
+        "title": "I'm Recovering From A Panic Attack",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S048.png",
+        "videoUrl":"",
+        "duration": "9 min"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Moments & Wisdom",
+    "author":"Nicholas Whitaker",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/9_Moments_Wisdom.png",
+    "duration": "7 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Noticing Vs Fixating",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S146.png",
+        "videoUrl":"",
+        "duration": "8 min"
+      },
+      {
+        "id": 2,
+        "title": "Making Sense of your Experience",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S147.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 3,
+        "title": "Avoid Avoiding",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S148.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      },
+      {
+        "id": 4,
+        "title": "What Else Could be True?",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S149.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 5,
+        "title": "Phrases to Focus the Mind",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S150.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      },
+      {
+        "id": 6,
+        "title": "Rewiring our Brain for Ease",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S151.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 7,
+        "title": "Reflecting on the Good",
+        "author":"Nicholas Whitaker",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S152.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Relive Social Pressure",
+    "author":"Jamie Magruder",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/10_Relieve_Social_Pressure.png",
+    "duration": "8 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I Feel Pressure to Be Agreeable",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S035.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 2,
+        "title": "I'm Stressed about my Clothes",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S036.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 3,
+        "title": "I Feel Excluded",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S037.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 4,
+        "title": "I Feel Pressured to Hide My True Self",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S038.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 5,
+        "title": "Sometimes it's hard to meet people",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S039.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 6,
+        "title": "I'm Uncomfortable About Physical Intimacy",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S040.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 7,
+        "title": "Explore your self Image",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S041.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 8,
+        "title": "I Feel Pressure to Be Strong",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S042.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Shorts",
+    "description": "",
+    "author":"Lauren Ducrey",
+    "imageUrl": "assets/images/program_thumbnails/11_Shorts.png",
+    "duration": "8 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "A given moment",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S100.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      },
+      {
+        "id": 2,
+        "title": "Bean",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S101.png",
+        "videoUrl":"",
+        "duration": "1 min"
+      },
+      {
+        "id": 3,
+        "title": "Cross Swell",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S102.png",
+        "videoUrl":"",
+        "duration": "3 min"
+      },
+      {
+        "id": 4,
+        "title": "Padding",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S103.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 5,
+        "title": "The Winding Road",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S104.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      },
+      {
+        "id": 6,
+        "title": "Those days I want to get things done",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S105.png",
+        "videoUrl":"",
+        "duration": "3 min"
+      },
+      {
+        "id": 7,
+        "title": "Time",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S106.png",
+        "videoUrl":"",
+        "duration": "3 min"
+      },
+      {
+        "id": 8,
+        "title": "When we go",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S107.png",
+        "videoUrl":"",
+        "duration": "2 min"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Understanding Stress",
+    "author":"Jamie Magruder",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/12_Understanding_stress.png",
+    "duration": "9 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "How Stress affects my actions",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S081.png",
+        "videoUrl":"",
+        "duration": "7 min"
+      },
+      {
+        "id": 2,
+        "title": "How Stress affects my emotions",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S082.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 3,
+        "title": "How Stress affects my relationships",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S083.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 4,
+        "title": "How stress affects my body",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S084.png",
+        "videoUrl":"",
+        "duration": "3 min"
+      },
+      {
+        "id": 5,
+        "title": "How stress affects my thoughts",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S085.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 6,
+        "title": "When It's Worrying Vs. When It's Planning",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S086.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 7,
+        "title": "Understanding Stress",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S097.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 8,
+        "title": "Where Is My stress Starting?",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S120.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 9,
+        "title": "Calming Amygdala stress",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S121.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Improve Communication",
+    "author":"Jacquie Brown",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/13_Improve_Communication.png",
+    "duration": "10 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I'm Preparing for a Hard Conversation",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S071.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 2,
+        "title": "I'm Starting a Hard Conversation",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S072.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 3,
+        "title": "I'm Receving Difficult Information",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S073.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 4,
+        "title": "I Don't Want to Say the wrong Thing",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S074.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 5,
+        "title": "I Feel Ghosted",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S075.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 6,
+        "title": "I'm Nervous About Public Speaking",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S076.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 7,
+        "title": "It's Hard to Reach Out",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S077.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 8,
+        "title": "I Have Trouble Saying No",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S078.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 9,
+        "title": "Listening is Hard",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S090.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Relieve Relationship Stress",
+    "author":"Jamie Magruder",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/14_Relieve_Relationship_stress.png",
+    "duration": "9 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I'm Confused About My Relationship",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S015.png",
+        "videoUrl":"",
+        "duration": "11 min"
+      },
+      {
+        "id": 2,
+        "title": "How to Handle Discomfort",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S029.png",
+        "videoUrl":"",
+        "duration": "13 min"
+      },
+      {
+        "id": 3,
+        "title": "I'm Shutting Down",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S030.png",
+        "videoUrl":"",
+        "duration": "9 min"
+      },
+      {
+        "id": 4,
+        "title": "My Relatinship Doesn't Feel Secure",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S031.png",
+        "videoUrl":"",
+        "duration": "7 min"
+      },
+      {
+        "id": 5,
+        "title": "I'm Scared It Won't Work Out",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S032.png",
+        "videoUrl":"",
+        "duration": "9 min"
+      },
+      {
+        "id": 6,
+        "title": "I'm Fighting With My Partner",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S033.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 7,
+        "title": "I'm Having Compulsive Thoughts",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S034.png",
+        "videoUrl":"",
+        "duration": "8 min"
+      },
+      {
+        "id": 8,
+        "title": "I need to learn how to sooth my mind",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S111.png",
+        "videoUrl":"",
+        "duration": "11 min"
+      },
+      {
+        "id": 9,
+        "title": "Society expects me to be bullet proof",
+        "author":"Jamie Magruder",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S112.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Managing Time & Stress",
+    "author":"Jacquie Brown",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/15_Managing_Time_and_Stress.png",
+    "duration": "6 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I Want to Shift My Perspective",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S065.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      },
+      {
+        "id": 2,
+        "title": "I Feel Disconnected from Where I Am",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S066.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 3,
+        "title": "I'm Afraid of a Public Place",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S067.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 4,
+        "title": "I'm Triggered by a Place",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S068.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 5,
+        "title": "How Do Places Make Me Feel?",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S069.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 6,
+        "title": "I Want to Find A Calming Place",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S070.png",
+        "videoUrl":"",
+        "duration": "4 min"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Connect With Others",
+    "author":"Jacquie Brown",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/16_Connect_with_others.png",
+    "duration": "8 Days",
+    "data": [
+      {
+        "id": 1,
+        "title": "I Want To Be More Connected",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S057.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 2,
+        "title": "I Want To Have Boundaries",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S058.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 3,
+        "title": "I Want To Experience Choice",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S059.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 4,
+        "title": "I Want to Learn Co-Regulate",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S060.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 5,
+        "title": "I Want to Have Comapanionship",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S061.png",
+        "videoUrl":"",
+        "duration": "5 min"
+      },
+      {
+        "id": 6,
+        "title": "I Want to Cultivate Patience",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S062.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 7,
+        "title": "I Want to Find Reassurance",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S063.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      },
+      {
+        "id": 8,
+        "title": "I Want To Experience Companionship",
+        "author":"Jacquie Brown",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S064.png",
+        "videoUrl":"",
+        "duration": "6 min"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Poetry Readout",
+    "author":"Lauren Ducrey",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/17_Poetic_Meditations.png",
+    "duration": "2 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Instrument Of Breath and Bones",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S098.png",
+        "videoUrl":"",
+        "duration": "15 min"
+      },
+      {
+        "id": 2,
+        "title": "Night Sky bodymap",
+        "author":"Lauren Ducrey",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S099.png",
+        "videoUrl":"",
+        "duration": "12 min"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Music",
+    "author":"Zoe",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/18_Music.png",
+    "duration": "3 days",
+    "data": [
+      {
+        "id": 1,
+        "title": "Relax and Release",
+        "author":"Zoe",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S108.png",
+        "videoUrl":"",
+        "duration": "17 min"
+      },
+      {
+        "id": 2,
+        "title": "Guided sound bath",
+        "author":"Zoe",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S109.png",
+        "videoUrl":"",
+        "duration": "16 min"
+      },
+      {
+        "id": 3,
+        "title": "Sound bath & Meditation",
+        "author":"Zoe",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S110.png",
+        "videoUrl":"",
+        "duration": "22 min"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Podcast Episodes",
+    "author":"Iain Mcintyre",
+    "description": "",
+    "imageUrl": "assets/images/program_thumbnails/19_Podcast_Episodes.png",
+    "duration": "1 day",
+    "data": [
+      {
+        "id": 1,
+        "title": "Episode 1",
+        "author":"Iain Mcintyre",
+        "description": "",
+        "imageUrl": "assets/images/sessions_thumbnails/S122.png",
+        "videoUrl":"",
+        "duration": "37 min"
+      }
+    ]
+  } 
+]
+}

@@ -47,6 +47,8 @@ class ImageConstant {
 
   static String imgClock28x28 = 'assets/images/img_clock_28x28.svg';
 
+  static String imgMenuList ='assets/images/menu.svg';
+
   static String imgImage184x18417 = 'assets/images/img_image_184x184_17.png';
 
   static String imgArrowdown = 'assets/images/img_arrowdown.svg';
@@ -366,7 +368,7 @@ class ImageConstant {
 
   static String imgImage80x8038 = 'assets/images/img_image_80x80_38.png';
 
-  static String imgImage184x18410 = 'assets/images/img_image_184x184_10.png';
+  static String imgImage184x18410 = 'assets/images/program_thumbnails/1_Welcome_and_Faq.png';
 
   static String imgImage80x8046 = 'assets/images/img_image_80x80_46.png';
 
@@ -398,7 +400,7 @@ class ImageConstant {
 
   static String imgArrowdown20x20 = 'assets/images/img_arrowdown_20x20.svg';
 
-  static String imgHome = 'assets/images/img_home.svg';
+  static String imgHome = 'assets/images/circle-xxs.svg';
 
   static String imgCheckmark32x32 = 'assets/images/img_checkmark_32x32.svg';
 

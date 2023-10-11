@@ -93,6 +93,8 @@ class ColorConstant {
 
   static Color gray70001 = fromHex('#7a5548');
 
+  static Color blueGreen = fromHex('#01796F');
+
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');

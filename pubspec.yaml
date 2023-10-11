@@ -6,28 +6,46 @@ environment:
 dependencies: 
   flutter: 
     sdk: flutter
-  get: ^4.6.5
-  connectivity_plus: ^2.3.6
+  get: ^4.6.6
+  connectivity_plus: ^4.0.2
   shared_preferences: ^2.0.15
   cached_network_image: ^3.2.1
-  flutter_svg: ^1.1.6
-  google_sign_in: ^5.0.7
+  flutter_svg: ^2.0.7
+  google_sign_in: ^6.1.5
   flutter_switch: ^0.3.2
   country_pickers: ^2.0.0 
   smooth_page_indicator: ^1.0.0+2
-  pin_code_fields: ^7.3.0
+  pin_code_fields: ^8.0.1
   sms_autofill: ^2.0.0
-  pin_input_text_field: 4.1.0
-  intl: ^0.17.0
+  pin_input_text_field: ^4.5.1
+  intl: ^0.18.1
+  
   usb_serial: ^0.5.1
+  image: ^4.1.3
+  sidebarx: ^0.16.2
+  easy_sidemenu: ^0.5.0
+  url_launcher: ^6.1.14
+  video_player: ^2.7.2
+  chewie: ^1.7.1
+  provider: ^6.0.5
+  icons_launcher: ^2.1.4
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+  change_app_package_name: ^1.1.0
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/go-roga 512.png"
 flutter: 
   uses-material-design: true
   assets: 
     - assets/
     - assets/images/
+    - assets/images/program_thumbnails/
+    - assets/images/sessions_thumbnails/
+    - jsonfiles/
   fonts: 
     - family: Urbanist
       fonts: 

@@ -34,8 +34,6 @@ import 'package:goroga/presentation/charts_screen/charts_screen.dart';
 import 'package:goroga/presentation/charts_screen/binding/charts_binding.dart';
 import 'package:goroga/presentation/top_albums_global_screen/top_albums_global_screen.dart';
 import 'package:goroga/presentation/top_albums_global_screen/binding/top_albums_global_binding.dart';
-import 'package:goroga/presentation/podcasts_screen/podcasts_screen.dart';
-import 'package:goroga/presentation/podcasts_screen/binding/podcasts_binding.dart';
 import 'package:goroga/presentation/new_releases_screen/new_releases_screen.dart';
 import 'package:goroga/presentation/new_releases_screen/binding/new_releases_binding.dart';
 import 'package:goroga/presentation/search_type_keyword_screen/search_type_keyword_screen.dart';
@@ -270,6 +268,8 @@ class AppRoutes {
 
   static const String initialRoute = '/initialRoute';
 
+  static const String detailsPage='/detail';
+
   static List<GetPage> pages = [
     GetPage(
       name: splashScreen,
@@ -397,13 +397,13 @@ class AppRoutes {
         TopAlbumsGlobalBinding(),
       ],
     ),
-    GetPage(
-      name: podcastsScreen,
-      page: () => PodcastsScreen(),
-      bindings: [
-        PodcastsBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: podcastsScreen,
+    //   page: () => PodcastsScreen(imagePath:),
+    //   bindings: [
+    //     PodcastsBinding(),
+    //   ],
+    // ),
     GetPage(
       name: newReleasesScreen,
       page: () => NewReleasesScreen(),
@@ -655,6 +655,8 @@ class AppRoutes {
       bindings: [
         SplashBinding(),
       ],
-    )
+    ),
+    
+   
   ];
 }

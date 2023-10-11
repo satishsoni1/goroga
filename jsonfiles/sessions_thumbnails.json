@@ -1,0 +1,572 @@
+{
+  "categories": [
+    {
+      "title": "Welcome to Roga!",
+      "data": [
+        {
+          "id": 1,
+          "title": "Getting Started",
+          "author": "Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S113.png",
+          "videoUrl":"",
+          "duration": "5 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Featured",
+      "data": [
+        {
+          "id": 1,
+          "title": "I Feel Ghosted",
+          "author": "Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S075.png",
+          "videoUrl":"",
+          "duration": "4 min"
+        },
+        {
+          "id": 2,
+          "title": "How stress affects my emotions",
+          "author": "Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S082.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 3,
+          "title": "Pay attention",
+          "author": "Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S091.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 4,
+          "title": "A given moment",
+          "author": "Lauren Ducrey",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S100.png",
+          "videoUrl":"",
+          "duration": "1 min"
+        },
+        {
+          "id": 5,
+          "title": "When we go",
+          "author": "Lauren Ducrey",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S107.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Workplace Wellbeing",
+      "data": [
+        {
+          "id": 1,
+          "title": "Program 1 intro",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S133.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+        {
+          "id": 2,
+          "title": "How do harness my attention to focus on what matters most?",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S134.png",
+          "videoUrl":"",
+          "duration": "17 min"
+        },
+        {
+          "id": 3,
+          "title": "I want to be more aware of my emotions at work",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S135.png",
+          "videoUrl":"",
+          "duration": "19 min"
+        },
+        {
+          "id": 4,
+          "title": "I want to shift my mindset to be more Challenge Ready",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S136.png",
+          "videoUrl":"",
+          "duration": "21 min"
+        },
+        {
+          "id": 5,
+          "title": "Invigorate Your Body to Sharpen Your Mind",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S137.png",
+          "videoUrl":"",
+          "duration": "18 min"
+        },
+        {
+          "id": 6,
+          "title": "I want to say no but don't know how",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S138.png",
+          "videoUrl":"",
+          "duration": "18 min"
+        },
+        {
+          "id": 7,
+          "title": "I want to develop motivation",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S139.png",
+          "videoUrl":"",
+          "duration": "16 min"
+        },
+        {
+          "id": 8,
+          "title": "I want to clarify my values and identity",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S140.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 9,
+          "title": "I want to be less hard on myself and apply self compassion",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S141.png",
+          "videoUrl":"",
+          "duration": "14 min"
+        },
+        {
+          "id": 10,
+          "title": "Power of positive emotions",
+          "author": "Lori Schwanbeck",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S142.png",
+          "videoUrl":"",
+          "duration": "17 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Guided Meditations",
+      "data": [
+        {
+          "id": 1,
+          "title": "We can use awareness and compassion to soothe stress",
+          "author": "Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S087.png",
+          "videoUrl":"",
+          "duration": "23 min"
+        },
+        {
+          "id": 2,
+          "title": "Pay attention",
+          "author": "Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S091.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 3,
+          "title": "Let your breath be your anchor",
+          "author": "Jasleen Kaur",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S092.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 4,
+          "title": "Body scan",
+          "author": "Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S093.png",
+          "videoUrl":"",
+          "duration": "25 min"
+        },
+        {
+          "id": 5,
+          "title": "Visualisation",
+          "author": "Jasleen Kaur",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S094.png",
+          "videoUrl":"",
+          "duration": "20 min"
+        },
+        {
+          "id": 6,
+          "title": "Dropping Below the Waves",
+          "author": "Adam Coelho",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S095.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 7,
+          "title": "Resetting and feeling in enough",
+          "author": "Adam Coelho",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S096.png",
+          "videoUrl":"",
+          "duration": "17 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Timer (no audio)",
+      "data": [
+        {
+          "id": 1,
+          "title": "5 min Silent Meditation",
+          "author": "",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S010.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/2_Silent_Meditations/S010+5+min+silent+meditation.mp4",
+          "duration": "5 min"
+        },
+        {
+          "id": 2,
+          "title": "10 min Silent Meditation",
+          "author": "",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S011.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/2_Silent_Meditations/S010+5+min+silent+meditation.mp4",
+          "duration": "10 min"
+        },
+        {
+          "id": 3,
+          "title": "20 min Silent Meditation",
+          "author": "",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S012.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/2_Silent_Meditations/S010+5+min+silent+meditation.mp4",
+          "duration": "20 min"
+        },
+        {
+          "id": 4,
+          "title": "30 min Silent Meditation",
+          "author": "",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S013.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/2_Silent_Meditations/S010+5+min+silent+meditation.mp4",
+          "duration": "30 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Understanding Stress",
+      "data": [
+        {
+          "id": 1,
+          "title": "How stress affects my actions",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S081.png",
+          "videoUrl":"",
+          "duration": "7 min"
+        },
+        {
+          "id": 2,
+          "title": "How stress affects my emotions",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S082.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 3,
+          "title": "How stress affects my relationships",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S083.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 4,
+          "title": "How stress affects my body",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S084.png",
+          "videoUrl":"",
+          "duration": "3 min"
+        },
+        {
+          "id": 5,
+          "title": "How stress affects my thoughts",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S085.png",
+          "videoUrl":"",
+          "duration": "4 min"
+        },
+        {
+          "id": 6,
+          "title": "When It's Worrying Vs. When It's Planning",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S086.png",
+          "videoUrl":"",
+          "duration": "4 min"
+        },
+        {
+          "id": 7,
+          "title": "Understanding Stress",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S097.png",
+          "videoUrl":"",
+          "duration": "5 min"
+        },
+        {
+          "id": 8,
+          "title": "Where is my stress Starting?",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S120.png",
+          "videoUrl":"",
+          "duration": "5 min"
+        },
+        {
+          "id": 9,
+          "title": "Calming Amygdala stress",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S121.png",
+          "videoUrl":"",
+          "duration": "5 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Soundscapes & Sound Baths",
+      "data": [
+        {
+          "id": 1,
+          "title": "Mountains ans sea (Soundscape)",
+          "author":"Roga Team",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S088.png",
+          "videoUrl":"",
+          "duration": "16 min"
+        },
+        {
+          "id": 2,
+          "title": "Aurora(Soundscape)",
+          "author":"By Roga Team",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S089.png",
+          "videoUrl":"",
+          "duration": "15 min"
+        },
+        {
+          "id": 3,
+          "title": "Fire Element(Soundscape)",
+          "author":"By Roga Team",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S090.png",
+          "videoUrl":"",
+          "duration": "14 min"
+        },
+        {
+          "id": 4,
+          "title": "Relax and Release",
+          "author":"Zoe",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S108.png",
+          "videoUrl":"",
+          "duration": "17 min"
+        },
+        {
+          "id": 5,
+          "title": "Guided sound bath",
+          "author":"Zoe",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S109.png",
+          "videoUrl":"",
+          "duration": "16 min"
+        },
+        {
+          "id": 6,
+          "title": "Sound bath & Meditation",
+          "author":"Zoe",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S110.png",
+          "videoUrl":"",
+          "duration": "22 min"
+        }
+      ]
+    },
+
+    {
+      "title": "I'm Feeling Stressed",
+      "data": [
+        {
+          "id": 1,
+          "title": "I'm Distracted",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S049.png",
+          "videoUrl":"",
+          "duration": "5 min"
+        },
+        {
+          "id": 2,
+          "title": "I'm Having FOMO",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S050.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 3,
+          "title": "I'm Overwhelmed",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S051.png",
+          "videoUrl":"",
+          "duration": "7 min"
+        },
+        {
+          "id": 4,
+          "title": "I'm Stressed About Packing for Trip",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S052.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 5,
+          "title": "I'm Caught in Perfectionism",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S053.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 6,
+          "title": "Scheduling is Making Me Stressed",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S054.png",
+          "videoUrl":"",
+          "duration": "7 min"
+        },
+        {
+          "id": 7,
+          "title": "My To Do List is too Much",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S055.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        },
+        {
+          "id": 8,
+          "title": "I'm Stressed About Transportation",
+          "author":"Jamie Magruder",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S056.png",
+          "videoUrl":"",
+          "duration": "6 min"
+        }
+      ]
+    },
+
+    {
+      "title": "Short Moments",
+      "data": [
+        {
+          "id": 1,
+          "title": "Noticing vs Fixating",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S146.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+        {
+          "id": 2,
+          "title": "Making Sense oF your Experience",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S147.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+        {
+          "id": 3,
+          "title": "Avoid Avoiding",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S148.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+
+        {
+          "id": 4,
+          "title": "What else could be true?",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S149.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+        {
+          "id": 5,
+          "title": "Phrases to Focus the Mind",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S150.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+
+        {
+          "id": 6,
+          "title": "Rewiring our Brain Ease",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S151.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        },
+        {
+          "id": 7,
+          "title": "Reflecting on the Good",
+          "author":"Nicholas Whitaker",
+          "description": "",
+          "imageUrl": "assets/images/sessions_thumbnails/S152.png",
+          "videoUrl":"",
+          "duration": "2 min"
+        }
+      ]
+    }
+  ]
+}

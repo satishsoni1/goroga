@@ -26,17 +26,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
-      toolbarHeight: height,
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
-      leadingWidth: leadingWidth ?? 0,
-      leading: leading,
-      title: title,
-      titleSpacing: 0,
-      centerTitle: centerTitle ?? false,
-      actions: actions,
-    );
+        elevation: 0,
+        toolbarHeight: height,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        leadingWidth: leadingWidth ?? 0,
+        leading: leading,
+        title: title,
+        titleSpacing: 0,
+        centerTitle: centerTitle ?? false,
+        actions: actions,
+        bottom: PreferredSize(
+          
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+            color: ColorConstant.primary,
+            height: 2.0,
+          ),
+        ));
   }
 
   @override

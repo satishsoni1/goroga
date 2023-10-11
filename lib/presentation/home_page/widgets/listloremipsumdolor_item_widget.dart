@@ -5,7 +5,7 @@ import 'package:goroga/core/app_export.dart';
 
 // ignore: must_be_immutable
 class ListloremipsumdolorItemWidget extends StatelessWidget {
-  ListloremipsumdolorItemWidget(this.listloremipsumdolorItemModelObj);
+  ListloremipsumdolorItemWidget(this.listloremipsumdolorItemModelObj, {required Null Function() onTapTypeRoundedC});
 
   ListloremipsumdolorItemModel listloremipsumdolorItemModelObj;
 
@@ -25,7 +25,7 @@ class ListloremipsumdolorItemWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomImageView(
-                imagePath: ImageConstant.imgImage160x1601,
+                imagePath: ImageConstant.imgImage184x18410,
                 height: getSize(
                   165,
                 ),
