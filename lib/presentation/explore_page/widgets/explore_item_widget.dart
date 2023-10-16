@@ -51,7 +51,7 @@ class ExploreItemWidget extends StatelessWidget {
                 // ),
                 Stack(children: [
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage160x1601,
+                    url: ImageConstant.imgImage160x1601,
                     height: getVerticalSize(
                       250,
                     ),

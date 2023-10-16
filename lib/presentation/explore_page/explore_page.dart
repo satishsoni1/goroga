@@ -63,7 +63,9 @@ class _ExplorePageState extends State<ExplorePage> {
                                         //         data: programs[index].data);
                                         //   },
                                         // ));
-                                       Get.to(()=>PodcastsScreen(programsData:program ,) );
+                                        Get.to(() => PodcastsScreen(
+                                              programsData: program,
+                                            ));
                                       },
                                       child: Container(
                                           // decoration: AppDecoration.gradientRed700RedA70002.copyWith(
@@ -83,18 +85,18 @@ class _ExplorePageState extends State<ExplorePage> {
                                               // child: Image(image: AssetImage(items[index].imageUrl.toString()),fit: BoxFit.cover,),
                                               children: [
                                                 CustomImageView(
-                                                  imagePath: programs![index]
+                                                  url: programs![index]
                                                       .imageUrl
                                                       .toString(),
-
+                                                  fit: BoxFit.cover,
                                                   height: MediaQuery.of(context)
                                                           .size
                                                           .width /
                                                       2,
                                                   width: MediaQuery.of(context)
                                                           .size
-                                                          .width-12
-                                                      ,
+                                                          .width -
+                                                      12,
                                                   radius: BorderRadius.circular(
                                                     getHorizontalSize(
                                                       5,
@@ -161,7 +163,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                           Icons.arrow_forward),
                                                       color: Colors.white,
                                                       onPressed: () {
-                                                        // Get.to(PodcastsScreen(imagePath: items[index].imageUrl.toString(),));
+                                                        //Get.to(PodcastsScreen(imagePath: items[index].imageUrl.toString(),));
                                                         // Add your button's onPressed logic here
                                                       },
                                                     ),

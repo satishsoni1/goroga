@@ -49,8 +49,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     _controller.play().then((_) {
       // Calculate the custom aspect ratio based on the device's screen dimensions.
       setState(() {
-        customAspectRatio = MediaQuery.of(context).size.height /
-            MediaQuery.of(context).size.width;
+        customAspectRatio = MediaQuery.of(context).size.height/
+            MediaQuery.of(context).size.width+0.295;
       });
     });
 
@@ -93,91 +93,93 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       ),
     );
     } else {
-      return Scaffold(
-        backgroundColor: Colors.black,
-        body: GestureDetector(
-          onTap: () {
-            setState(() {
-              _showControls = !_showControls;
-            });
-          },
-          child: OrientationBuilder(
-            builder: (context, orientation) {
-              return Stack(
-                children: [
-                  AspectRatio(
-                    aspectRatio: customAspectRatio,
-                    child: VideoPlayer(_controller),
-                  ),
-                  Visibility(
-                    visible: _showControls,
-                    child: Positioned(
-                      top: 20, // Adjust the top position as needed
-                      left: 20, // Adjust the left position as needed
-                      child: GestureDetector(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: Icon(
-                          Icons.arrow_back_ios_rounded,
-                          color: Colors.white, // Customize the arrow color
-                          size: 32, // Customize the arrow size
-                        ),
-                      ),
-                    ),
-                  ),
-                  Visibility(
-                    visible: _showControls,
-                    child: Positioned(
-                      bottom: 20.0, // Adjust the position as needed
-                      left: 0.0,
-                      right: 0.0,
-                      child: Slider(
-                        activeColor: Colors.white,
-                        value: _sliderValue,
-                        min: 0,
-                        max: _controller.value.duration.inSeconds.toDouble(),
-                        onChanged: (value) {
-                          setState(() {
-                            _sliderValue = value;
-                          });
-                          final Duration position =
-                              Duration(seconds: value.toInt());
-                          _controller.seekTo(position);
-                        },
-                      ),
-                    ),
-                  ),
-
-                  Visibility(
-                    visible: _showControls,
-                    child: Positioned(
-                      bottom: 20.0, // Adjust the position as needed
-                      left: 25.0,
-                      right: 0.0,
-                      child: Container(
-                        child: Text(
-                          _videoPosition,
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // floatingActionButton: FloatingActionButton(
-                  //   onPressed: () {
-                  //     setState(() {
-                  //       if (_controller.value.isPlaying) {
-                  //         _controller.pause();
-                  //       } else {
-                  //         _controller.play();
-                  //       }
-                  //     });
-                  //   },
-
-                  // ),
-                ],
-              );
+      return SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          body: GestureDetector(
+            onTap: () {
+              setState(() {
+                _showControls = !_showControls;
+              });
             },
+            child: OrientationBuilder(
+              builder: (context, orientation) {
+                return Stack(
+                  children: [
+                    AspectRatio(
+                      aspectRatio: customAspectRatio,
+                      child: VideoPlayer(_controller),
+                    ),
+                    Visibility(
+                      visible: _showControls,
+                      child: Positioned(
+                        top: 20, // Adjust the top position as needed
+                        left: 20, // Adjust the left position as needed
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios_rounded,
+                            color: Colors.white, // Customize the arrow color
+                            size: 32, // Customize the arrow size
+                          ),
+                        ),
+                      ),
+                    ),
+                    Visibility(
+                      visible: _showControls,
+                      child: Positioned(
+                        bottom: 20.0, // Adjust the position as needed
+                        left: 0.0,
+                        right: 0.0,
+                        child: Slider(
+                          activeColor: Colors.white,
+                          value: _sliderValue,
+                          min: 0,
+                          max: _controller.value.duration.inSeconds.toDouble(),
+                          onChanged: (value) {
+                            setState(() {
+                              _sliderValue = value;
+                            });
+                            final Duration position =
+                                Duration(seconds: value.toInt());
+                            _controller.seekTo(position);
+                          },
+                        ),
+                      ),
+                    ),
+      
+                    Visibility(
+                      visible: _showControls,
+                      child: Positioned(
+                        bottom: 20.0, // Adjust the position as needed
+                        left: 25.0,
+                        right: 0.0,
+                        child: Container(
+                          child: Text(
+                            _videoPosition,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    // floatingActionButton: FloatingActionButton(
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       if (_controller.value.isPlaying) {
+                    //         _controller.pause();
+                    //       } else {
+                    //         _controller.play();
+                    //       }
+                    //     });
+                    //   },
+      
+                    // ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       );

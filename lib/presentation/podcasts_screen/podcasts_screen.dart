@@ -73,8 +73,8 @@ class PodcastsScreen extends GetWidget<PodcastsController> {
           body: Column(children: [
         Stack(
           children: [
-            Image.asset(
-              programsData.imageUrl
+            CustomImageView(
+             url: programsData.imageUrl
                   .toString(), // Display the image using the received image path
               height: MediaQuery.of(context).size.height /
                   4, // Adjust the height as needed
@@ -403,7 +403,7 @@ class PodcastsScreen extends GetWidget<PodcastsController> {
                                       Stack(
                                         children: [
                                           CustomImageView(
-                                              imagePath: currentData.imageUrl
+                                              url: currentData.imageUrl
                                                   .toString()
                                                   .toString(),
                                               height: MediaQuery.of(context)

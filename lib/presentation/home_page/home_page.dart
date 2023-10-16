@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                                                               Stack(
                                                                 children: [
                                                                   CustomImageView(
-                                                                    imagePath: data
+                                                                    url: data
                                                                         .imageUrl
                                                                         .toString(),
                                                                     fit: BoxFit

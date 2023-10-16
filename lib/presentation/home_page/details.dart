@@ -55,9 +55,17 @@ class _DetailPageState extends State<DetailPage> {
       body: Column(children: [
         Stack(
           children: [
-            Image.asset(
-              widget.data.imageUrl
-                  .toString(), // Display the image using the received image path
+            // Image.asset(
+            //   widget.data.imageUrl
+            //       .toString(), // Display the image using the received image path
+            //   height: MediaQuery.of(context).size.height / 2 -
+            //       20, // Adjust the height as needed
+            //   width: MediaQuery.of(context).size.width,
+            //   fit: BoxFit.cover,
+            //   // Adjust the width as needed
+            // ),
+            CustomImageView(
+              url: widget.data.imageUrl.toString(), // Display the image using the received image path
               height: MediaQuery.of(context).size.height / 2 -
                   20, // Adjust the height as needed
               width: MediaQuery.of(context).size.width,

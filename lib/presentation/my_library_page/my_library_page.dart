@@ -134,7 +134,7 @@ class _MyLibraryState extends State<MyLibraryPage> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(51),
+                height: getVerticalSize(80),
                 // leadingWidth: 56,
                 // leading: AppbarImage(
                 //     height: getSize(32),

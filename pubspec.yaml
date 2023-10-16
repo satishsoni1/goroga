@@ -43,8 +43,6 @@ flutter:
   assets: 
     - assets/
     - assets/images/
-    - assets/images/program_thumbnails/
-    - assets/images/sessions_thumbnails/
     - jsonfiles/
   fonts: 
     - family: Urbanist
