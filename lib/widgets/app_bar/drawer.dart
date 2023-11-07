@@ -1,5 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:goroga/presentation/profile_settings_page/bookedAppoinmets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:goroga/core/app_export.dart';
+import 'package:http/http.dart' as http;
+import '../../presentation/profile_settings_page/appoinmentsPage.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -46,7 +53,7 @@ class _NavBarState extends State<NavBar> {
                 ],
               ),
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.centerLeft,
                 child: Text(
                   "Settings",
                   style: TextStyle(
@@ -58,128 +65,291 @@ class _NavBarState extends State<NavBar> {
               SizedBox(
                 height: 15,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  launchUrl(_privacyPolicy);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 224, 245, 243), backgroundColor: Colors.white, // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                  ),
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.lock_outline_sharp,
-                    color: Color.fromRGBO(16, 106, 94, 1),
-                  ),
-                  title: Text(
-                    'Privacy Policy',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle button tap
-                  launchUrl(_terms);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 224, 245, 243), backgroundColor: Colors.white, // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                  ),
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.file_copy_sharp,
-                    color: Color.fromRGBO(16, 106, 94, 1),
-                  ),
-                  title: Text('Terms',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle button tap
-                  launchUrl(_dataPrivacy);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 224, 245, 243), backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                  ), // Text color
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.list,
-                    color: Color.fromRGBO(16, 106, 94, 1),
-                  ),
-                  title: Text('Data Privacy',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle button tap
-                  launchUrl(_support);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 224, 245, 243), backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                  ), // Text color
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.question_mark,
-                    color: Color.fromRGBO(16, 106, 94, 1),
-                  ),
-                  title: Text(
-                    'Support/FAQs',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle button tap
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 224, 245, 243), backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust the radius as needed
-                  ), // Text color
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.logout_outlined,
-                    color: Color.fromRGBO(16, 106, 94, 1),
-                  ),
-                  title: Text('Logout',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        Get.to(() => AppointmentsPage());
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.edit_calendar_rounded,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Appoinments',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        Get.to(() => bookingAppoinments());
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.date_range,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Bookings',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        Get.toNamed(
+                          AppRoutes.subscriptionPage,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.subscriptions_outlined,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Subscription',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        launchUrl(_privacyPolicy);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ),
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.lock_outline_sharp,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text(
+                            'Privacy Policy',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 12),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        launchUrl(_terms);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ),
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.file_copy_sharp,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Terms',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        launchUrl(_dataPrivacy);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.list,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Data Privacy',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        launchUrl(_support);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.question_mark,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text(
+                            'Support/FAQs',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 12),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle button tap
+                        logOut();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ), // Text color
+                      ),
+                      child: SizedBox(
+                        height: 50,
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.logout_outlined,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text('Logout',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ]),
           ),
         ));
   }
+
+  logOut() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var userDataJson = sp.getString('userData');
+    Map<String, dynamic> userDataMap = json.decode(userDataJson!);
+    Map<String, dynamic> data = userDataMap['data'];
+    // await sp.remove('email');
+    // await sp.remove('password');
+    print(data['api_token']);
+    final apiToken = data['api_token'];
+
+    try {
+      final response = await http.get(
+        Uri.parse('https://api.goroga.in/api/logout?api_token=' + apiToken),
+      );
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+
+        if (responseData['success'] == true) {
+          await sp.setBool("isLogin", false);
+
+          print(responseData['message']);
+          Get.offAllNamed(AppRoutes.signInScreen);
+        } else {
+          print('Logout on the server failed');
+        }
+      } else {
+        print('Failed to log out on the server');
+      }
+    } catch (error) {
+      print('An error occurred during server-side logout: $error');
+    }
+  }
 }
+

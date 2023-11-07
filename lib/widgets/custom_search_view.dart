@@ -15,6 +15,7 @@ class CustomSearchView extends StatelessWidget {
       this.hintText,
       this.prefix,
       this.prefixConstraints,
+      this.onchangeFunction,
       this.suffix,
       this.suffixConstraints});
 
@@ -29,6 +30,8 @@ class CustomSearchView extends StatelessWidget {
   Alignment? alignment;
 
   double? width;
+
+  ValueChanged<String>? onchangeFunction;
 
   EdgeInsetsGeometry? margin;
 
@@ -61,6 +64,7 @@ class CustomSearchView extends StatelessWidget {
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
+        onChanged: onchangeFunction,
         controller: controller,
         focusNode: focusNode,
         style: _setFontStyle(),
@@ -122,7 +126,7 @@ class CustomSearchView extends StatelessWidget {
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            16.00,
+            30.00,
           ),
         );
     }
@@ -143,7 +147,10 @@ class CustomSearchView extends StatelessWidget {
       default:
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(
+            color: ColorConstant.primary,
+            width: 1,
+          ),
         );
     }
   }
@@ -186,15 +193,18 @@ class CustomSearchView extends StatelessWidget {
 enum SearchViewShape {
   RoundedBorder16,
 }
+
 enum SearchViewPadding {
   PaddingT18_1,
   PaddingT18,
 }
+
 enum SearchViewVariant {
   None,
   FillGray100,
   OutlineRedA70002,
 }
+
 enum SearchViewFontStyle {
   UrbanistRegular14Gray400,
   UrbanistSemiBold14Gray900,

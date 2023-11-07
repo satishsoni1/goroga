@@ -1,12 +1,21 @@
-import 'controller/sign_in_controller.dart';
+
+import 'package:goroga/presentation/sign_in_screen/controller/sign_in_controller.dart';
+
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/custom_button.dart';
-import 'package:goroga/widgets/custom_checkbox.dart';
 import 'package:goroga/widgets/custom_text_form_field.dart';
-import 'package:goroga/domain/googleauth/google_auth_helper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends GetWidget<SignInController> {
+  
+  SignInController _SignInController = Get.put(SignInController());
+void getData()async{
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    List<String>? data = sp.getStringList('userData');
+    print(data);
+}
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,28 +28,34 @@ class SignInScreen extends GetWidget<SignInController> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      CustomImageView(
-                          svgPath: ImageConstant.imgArrowleft,
-                          height: getSize(28),
-                          width: getSize(28),
-                          alignment: Alignment.centerLeft,
-                          onTap: () {
-                            onTapImgArrowleft();
-                          }),
-                      CustomImageView(
-                          imagePath: ImageConstant.imgVectorRedA700,
-                          height: getSize(102),
-                          width: getSize(102),
-                          margin: getMargin(top: 28)),
+                      // CustomImageView(
+                      //     svgPath: ImageConstant.imgArrowleft,
+                      //     height: getSize(28),
+                      //     width: getSize(28),
+                      //     alignment: Alignment.centerLeft,
+                      //     onTap: () {
+                      //       onTapImgArrowleft();
+                      //     }),
+                      Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          child: Column(children: [
+                            CustomImageView(
+                              imagePath: ImageConstant.imageLogo,
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width - 80,
+                              fit: BoxFit.contain,
+                            ),
+                          ])),
                       Padding(
-                          padding: getPadding(top: 69),
+                          padding: getPadding(top: 20),
                           child: Text("msg_login_to_your_a".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style: AppStyle.txtUrbanistRomanBold32)),
+                              style: AppStyle.txtUrbanistRomanBold32
+                              )),
                       CustomTextFormField(
                           focusNode: FocusNode(),
-                          controller: controller.statusDefaultController,
+                          controller: controller.usernameController,
                           hintText: "lbl_email".tr,
                           margin: getMargin(top: 27),
                           padding: TextFormFieldPadding.PaddingT21,
@@ -54,58 +69,83 @@ class SignInScreen extends GetWidget<SignInController> {
                                   svgPath: ImageConstant.imgCheckmark)),
                           prefixConstraints:
                               BoxConstraints(maxHeight: getVerticalSize(60))),
-                      Obx(() => CustomTextFormField(
-                          focusNode: FocusNode(),
-                          controller: controller.statusDefaultOneController,
-                          hintText: "lbl_password".tr,
-                          margin: getMargin(top: 24),
-                          padding: TextFormFieldPadding.PaddingT21_1,
-                          fontStyle:
-                              TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                          textInputAction: TextInputAction.done,
-                          textInputType: TextInputType.visiblePassword,
-                          prefix: Container(
-                              margin: getMargin(
-                                  left: 20, top: 20, right: 12, bottom: 20),
-                              child: CustomImageView(
-                                  svgPath: ImageConstant.imgLock)),
-                          prefixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(60)),
-                          suffix: InkWell(
-                              onTap: () {
-                                controller.isShowPassword.value =
-                                    !controller.isShowPassword.value;
-                              },
-                              child: Container(
-                                  margin: getMargin(
-                                      left: 30, top: 20, right: 20, bottom: 20),
-                                  child: CustomImageView(
-                                      svgPath: controller.isShowPassword.value
-                                          ? ImageConstant.imgDashboard
-                                          : ImageConstant.imgDashboard))),
-                          suffixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(60)),
-                          isObscureText: controller.isShowPassword.value)),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Obx(() => CustomCheckbox(
-                              alignment: Alignment.centerLeft,
-                              text: "lbl_remember_me".tr,
-                              iconSize: getHorizontalSize(24),
-                              value: controller.isCheckbox.value,
-                              margin: getMargin(top: 24),
-                              fontStyle:
-                                  CheckboxFontStyle.UrbanistSemiBold14Gray900,
-                              onChange: (value) {
-                                controller.isCheckbox.value = value;
-                              }))),
+                     Obx(() =>   CustomTextFormField(
+                        focusNode: FocusNode(),
+                        controller: controller.passwordController,
+                        hintText: "lbl_password".tr,
+                        margin: getMargin(top: 24),
+                        padding: TextFormFieldPadding.PaddingT21_1,
+                        fontStyle:
+                            TextFormFieldFontStyle.UrbanistRegular14Gray500,
+                        textInputAction: TextInputAction.done,
+                        textInputType: TextInputType.visiblePassword,
+                        prefix: Container(
+                            margin: getMargin(
+                                left: 20, top: 20, right: 12, bottom: 20),
+                            child: CustomImageView(
+                                svgPath: ImageConstant.imgLock)),
+                        prefixConstraints:
+                            BoxConstraints(maxHeight: getVerticalSize(60),
+                        ),
+                         
+                        suffix: InkWell(
+                            onTap: () {
+                              controller.isShowPassword.value =
+                                  !controller.isShowPassword.value;
+                            },
+                            child: Container(
+                                margin: getMargin(
+                                    left: 30, right: 20,),
+                                child: CustomImageView(
+                                    svgPath: controller.isShowPassword.value
+                                        ? ImageConstant.imgEye
+                                        : ImageConstant.imgDashboard))),
+                        suffixConstraints:
+                            BoxConstraints(maxHeight: getVerticalSize(60)),
+                        isObscureText: controller.isShowPassword.value
+                      ),),
+                      // Obx(() => CustomTextFormField(
+                      //     focusNode: FocusNode(),
+                      //     // controller: controller.statusDefaultOneController,
+                      //     hintText: "lbl_password".tr,
+                      //     margin: getMargin(top: 24),
+                      //     padding: TextFormFieldPadding.PaddingT21_1,
+                      //     fontStyle:
+                      //         TextFormFieldFontStyle.UrbanistRegular14Gray500,
+                      //     textInputAction: TextInputAction.done,
+                      //     textInputType: TextInputType.visiblePassword,
+                      //     prefix: Container(
+                      //         margin: getMargin(
+                      //             left: 20, top: 20, right: 12, bottom: 20),
+                      //         child: CustomImageView(
+                      //             svgPath: ImageConstant.imgLock)),
+                      //     prefixConstraints:
+                      //         BoxConstraints(maxHeight: getVerticalSize(60)),
+                      //     suffix: InkWell(
+                      //         onTap: () {
+                      //           controller.isShowPassword.value =
+                      //               !controller.isShowPassword.value;
+                      //         },
+                      //         child: Container(
+                      //             margin: getMargin(
+                      //                 left: 30, right: 20,),
+                      //             child: CustomImageView(
+                      //                 svgPath: controller.isShowPassword.value
+                      //                     ? ImageConstant.imgDashboard
+                      //                     : ImageConstant.imgDashboard))),
+                      //     suffixConstraints:
+                      //         BoxConstraints(maxHeight: getVerticalSize(60)),
+                      //     isObscureText: controller.isShowPassword.value)),
+
                       CustomButton(
                           height: getVerticalSize(58),
                           text: "lbl_sign_in".tr,
                           margin: getMargin(top: 24),
                           padding: ButtonPadding.PaddingT18,
                           onTap: () {
-                            onTapSignin();
+                           
+                            _SignInController.checkLogIn(controller.usernameController.text,
+                              controller.passwordController.text);
                           }),
                       GestureDetector(
                           onTap: () {
@@ -291,9 +331,7 @@ class SignInScreen extends GetWidget<SignInController> {
   }
 
   onTapSignin() {
-    Get.toNamed(
-      AppRoutes.homeContainerScreen,
-    );
+   
   }
 
   onTapTxtForgotthepassword() {
@@ -303,15 +341,37 @@ class SignInScreen extends GetWidget<SignInController> {
   }
 
   onTapImgGoogle() async {
-    await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
-      if (googleUser != null) {
-        //TODO Actions to be performed after signin
-      } else {
-        Get.snackbar('Error', 'user data is empty');
-      }
-    }).catchError((onError) {
-      Get.snackbar('Error', onError.toString());
-    });
+  //    try {
+  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  //   if (googleUser == null) {
+  //     // User canceled the sign-in process
+  //     return null;
+  //   }final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+  //   final AuthCredential credential = GoogleAuthProvider.credential(
+  //     accessToken: googleAuth.accessToken,
+  //     idToken: googleAuth.idToken,
+  //   );
+
+  //   final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+  //   final User? user = authResult.user;
+  //   return user;
+  // }catch (e) {
+  //   // Handle sign-in errors
+  //   print("Error: $e");
+  //   return null;
+  // }
+
+    // await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
+    //       print("google iside");
+
+    //   if (googleUser != null) {
+    //     //TODO Actions to be performed after signin
+    //   } else {
+    //     Get.snackbar('Error', 'user data is empty');
+    //   }
+    // }).catchError((onError) {
+    //   Get.snackbar('Error', onError.toString());
+    // });
   }
 
   onTapTxtSignup() {

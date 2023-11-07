@@ -1,3 +1,4 @@
+import 'package:goroga/presentation/profile_settings_page/subscriptionPage.dart';
 import 'package:goroga/presentation/splash_screen/splash_screen.dart';
 import 'package:goroga/presentation/splash_screen/binding/splash_binding.dart';
 import 'package:goroga/presentation/walkthrough_screen/walkthrough_screen.dart';
@@ -237,6 +238,9 @@ class AppRoutes {
   static const String profileSettingsPage = '/profile_settings_page';
 
   static const String subscribeScreen = '/subscribe_screen';
+
+  static const String subscriptionPage = '/subscription_page';
+
 
   static const String paymentMethodScreen = '/payment_method_screen';
 
@@ -557,6 +561,11 @@ class AppRoutes {
       bindings: [
         SubscribeBinding(),
       ],
+    ),
+    GetPage(
+      name: subscriptionPage,
+      page: () => SubscriptionPage(),
+
     ),
     GetPage(
       name: paymentMethodScreen,

@@ -1,3 +1,4 @@
+
 import 'controller/lets_you_in_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
@@ -127,9 +128,14 @@ class LetsYouInScreen extends GetWidget<LetsYouInController> {
   }
 
   onTapContinuewithgoogle() async {
+          print("google inside process");
+
     await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
+      print("google inside process");
+      print(googleUser);
       if (googleUser != null) {
         //TODO Actions to be performed after signin
+        // Get.to(() => HomeContainerScreen());
       } else {
         Get.snackbar('Error', 'user data is empty');
       }

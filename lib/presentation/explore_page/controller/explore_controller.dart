@@ -1,13 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/explore_page/models/program_model.dart';
 
 class ExploreController extends GetxController {
   // ExploreController(this.exploreModelObj);
 
-// TextEditingController searchBarController = TextEditingController();
+TextEditingController searchBarController = TextEditingController();
 
 // Rx<ExploreModel> exploreModelObj;
 
