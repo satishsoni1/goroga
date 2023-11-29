@@ -1,40 +1,98 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:goroga/presentation/profile_settings_page/controller/paymentController.dart';
-
+import 'package:goroga/presentation/home_page/controller/userDetailsController.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 import '../../widgets/app_bar/appbar_title.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
 
 class PaymentPage extends StatefulWidget {
-  int? id;
-  PaymentPage(this.id);
+  final dynamic data;
+  PaymentPage({required this.data});
 
   @override
   State<PaymentPage> createState() => _PaymentPageState();
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  PaymentController _paymentController = Get.put(PaymentController());
+  // PaymentController _paymentController = Get.put(PaymentController());
+  UserDetailsController _userDetailsController =
+      Get.put(UserDetailsController());
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  Razorpay? _razorpay;
 
   @override
   void initState() {
     super.initState();
-    // Fetch payment data for the specific e_provider id
-    _paymentController.fetchpaymentData(widget.id);
+    print(widget.data.price.toString());
+    _razorpay = Razorpay();
+    _razorpay!.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay!.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay!.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // _razorpay?.clear();
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    print("Payment is Successful");
+    // print(razop);
+
+    // Handle payment success
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    print("Payment failed with error ");
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    print("external wallet called");
+    // Handle external wallet
+  }
+
+  void _startPayment(String? user_mob_no, String? userEmail, dynamic amount) {
+    print(amount);
+    double amountInPaisa = double.parse(amount);
+
+    var options = {
+      'key': 'rzp_test_R4IYtWXT0TYnrb',
+      'amount': amountInPaisa * 100,
+      'name': 'goroga',
+      'description': 'Payment for services',
+      'prefill': {
+        'contact': user_mob_no,
+        'email': userEmail,
+      },
+      'external': {
+        'wallets': ['paytm'],
+      },
+    };
+
+    try {
+      print('hii');
+      print(userEmail);
+      print(user_mob_no);
+      _razorpay?.open(options);
+    } catch (e) {
+      print('hello');
+      print(e.toString());
+    }
   }
 
   Widget build(BuildContext context) {
+    dynamic totalPrice;
+    totalPrice = ((widget.data.price) - (widget.data.discountPrice));
+    dynamic roundedTotalPrice = totalPrice.toStringAsFixed(2);
+
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
         appBar: CustomAppBar(
           height: getVerticalSize(80),
           leading: IconButton(
-              onPressed: () {
-                // print(widget.id);
-                Get.back();
-              },
+              onPressed: () => Get.back(),
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.black,
@@ -66,25 +124,25 @@ class _PaymentPageState extends State<PaymentPage> {
                             style: TextStyle(fontSize: 18),
                           ),
                           Text(
-                            '100',
+                          widget.data.price.toString(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'GST: ',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Text(
-                            '100',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      ),
+                      // SizedBox(height: 20),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      //     Text(
+                      //       'GST: ',
+                      //       style: TextStyle(fontSize: 18),
+                      //     ),
+                      //     Text(
+                      //       '100',
+                      //       style: TextStyle(fontSize: 18),
+                      //     ),
+                      //   ],
+                      // ),
                       SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,7 +152,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             style: TextStyle(fontSize: 18),
                           ),
                           Text(
-                            '-100',
+                            '- ' + (widget.data.discountPrice.toString()),
                             style: TextStyle(
                                 fontSize: 18, color: ColorConstant.primary),
                           ),
@@ -109,7 +167,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             style: TextStyle(fontSize: 18),
                           ),
                           Text(
-                            '100',
+                            roundedTotalPrice.toString(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ],
@@ -130,7 +188,13 @@ class _PaymentPageState extends State<PaymentPage> {
                           ),
                           backgroundColor: ColorConstant.primary),
                       onPressed: () {
-                        // Handle the payment processing here
+                        String? user_mob_no = _userDetailsController
+                            .usersData.value.data?.phoneNumber;
+                        String? userEmail =
+                            _userDetailsController.usersData.value.data?.email;
+
+                        _startPayment(
+                            user_mob_no, userEmail, roundedTotalPrice);
                       },
                       child: Text('Proceeed to Payment',
                           style: TextStyle(
@@ -149,8 +213,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         // backgroundColor: ColorConstant.primary
                       ),
                       onPressed: () {
-                        // Get.back();
-                        // Handle the payment processing here
+                        Get.back();
                       },
                       child: Text('Cancel',
                           style: TextStyle(

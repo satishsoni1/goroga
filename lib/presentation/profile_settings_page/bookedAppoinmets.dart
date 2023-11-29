@@ -27,6 +27,7 @@ class _bookingAppoinmentsState extends State<bookingAppoinments> {
   fetchData() async {
     try {
       await _appoinmentbookingController.getBookings();
+      
     } catch (e) {
       // _appoinmentbookingController.isEmpty = true.obs;
       print("error:$e");
@@ -74,7 +75,7 @@ class _bookingAppoinmentsState extends State<bookingAppoinments> {
                   _appoinmentbookingController
                           .appointments.value.data!.length ==
                       0) {
-                print("is lenght tr");
+                // print("is lenght tr");
                 return Center(child: Text("Data not found"));
               } else {
                 return Center(child: CircularProgressIndicator());
@@ -154,7 +155,7 @@ class _appoinmentsCardState extends State<appoinmentsCard> {
             backgroundColor: ColorConstant.primary,
           ),
           onPressed: () {
-            Get.to(() => PaymentPage(doctorData.eProvider!.id));
+            Get.to(() => PaymentPage( data: doctorData.eService, ));
           },
           child: Text(
             'Pay',

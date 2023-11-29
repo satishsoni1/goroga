@@ -1,8 +1,6 @@
 import 'package:goroga/presentation/profile_settings_page/global_key.dart';
 import 'package:goroga/widgets/app_bar/drawer.dart';
 
-import 'controller/profile_settings_controller.dart';
-import 'models/profile_settings_model.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/app_bar/appbar_image.dart';

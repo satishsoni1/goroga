@@ -30,10 +30,10 @@ class PaymentModel {
 class Data {
   int? id;
   Name? name;
-  dynamic? price;
-  dynamic? discountPrice;
+  dynamic price;
+  dynamic discountPrice;
   String? priceUnit;
-  dynamic? quantityUnit;
+  dynamic quantityUnit;
   String? duration;
   Name? description;
   bool? featured;
@@ -42,9 +42,9 @@ class Data {
   int? eProviderId;
   List<dynamic>? customFields;
   bool? hasMedia;
-  dynamic? totalReviews;
+  dynamic totalReviews;
   bool? isFavorite;
-  dynamic? rate;
+  dynamic rate;
   EProvider? eProvider;
   List<dynamic>? media;
 
@@ -157,15 +157,15 @@ class EProvider {
   Name? description;
   String? phoneNumber;
   String? mobileNumber;
-  dynamic? availabilityRange;
+  dynamic availabilityRange;
   bool? available;
   bool? featured;
   bool? accepted;
   List<dynamic>? customFields;
   bool? hasMedia;
-  dynamic? rate;
-  dynamic? totalReviews;
-  dynamic? hasValidSubscription;
+  dynamic rate;
+  dynamic totalReviews;
+  dynamic hasValidSubscription;
   List<AvailabilityHours>? availabilityHours;
   List<dynamic>? media;
 

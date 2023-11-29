@@ -1,4 +1,3 @@
-
 import 'controller/sign_up_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
@@ -48,28 +47,24 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                 textAlign: TextAlign.left,
                                 style: AppStyle.txtUrbanistRomanBold32)),
 
-                       
-                              CustomTextFormField(
-                                  focusNode: FocusNode(),
-                                  controller: controller.usernameController,
-                                  hintText: "Username".tr,
-                                  margin: getMargin(top: 43),
-                                  // padding: TextFormFieldPadding.PaddingT21,
-                                  fontStyle: TextFormFieldFontStyle
-                                      .UrbanistRegular14Gray500,
-                                  textInputType: TextInputType.name,
-                                  // prefix: Container(
-                                  //     margin: getMargin(
-                                  //         left: 20, top: 20, right: 12, bottom: 20),
-                                  //     child: CustomImageView(
-                                  //         svgPath: ImageConstant.imgCheckmark)
-                                  //         ),
-                                  prefixConstraints: BoxConstraints(
-                                      maxHeight: getVerticalSize(60))),
-                            
-                            
-                          
-                        
+                        CustomTextFormField(
+                            focusNode: FocusNode(),
+                            controller: controller.usernameController,
+                            hintText: "Username".tr,
+                            margin: getMargin(top: 43),
+                            // padding: TextFormFieldPadding.PaddingT21,
+                            fontStyle:
+                                TextFormFieldFontStyle.UrbanistRegular14Gray500,
+                            textInputType: TextInputType.name,
+                            // prefix: Container(
+                            //     margin: getMargin(
+                            //         left: 20, top: 20, right: 12, bottom: 20),
+                            //     child: CustomImageView(
+                            //         svgPath: ImageConstant.imgCheckmark)
+                            //         ),
+                            prefixConstraints:
+                                BoxConstraints(maxHeight: getVerticalSize(60))),
+
                         CustomTextFormField(
                             focusNode: FocusNode(),
                             controller: controller.mobileController,
@@ -102,41 +97,45 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                     svgPath: ImageConstant.imgCheckmark)),
                             prefixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
-                       Obx(() =>  CustomTextFormField(
-                            focusNode: FocusNode(),
-                            controller: controller.passwordController,
-                            hintText: "lbl_password".tr,
-                            margin: getMargin(top: 20),
-                            padding: TextFormFieldPadding.PaddingT21_1,
-                            fontStyle:
-                                TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                            textInputAction: TextInputAction.done,
-                            textInputType: TextInputType.visiblePassword,
-                            prefix: Container(
-                                margin: getMargin(
-                                    left: 20, top: 20, right: 12, bottom: 20),
-                                child: CustomImageView(
-                                    svgPath: ImageConstant.imgLock)),
-                            prefixConstraints:
-                                BoxConstraints(maxHeight: getVerticalSize(60)),
-                            suffix: InkWell(
-                                onTap: () {
-                                  controller.isShowPassword.value=!controller.isShowPassword.value;
-                                  // _signUpController.isShowPassword.toggle();
-                                },
-                                child: Container(
-                                    margin: getMargin(
-                                        left: 30,
-                                        top: 20,
-                                        right: 20,
-                                        bottom: 20),
-                                    child: CustomImageView(
-                                        svgPath: controller.isShowPassword.value
-                                            ? ImageConstant.imgEye
-                                            : ImageConstant.imgDashboard))),
-                            suffixConstraints:
-                                BoxConstraints(maxHeight: getVerticalSize(60)),
-                            isObscureText: controller.isShowPassword.value),),
+                        Obx(
+                          () => CustomTextFormField(
+                              focusNode: FocusNode(),
+                              controller: controller.passwordController,
+                              hintText: "lbl_password".tr,
+                              margin: getMargin(top: 20),
+                              padding: TextFormFieldPadding.PaddingT21_1,
+                              fontStyle: TextFormFieldFontStyle
+                                  .UrbanistRegular14Gray500,
+                              textInputAction: TextInputAction.done,
+                              textInputType: TextInputType.visiblePassword,
+                              prefix: Container(
+                                  margin: getMargin(
+                                      left: 20, top: 20, right: 12, bottom: 20),
+                                  child: CustomImageView(
+                                      svgPath: ImageConstant.imgLock)),
+                              prefixConstraints: BoxConstraints(
+                                  maxHeight: getVerticalSize(60)),
+                              suffix: InkWell(
+                                  onTap: () {
+                                    controller.isShowPassword.value =
+                                        !controller.isShowPassword.value;
+                                    // _signUpController.isShowPassword.toggle();
+                                  },
+                                  child: Container(
+                                      margin: getMargin(
+                                          left: 30,
+                                          top: 20,
+                                          right: 20,
+                                          bottom: 20),
+                                      child: CustomImageView(
+                                          svgPath: controller
+                                                  .isShowPassword.value
+                                              ? ImageConstant.imgEye
+                                              : ImageConstant.imgDashboard))),
+                              suffixConstraints: BoxConstraints(
+                                  maxHeight: getVerticalSize(60)),
+                              isObscureText: controller.isShowPassword.value),
+                        ),
                         // CustomTextFormField(
                         //   focusNode: FocusNode(),
                         //   controller:
@@ -195,8 +194,6 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                   controller.mobileController.text,
                                   controller.emailController.text,
                                   controller.passwordController.text);
-                                  
-                              
                             },
                             height: getVerticalSize(58),
                             text: "lbl_sign_up".tr,
@@ -399,4 +396,6 @@ class SignUpScreen extends GetWidget<SignUpController> {
   onTapSignUp() {
     print("signup");
   }
+  
+  void cleardata() {}
 }

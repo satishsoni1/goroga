@@ -105,16 +105,16 @@ class SignUpController extends GetxController {
     final apiUrl = Uri.parse('https://api.goroga.in/api/register');
 
     final requestBody = {
-      'name': username,
-      'phone_number': phone,
-      'email': email,
-      'password': password,
+      "email": email,
+      "password": password,
+      "phone_verified_at": " ",
+      "phone_number": phone,
+      "name": username
     };
-    var data = jsonEncode(requestBody);
-    print(data);
+
     try {
       // Make a POST request to the API
-      final response = await http.post(apiUrl, body: data);
+      final response = await http.post(apiUrl, body: requestBody);
       print(response.body);
       // print(jsonDecode(response.body));
 
@@ -123,18 +123,38 @@ class SignUpController extends GetxController {
 
         if (Userdata['success'] == true) {
           // final Data = Userdata['data'];
+          usernameController.clear();
+          mobileController.clear();
+          emailController.clear();
+          passwordController.clear();
+          Get.snackbar('Successfull', Userdata['message'],
+              mainButton: TextButton(
+                onPressed: () {
+                  Get.toNamed(AppRoutes.signInScreen);
+                },
+                child: Text('Sign In'),
+              ),
+              backgroundColor: Color.fromARGB(255, 199, 244, 239));
           // Get.offNamed(AppRoutes.signInScreen);
-        } else {
-          Get.snackbar(
-            'Error',
-            'Already have an account',
-            mainButton: TextButton(
-              onPressed: () {
-                Get.toNamed(AppRoutes.signInScreen);
-              },
-              child: Text('Sign In'),
-            ),
-          );
+        } else if (Userdata['success'] == false) {
+          print(Userdata["message"]);
+          var messages;
+          try {
+            messages = Userdata['message']
+                .map((errorMessage) => errorMessage[0])
+                .toList()
+                .join(' ');
+          } catch (e) {
+            messages = "Something went wrong !!";
+          }
+          Get.snackbar('Wrong', messages,
+              mainButton: TextButton(
+                onPressed: () {
+                  Get.toNamed(AppRoutes.signInScreen);
+                },
+                child: Text('Sign In'),
+              ),
+              backgroundColor: Color.fromARGB(255, 199, 244, 239));
         }
       }
     } catch (e) {

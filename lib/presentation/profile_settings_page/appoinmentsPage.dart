@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/DoctorDataController.dart';
-import 'package:goroga/presentation/profile_settings_page/controller/appoinmentBookingController.dart';
 import 'package:goroga/presentation/profile_settings_page/global_key.dart';
 import 'package:goroga/presentation/profile_settings_page/models/doctor_Data_Model.dart';
-import 'package:goroga/presentation/profile_settings_page/payment_page.dart';
 import 'package:intl/intl.dart';
 import '../../widgets/custom_search_view.dart';
 import 'controller/search_controller.dart';
@@ -19,7 +17,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
   final searchController = Get.put(searchBarController());
 
   final _DoctorDataController = Get.put(DoctorDataController());
-  final _appoinmrntsBookingController = Get.put(AppoinmentbookingController());
+  // final _appoinmrntsBookingController = Get.put(AppoinmentbookingController());
   bool isSearchVisible = false;
 
   @override
@@ -349,18 +347,12 @@ class _DoctorCardState extends State<DoctorCard> {
   }
 
   Widget buildTimeSlots(selectedDate, start_time, end_time) {
-    print(selectedDate);
-    print(start_time);
-    print(end_time);
-
     DateTime currentTime = DateTime.now();
     String current_time = DateFormat('HH:mm').format(currentTime);
     DateTime currentDate =
         DateTime(currentTime.year, currentTime.month, currentTime.day);
     DateTime dateWithoutTime =
         DateTime(selectedDate.year, selectedDate.month, selectedDate.day);
-    print(current_time);
-    print(dateWithoutTime);
 
     String selectedDateStr = DateFormat('yyyy-MM-dd').format(selectedDate);
     DateTime startTime = DateTime.parse('2000-01-01T$start_time:00');
@@ -369,7 +361,6 @@ class _DoctorCardState extends State<DoctorCard> {
 
     while (startTime.isBefore(endTime)) {
       String formattedTime = DateFormat.Hm().format(startTime);
-      print(formattedTime);
       if (currentDate != dateWithoutTime) {
         slots.add(formattedTime);
       } else if (currentDate == dateWithoutTime) {
@@ -379,7 +370,6 @@ class _DoctorCardState extends State<DoctorCard> {
       }
       startTime = startTime.add(Duration(minutes: 30));
     }
-    print(slots);
     return Container(
       decoration: BoxDecoration(color: Color.fromARGB(223, 233, 238, 236)),
       alignment: Alignment.topLeft,
@@ -411,7 +401,7 @@ class _DoctorCardState extends State<DoctorCard> {
                       setState(() {
                         isSelected = true;
                         selectedTime = slot;
-                        print(selectedTime);
+                        // print(selectedTime);
                       });
                     },
                     child: Text(
@@ -442,14 +432,12 @@ class _DoctorCardState extends State<DoctorCard> {
                 onPressed: () {
                   final doctorId = widget.doctorData.id;
                   final doctorName = widget.doctorData.name?.en ?? "";
-                  final selectedDay = selectedDate;
                   final selectedslot = selectedTime;
                   String formattedDateTime = '$selectedDateStr $selectedslot';
-                  final controller = Get.find<AppoinmentbookingController>();
+                  final controller = Get.find<DoctorDataController>();
                   controller.confirmAppointment(
                       doctorId!, doctorName, formattedDateTime);
-                  // .confirmAppointment(
-                  //     doctorId, doctorName, selectedDate, selectedTime);
+               
 
                   showDialog(
                     context: context,
@@ -460,26 +448,26 @@ class _DoctorCardState extends State<DoctorCard> {
                           "Your appointment is confirmed.",
                         ),
                         actions: <Widget>[
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              backgroundColor: ColorConstant.primary,
-                            ),
-                            child: Text(
-                              "Pay",
-                              style: TextStyle(color: ColorConstant.whiteA700),
-                            ),
-                            onPressed: () {
-                              clearData();
+                          // TextButton(
+                          //   style: TextButton.styleFrom(
+                          //     backgroundColor: ColorConstant.primary,
+                          //   ),
+                          //   child: Text(
+                          //     "Pay",
+                          //     style: TextStyle(color: ColorConstant.whiteA700),
+                          //   ),
+                          //   onPressed: () {
+                          //     clearData();
 
-                              Get.to(() => PaymentPage(widget.doctorData.id));
-                            },
-                          ),
+                          //     // Get.to(() => PaymentPage(widget.doctorData.));
+                          //   },
+                          // ),
                           TextButton(
                             style: TextButton.styleFrom(
                               backgroundColor: ColorConstant.primary,
                             ),
                             child: Text(
-                              "Later",
+                              "okk",
                               style: TextStyle(color: ColorConstant.whiteA700),
                             ),
                             onPressed: () {
@@ -511,7 +499,7 @@ class _DoctorCardState extends State<DoctorCard> {
 
   Widget buildDates(List<AvailabilityHours>? availabilityHours) {
     CalendarFormat _calendarFormat = CalendarFormat.month;
-    print(_selectedDay);
+    // print(_selectedDay);
     // print(selectedDate);
 
     Set<String> availableDaysOfWeek = Set<String>();
@@ -519,7 +507,7 @@ class _DoctorCardState extends State<DoctorCard> {
       availableDaysOfWeek = Set.from(availabilityHours
           .map((availabilityHour) => availabilityHour.day?.toLowerCase()));
     }
-    print(availableDaysOfWeek);
+    // print(availableDaysOfWeek);
     DateTime currentDate = DateTime.now();
     int currentYear = currentDate.year;
     List<DateTime> availableDates = [];
@@ -537,7 +525,7 @@ class _DoctorCardState extends State<DoctorCard> {
         }
       }
     }
-    print(availableDates);
+    // print(availableDates);
     return Container(
       decoration: BoxDecoration(color: Color.fromARGB(223, 233, 238, 236)),
       padding: EdgeInsets.all(16.0),
@@ -580,7 +568,7 @@ class _DoctorCardState extends State<DoctorCard> {
                       // });
                     },
                     child: Text(
-                      availabilityHour.day ?? '',
+                      availabilityHour.day?.toUpperCase()?? '',
                       style: TextStyle(
                         color: ColorConstant.primary,
                       ),
@@ -594,7 +582,6 @@ class _DoctorCardState extends State<DoctorCard> {
             "Choose date :",
             style: TextStyle(fontSize: 16),
           ),
-
           TableCalendar(
             calendarFormat: _calendarFormat,
             firstDay: DateTime.utc(currentYear, 1, 1),
@@ -650,49 +637,6 @@ class _DoctorCardState extends State<DoctorCard> {
               });
             },
           ),
-          // SingleChildScrollView(
-          //   scrollDirection: Axis.horizontal,
-          //   child: Row(
-          //     children: (availabilityHours ?? []).map((availabilityHour) {
-          //       bool isSelected = dayOfWeek == availabilityHour.day;
-
-          //       return Padding(
-          //         padding: EdgeInsets.all(8.0),
-          //         child: TextButton(
-          //           style: TextButton.styleFrom(
-          //             shape: RoundedRectangleBorder(
-          //               side: BorderSide(
-          //                 color: ColorConstant.primary,
-          //                 width: 1.0,
-          //               ),
-          //               borderRadius: BorderRadius.circular(15.0),
-          //             ),
-          //             backgroundColor:
-          //                 isSelected ? ColorConstant.primary : null,
-          //           ),
-          //           onPressed: () {
-          //             setState(() {
-          //               dayOfWeek = (isSelected ? null : availabilityHour.day)!;
-          //               print(dayOfWeek);
-          //               start_time =
-          //                   isSelected ? null : availabilityHour.startAt;
-          //               end_time = isSelected ? null : availabilityHour.endAt;
-          //               showTimeSlots = true;
-          //             });
-          //           },
-          //           child: Text(
-          //             availabilityHour.day ?? '',
-          //             style: TextStyle(
-          //               color: isSelected
-          //                   ? ColorConstant.whiteA700
-          //                   : ColorConstant.primary,
-          //             ),
-          //           ),
-          //         ),
-          //       );
-          //     }).toList(),
-          //   ),
-          // ),
           SizedBox(height: 10),
           if (showTimeSlots) buildTimeSlots(_selectedDay, start_time, end_time),
         ],

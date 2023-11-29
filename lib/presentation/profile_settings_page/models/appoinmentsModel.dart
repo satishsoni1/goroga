@@ -36,18 +36,18 @@ class Data {
   int? userId;
   int? bookingStatusId;
   Address? address;
-  dynamic? paymentId;
+  dynamic paymentId;
   Coupon? coupon;
   List<dynamic>? taxes;
-  dynamic? bookingAt;
-  dynamic? startAt;
-  dynamic? endsAt;
-  dynamic? hint;
+  dynamic bookingAt;
+  dynamic startAt;
+  dynamic endsAt;
+  dynamic hint;
   bool? cancel;
   String? createdAt;
   String? updatedAt;
   List<dynamic>? customFields;
-  dynamic? duration;
+  dynamic duration;
 
   Data({
     this.id,
@@ -153,15 +153,15 @@ class EProvider {
   Name? description;
   String? phoneNumber;
   String? mobileNumber;
-  dynamic? availabilityRange;
+  dynamic availabilityRange;
   bool? available;
   bool? featured;
   bool? accepted;
   List<dynamic>? customFields;
   bool? hasMedia;
-  dynamic? rate;
+  dynamic rate;
   int? totalReviews;
-  dynamic? hasValidSubscription;
+  dynamic hasValidSubscription;
   List<AvailabilityHours>? availabilityHours;
   List<dynamic>? media;
 
@@ -313,8 +313,8 @@ class AvailabilityHours {
 class EService {
   int? id;
   Name? name;
-  dynamic? price;
-  dynamic? discountPrice;
+  dynamic price;
+  dynamic discountPrice;
   String? priceUnit;
   String? quantityUnit;
   String? duration;
@@ -322,12 +322,12 @@ class EService {
   bool? featured;
   bool? enableBooking;
   bool? available;
-  dynamic? eProviderId;
+  dynamic eProviderId;
   List<dynamic>? customFields;
   bool? hasMedia;
-  dynamic? totalReviews;
+  dynamic totalReviews;
   bool? isFavorite;
-  dynamic? rate;
+  dynamic rate;
   EProvider? eProvider;
   List<dynamic>? media;
 
@@ -422,8 +422,8 @@ class EService {
 class Address {
   String? description;
   String? address;
-  dynamic? latitude;
-  dynamic? longitude;
+  dynamic latitude;
+  dynamic longitude;
   int? id;
   List<dynamic>? customFields;
 
