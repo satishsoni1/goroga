@@ -1,4 +1,4 @@
-package `in`.goroga.customer
+package com.goroga.example
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,6 @@
 import 'package:goroga/presentation/home_page/details.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'controller/home_controller.dart';
 import 'models/home_model.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeController _homeController = Get.put(HomeController());
+  final Uri _support = Uri.parse('https://app.roga.ai');
 
   @override
   void initState() {
@@ -45,152 +47,178 @@ class _HomePageState extends State<HomePage> {
                 margin: getMargin(left: 16),
               ),
             ),
-            body: FutureBuilder(
-                future: fetchData(),
-                builder: (context, AsyncSnapshot<HomeModel> snapshot) {
-                  if (snapshot.hasError) {
-                    return Center(child: Text("${snapshot.error}"));
-                  } else if (snapshot.hasData) {
-                    List<Categories>? categories = snapshot.data!.categories;
-
-                    return ListView.builder(
-                        itemCount: categories?.length,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: ((context, index) {
-                          Categories? category = categories?[index];
-                          return category != null
-                              ? ListTile(
-                                  title: Text(
-                                    category.title ?? '',
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                  subtitle: category.data != null
-                                      ? SizedBox(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              2.2,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width +
-                                              5, 
-                                          child: ListView.builder(
-                                              scrollDirection: Axis.horizontal,
-                                              itemCount: category.data!.length,
-                                              itemBuilder:
-                                                  (context, dataIndex) {
-                                                Data data =
-                                                    category.data![dataIndex];
-                                                return data != null
-                                                    ? Align(
-                                                        alignment:
-                                                            Alignment.center,
-                                                        child: GestureDetector(
-                                                            onTap: () {
-                                                              print("tapped");
-                                                              Get.to(
-                                                                () =>
-                                                                    DetailPage(
-                                                                  data: data,
-                                                                ),
-                                                              );
-                                                            },
-                                                            child: Container(
-                                                              child: Row(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Stack(
-                                                                    children: [
-                                                                      CustomImageView(
-                                                                        height:
-                                                                            MediaQuery.of(context).size.width /
-                                                                                2,
-                                                                        width: MediaQuery.sizeOf(context).width -
-                                                                            100,
-                                                                        url: data
-                                                                            .imageUrl
-                                                                            .toString(),
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                        margin:
-                                                                            getMargin(
-                                                                          left:
-                                                                              5,
-                                                                          right:
-                                                                              5,
-                                                                          top:
-                                                                              10,
-                                                                        ),
+            body: 
+            Column(
+              children: [
+                  ElevatedButton(
+                        onPressed: () {
+                          // Handle button tap
+                          launchUrl(_support);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: ColorConstant.primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                10.0), // Adjust the radius as needed
+                          ), // Text color
+                        ),
+                        child: Text(
+                              'Try Our AI Coach',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 12,color: Colors.white),
+                            ),
+                        ),
+                Expanded(
+                  child: FutureBuilder(
+                      future: fetchData(),
+                      builder: (context, AsyncSnapshot<HomeModel> snapshot) {
+                        if (snapshot.hasError) {
+                          return Center(child: Text("${snapshot.error}"));
+                        } else if (snapshot.hasData) {
+                          List<Categories>? categories = snapshot.data!.categories;
+                
+                          return ListView.builder(
+                              itemCount: categories?.length,
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: ((context, index) {
+                                Categories? category = categories?[index];
+                                return category != null
+                                    ? ListTile(
+                                        title: Text(
+                                          category.title ?? '',
+                                          style: TextStyle(fontSize: 20),
+                                        ),
+                                        subtitle: category.data != null
+                                            ? SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    2.2,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width +
+                                                    5, 
+                                                child: ListView.builder(
+                                                    scrollDirection: Axis.horizontal,
+                                                    itemCount: category.data!.length,
+                                                    itemBuilder:
+                                                        (context, dataIndex) {
+                                                      Data data =
+                                                          category.data![dataIndex];
+                                                      return data != null
+                                                          ? Align(
+                                                              alignment:
+                                                                  Alignment.center,
+                                                              child: GestureDetector(
+                                                                  onTap: () {
+                                                                    print("tapped");
+                                                                    Get.to(
+                                                                      () =>
+                                                                          DetailPage(
+                                                                        data: data,
                                                                       ),
-                                                                      Positioned(
-                                                                        bottom:
-                                                                            10,
-                                                                        left:
-                                                                            10,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              220,
-                                                                          alignment:
-                                                                              Alignment.bottomLeft,
-                                                                          padding:
-                                                                              EdgeInsets.all(8),
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          child:
-                                                                              Text(
-                                                                            data.title.toString(),
-                                                                            style: TextStyle(
-                                                                                color: Colors.white,
-                                                                                fontSize: 16,
-                                                                                fontWeight: FontWeight.bold),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Positioned(
-                                                                        bottom:
-                                                                            10,
-                                                                        right:
-                                                                            10,
-                                                                        child:
-                                                                            Container(
-                                                                          padding:
-                                                                              EdgeInsets.all(5),
-                                                                          decoration: BoxDecoration(
-                                                                              color: Colors.transparent,
-                                                                              borderRadius: BorderRadius.circular(5)),
-                                                                          child:
-                                                                              Text(
-                                                                            data.duration.toString(), 
-                                                                            style:
-                                                                                TextStyle(
-                                                                              color: Colors.white,
-                                                                              fontSize: 16,
+                                                                    );
+                                                                  },
+                                                                  child: Container(
+                                                                    child: Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Stack(
+                                                                          children: [
+                                                                            CustomImageView(
+                                                                              height:
+                                                                                  MediaQuery.of(context).size.width /
+                                                                                      2,
+                                                                              width: MediaQuery.sizeOf(context).width -
+                                                                                  100,
+                                                                              url: data
+                                                                                  .imageUrl
+                                                                                  .toString(),
+                                                                              fit: BoxFit
+                                                                                  .cover,
+                                                                              margin:
+                                                                                  getMargin(
+                                                                                left:
+                                                                                    5,
+                                                                                right:
+                                                                                    5,
+                                                                                top:
+                                                                                    10,
+                                                                              ),
                                                                             ),
-                                                                          ),
+                                                                            Positioned(
+                                                                              bottom:
+                                                                                  10,
+                                                                              left:
+                                                                                  10,
+                                                                              child:
+                                                                                  Container(
+                                                                                width:
+                                                                                    220,
+                                                                                alignment:
+                                                                                    Alignment.bottomLeft,
+                                                                                padding:
+                                                                                    EdgeInsets.all(8),
+                                                                                color:
+                                                                                    Colors.transparent,
+                                                                                child:
+                                                                                    Text(
+                                                                                  data.title.toString(),
+                                                                                  style: TextStyle(
+                                                                                      color: Colors.white,
+                                                                                      fontSize: 16,
+                                                                                      fontWeight: FontWeight.bold),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Positioned(
+                                                                              bottom:
+                                                                                  10,
+                                                                              right:
+                                                                                  10,
+                                                                              child:
+                                                                                  Container(
+                                                                                padding:
+                                                                                    EdgeInsets.all(5),
+                                                                                decoration: BoxDecoration(
+                                                                                    color: Colors.transparent,
+                                                                                    borderRadius: BorderRadius.circular(5)),
+                                                                                child:
+                                                                                    Text(
+                                                                                  data.duration.toString(), 
+                                                                                  style:
+                                                                                      TextStyle(
+                                                                                    color: Colors.white,
+                                                                                    fontSize: 16,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            )))
-                                                    : SizedBox.shrink();
-                                              }))
-                                      : SizedBox.shrink(),
-                                )
-                              : SizedBox.shrink();
-                        }));
-                  } else {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                })));
+                                                                      ],
+                                                                    ),
+                                                                  )))
+                                                          : SizedBox.shrink();
+                                                    }))
+                                            : SizedBox.shrink(),
+                                      )
+                                    : SizedBox.shrink();
+                              }));
+                        } else {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                      }),
+                ),
+              ],
+            )));
   }
 }

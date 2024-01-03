@@ -17,7 +17,7 @@ class ProfileSettingsPage extends StatelessWidget {
             backgroundColor: ColorConstant.whiteA700,
             key: MyGlobalKeys.ScaffoldKey,
             drawer: NavBar(),
-            appBar: CustomAppBar(
+             appBar: CustomAppBar(
                 height: getVerticalSize(80),
                 title: AppbarTitle(
                     text: "lbl_profile".tr, margin: getMargin(left: 16)),

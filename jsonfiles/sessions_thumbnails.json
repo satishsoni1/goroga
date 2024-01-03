@@ -1,19 +1,6 @@
 {
   "categories": [
-    {
-      "title": "Welcome to Roga!",
-      "data": [
-        {
-          "id": 1,
-          "title": "Getting Started",
-          "author": "Jamie Magruder",
-          "description": "",
-          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S113.png",
-          "videoUrl":"",
-          "duration": "5 min"
-        }
-      ]
-    },
+    
 
     {
       "title": "Featured",

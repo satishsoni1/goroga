@@ -1,93 +1,70 @@
 {
   "programs":[
-  {
-    "id": 1,
-    "title": "Welcome & FAQ",
-    "author":"Jamie Magruder",
-    "description": "Welcome to Roga ",
-    "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/1_Welcome_and_Faq.png",
-    "duration": "8 days",
-    "data": [
-      {
-        "id": 1,
-        "title": "Getting Started",
-        "author":"Jamie Magruder",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S113.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S113+explainer_video_full.mp4+(1080p).mp4",
-        "duration": "5 min"
-      },
-      {
-        "id": 2,
-        "title": "What is Roga?",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S114.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S114+What+is+Roga.mp4",
-        "duration": "3 min"
-      },
-      {
-        "id": 3,
-        "title": "How to setup the pads/electrodes?",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S115.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S115+How+to+setup+the+padselectrodes.mp4",
-        "duration": "1 min"
-      },
-      {
-        "id": 4,
-        "title": "How to use the device?",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S116.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S116+How+to+use+the+device.mp4",
-        "duration": "1 min"
-      },
-      {
-        "id": 5,
-        "title": "How does the App work",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S117.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S115+How+to+setup+the+padselectrodes.mp4",
-        "duration": "0 min"
-      },
-      {
-        "id": 6,
-        "title": "How often should I use Roga?",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S118.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S118+Treatment+recommendation.mp4",
-        "duration": "0 min"
-      },
-      {
-        "id": 7,
-        "title": "After using the device",
-        "author":"Jamie Magruder",
-
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S119.png",
-        "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/welcome_to_roga/1.+Welcome+to+Roga/S119+after+finnishing+your+session.mp4",
-        "duration": "0 min"
-      },
-      {
-        "id": 8,
-        "title": "Roga Electrode Tips",
-        "author":"Alison Smith",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S145.png",
-        "videoUrl":"",
-        "duration": "1 min"
-      }
-    ]
-  },
+    {
+      "id": 1,
+      "title": "Managing Time & Stress",
+      "author":"Jacquie Brown",
+      "description": "",
+      "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/15_Managing_Time_and_Stress.png",
+      "duration": "6 days",
+      "data": [
+        {
+          "id": 1,
+          "title": "I Want to Shift My Perspective",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S065.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S065+I+Want+to+Shift+My+Perspective.mp4",
+          "duration": "4 min"
+        },
+        {
+          "id": 2,
+          "title": "I Feel Disconnected from Where I Am",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S066.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S066+I+Feel+Disconnected+from+Where+I+Am.mp4",
+          "duration": "5 min"
+        },
+        {
+          "id": 3,
+          "title": "I'm Afraid of a Public Place",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S067.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S067+I'm+Afraid+of+a+Public+Place.mp4",
+          "duration": "6 min"
+        },
+        {
+          "id": 4,
+          "title": "I'm Triggered by a Place",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S068.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S068+I'm+Triggered+by+a+Place.mp4",
+          "duration": "5 min"
+        },
+        {
+          "id": 5,
+          "title": "How Do Places Make Me Feel?",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S069.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S069+How+Do+Places+Make+Me+Feel.mp4",
+          "duration": "6 min"
+        },
+        {
+          "id": 6,
+          "title": "I Want to Find A Calming Place",
+          "author":"Jacquie Brown",
+          "description": "",
+          "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S070.png",
+          "videoUrl":"https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/Time_and_place_stress/S070+I+Want+to+Find+A+Calming+Place.mp4",
+          "duration": "4 min"
+        }
+      ]
+    },
+  
   {
     "id": 2,
     "title": "Workplace Wellbeing Series: Getting to Know Yourself at work.",
@@ -1164,70 +1141,7 @@
       }
     ]
   },
-  {
-    "id": 15,
-    "title": "Managing Time & Stress",
-    "author":"Jacquie Brown",
-    "description": "",
-    "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/15_Managing_Time_and_Stress.png",
-    "duration": "6 days",
-    "data": [
-      {
-        "id": 1,
-        "title": "I Want to Shift My Perspective",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S065.png",
-        "videoUrl":"",
-        "duration": "4 min"
-      },
-      {
-        "id": 2,
-        "title": "I Feel Disconnected from Where I Am",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S066.png",
-        "videoUrl":"",
-        "duration": "5 min"
-      },
-      {
-        "id": 3,
-        "title": "I'm Afraid of a Public Place",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S067.png",
-        "videoUrl":"",
-        "duration": "6 min"
-      },
-      {
-        "id": 4,
-        "title": "I'm Triggered by a Place",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S068.png",
-        "videoUrl":"",
-        "duration": "5 min"
-      },
-      {
-        "id": 5,
-        "title": "How Do Places Make Me Feel?",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S069.png",
-        "videoUrl":"",
-        "duration": "6 min"
-      },
-      {
-        "id": 6,
-        "title": "I Want to Find A Calming Place",
-        "author":"Jacquie Brown",
-        "description": "",
-        "imageUrl": "https://makebot-v3.s3.ap-south-1.amazonaws.com/goroga/thumbnail/S070.png",
-        "videoUrl":"",
-        "duration": "4 min"
-      }
-    ]
-  },
+ 
   {
     "id": 16,
     "title": "Connect With Others",
