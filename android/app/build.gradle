@@ -43,7 +43,7 @@ compileSdkVersion 34
     }
 
     defaultConfig {
-        applicationId "com.goroga.example"
+        applicationId "com.docexa.goroga"
         minSdkVersion 22
         targetSdkVersion flutter.targetSdkVersion
         multiDexEnabled true

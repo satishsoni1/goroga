@@ -1,4 +1,4 @@
-package com.goroga.example
+package com.docexa.goroga
 
 import io.flutter.embedding.android.FlutterActivity
 
