@@ -390,7 +390,7 @@ class _QuestionsState extends State<Questions> {
                                           Text(
                                             questions[index]
                                                 .ans![optionIndex]
-                                                .id
+                                                .title
                                                 .toString(),
                                           ),
                                           // if (questions[index]
