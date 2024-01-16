@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:goroga/presentation/profile_settings_page/models/doctor_Data_Model.dart';
+import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/app_export.dart';
@@ -16,7 +17,7 @@ class DoctorDataController extends GetxController {
   String query = "";
   Future<void> fetchDoctorData() async {
     print("data fetch done");
-    final apiUrl = Uri.parse('https://api.goroga.in/api/e_providers');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'/e_providers');
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
@@ -66,7 +67,7 @@ class DoctorDataController extends GetxController {
 
     print(apiToken);
     final apiUrl =
-        Uri.parse('https://api.goroga.in/api/bookings?api_token=' + apiToken);
+        Uri.parse(AppConfig.baseUrl+'/bookings?api_token=' + apiToken);
     print(apiUrl);
     print(selectedDayTime);
     final requestBody = {

@@ -56,6 +56,7 @@ import 'dart:convert';
 import 'package:goroga/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/presentation/sign_in_screen/models/sign_in_model.dart';
+import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart'; // Import the http package
 
@@ -66,7 +67,7 @@ class SignInController extends GetxController {
 
   void checkLogIn(username, password) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
-    final apiUrl = Uri.parse('https://api.goroga.in/api/login');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'/login');
     final requestBody = {
       'email': username,
       'password': password,

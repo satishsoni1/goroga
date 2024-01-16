@@ -1,4 +1,5 @@
 import 'package:goroga/presentation/home_page/details.dart';
+import 'package:goroga/presentation/home_page/widgets/survey.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'controller/home_controller.dart';
@@ -21,7 +22,25 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData();
+    // fetchData();
+    Future.delayed(Duration.zero, () {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return SurveyDialog();
+      },
+    // ).then((value) {
+    //   // Here, you can navigate to the home page
+    //   if (value != null && value) {
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(builder: (context) => HomePage()),
+    //     );
+    //   }
+    // }
+    );
+  });
+
   }
 
   Future<HomeModel> fetchData() async {
@@ -50,9 +69,27 @@ class _HomePageState extends State<HomePage> {
             body: 
             Column(
               children: [
+        //         ElevatedButton(
+        //   onPressed: () {
+        //     showDialog(
+        //       context: context,
+        //       builder: (BuildContext context) {
+        //         return SurveyDialog();
+        //       },
+        //     ).then((value) {
+        //       // Here, you can navigate to the home page
+        //       if (value != null && value) {
+        //         Navigator.push(
+        //           context,
+        //           MaterialPageRoute(builder: (context) => HomePage()),
+        //         );
+        //       }
+        //     });
+        //   },
+        //   child: Text('Take Survey'),
+        // ),
                   ElevatedButton(
                         onPressed: () {
-                          // Handle button tap
                           launchUrl(_support);
                         },
                         style: ElevatedButton.styleFrom(
@@ -60,8 +97,8 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: ColorConstant.primary,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
-                                10.0), // Adjust the radius as needed
-                          ), // Text color
+                                10.0),
+                          ), 
                         ),
                         child: Text(
                               'Try Our AI Coach',

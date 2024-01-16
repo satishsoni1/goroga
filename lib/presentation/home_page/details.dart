@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
+import 'package:goroga/presentation/home_page/widgets/beforeSession.dart';
 import 'package:goroga/presentation/home_page/widgets/video_screen.dart';
 
 class DetailPage extends StatefulWidget {
   final dynamic data;
-
   DetailPage({
     required this.data,
   });
@@ -17,8 +17,6 @@ class _DetailPageState extends State<DetailPage> {
   bool isFavorite = false;
   int _isFvoritedCount = 0;
   List<dynamic> favoriteDataList = [];
-
-
 
   void _toggleFavorite() {
     setState(() {
@@ -37,6 +35,7 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    // var type_id = widget.type;
     return SafeArea(
         child: Scaffold(
       // appBar: CustomAppBar(
@@ -65,7 +64,8 @@ class _DetailPageState extends State<DetailPage> {
             //   // Adjust the width as needed
             // ),
             CustomImageView(
-              url: widget.data.imageUrl.toString(), // Display the image using the received image path
+              url: widget.data.imageUrl
+                  .toString(), // Display the image using the received image path
               height: MediaQuery.of(context).size.height / 2 -
                   20, // Adjust the height as needed
               width: MediaQuery.of(context).size.width,
@@ -93,10 +93,12 @@ class _DetailPageState extends State<DetailPage> {
               bottom: 50,
               child: GestureDetector(
                 onTap: () {
-                  Get.to(
-                    VideoPlayerScreen(
-                        videoUrl: widget.data.videoUrl.toString()),
-                  );
+                  Get.to(() => beforeSession(
+                            data: widget.data
+                          )
+                      // VideoPlayerScreen(
+                      //     data:widget.data)
+                      );
                   // Navigator.of(context).pop();
                 },
                 child: Icon(
@@ -142,7 +144,7 @@ class _DetailPageState extends State<DetailPage> {
             ]),
           ),
         ),
-        widget.data.description != ""
+        widget.data.description != null
             ? Container(
                 margin: const EdgeInsets.only(left: 20, top: 20),
                 alignment: Alignment.bottomLeft,

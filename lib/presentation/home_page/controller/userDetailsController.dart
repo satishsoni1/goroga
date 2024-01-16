@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:goroga/presentation/home_page/models/user_details.dart';
+import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/app_export.dart';
@@ -14,7 +15,7 @@ class UserDetailsController extends GetxController {
     final apiToken = data['api_token'];
     print(apiToken);
     final apiUrl =
-        Uri.parse('https://api.goroga.in/api/user?api_token=' + apiToken);
+        Uri.parse(AppConfig.baseUrl+'/user?api_token=' + apiToken);
     try {
       final response = await http.get(apiUrl);
       // print(response.body)?;

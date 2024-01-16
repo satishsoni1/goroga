@@ -91,6 +91,7 @@ import 'dart:convert';
 
 import 'package:goroga/core/app_export.dart';
 import 'package:flutter/material.dart';
+import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 
 class SignUpController extends GetxController {
@@ -102,7 +103,7 @@ class SignUpController extends GetxController {
   Rx<bool> isShowPassword = true.obs;
 
   void signup(username, phone, email, password) async {
-    final apiUrl = Uri.parse('https://api.goroga.in/api/register');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'/register');
 
     final requestBody = {
       "email": email,

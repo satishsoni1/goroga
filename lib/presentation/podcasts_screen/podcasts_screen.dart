@@ -324,7 +324,7 @@ class PodcastsScreen extends GetWidget<PodcastsController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                programsData.description.toString(),
+                                programsData.description!=null?programsData.description.toString():" ",
                                 style: TextStyle(fontSize: 12),
                               ),
                             ],

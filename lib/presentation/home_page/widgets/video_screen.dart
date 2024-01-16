@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
+import 'package:goroga/presentation/home_page/widgets/afterSession.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter/services.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
-  final String videoUrl;
+  final dynamic data;
 
-  VideoPlayerScreen({Key? key, required this.videoUrl}) : super(key: key);
+  VideoPlayerScreen({Key? key, required this.data,}) : super(key: key);
 
   @override
   State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
@@ -20,16 +21,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   String _videoPosition = '0:00 / 0:00';
   bool _showControls = true;
   bool isConnected = true;
+
   @override
   void initState() {
     super.initState();
     checkNetworkConnectivity();
-    // Create and store the VideoPlayerController. The VideoPlayerController
-    // offers several different constructors to play videos from assets, files,
-    // or the internet.
 
     _controller = VideoPlayerController.network(
-      widget.videoUrl,
+      widget.data.videoUrl.toString(),
     );
     _initializeVideoPlayerFuture = _controller.initialize();
     _controller.setLooping(true);
@@ -47,10 +46,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       });
     });
     _controller.play().then((_) {
-      // Calculate the custom aspect ratio based on the device's screen dimensions.
       setState(() {
-        customAspectRatio = MediaQuery.of(context).size.height/
-            MediaQuery.of(context).size.width+0.295;
+        customAspectRatio = MediaQuery.of(context).size.height /
+                MediaQuery.of(context).size.width +
+            0.295;
       });
     });
 
@@ -60,7 +59,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       DeviceOrientation.landscapeRight,
     ]);
 
-    // Start playing the video when the page is loaded.
     _controller.play();
   }
 
@@ -68,7 +66,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     var connectivityResult = await Connectivity().checkConnectivity();
     if (connectivityResult == ConnectivityResult.none) {
       setState(() {
-        isConnected = false; // No network connection
+        isConnected = false;
       });
     }
   }
@@ -86,12 +84,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     if (!isConnected) {
-       return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+      return Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
     } else {
       return SafeArea(
         child: Scaffold(
@@ -113,16 +111,49 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     Visibility(
                       visible: _showControls,
                       child: Positioned(
-                        top: 20, // Adjust the top position as needed
-                        left: 20, // Adjust the left position as needed
-                        child: GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: Icon(
-                            Icons.arrow_back_ios_rounded,
-                            color: Colors.white, // Customize the arrow color
-                            size: 32, // Customize the arrow size
+                        top: 20,
+                        left: 20,
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          width: MediaQuery.sizeOf(context).width / 2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    widget.data.author.toString(),
+                                    style: TextStyle(color: Colors.white),
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  Text(
+                                    widget.data.title.toString(),
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                ],
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.black,
+                                    textStyle: TextStyle(color: Colors.white),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 10),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    // Get.back();
+                                    Get.offAll(()=>afterSession(data: widget.data));
+                                  },
+                                  child: Text("End Session")),
+                            ],
                           ),
                         ),
                       ),
@@ -130,7 +161,57 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     Visibility(
                       visible: _showControls,
                       child: Positioned(
-                        bottom: 20.0, // Adjust the position as needed
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  _controller.seekTo(Duration(
+                                      seconds: _sliderValue.toInt() - 10));
+                                },
+                                icon: Icon(Icons.fast_rewind,
+                                    color: Colors.white),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (_controller.value.isPlaying) {
+                                      _controller.pause();
+                                    } else {
+                                      _controller.play();
+                                    }
+                                  });
+                                },
+                                icon: Icon(
+                                  _controller.value.isPlaying
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  _controller.seekTo(Duration(
+                                      seconds: _sliderValue.toInt() + 10));
+                                },
+                                icon: Icon(Icons.fast_forward,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    Visibility(
+                      visible: _showControls,
+                      child: Positioned(
+                        bottom: 30.0,
                         left: 0.0,
                         right: 0.0,
                         child: Slider(
@@ -149,11 +230,11 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         ),
                       ),
                     ),
-      
+
                     Visibility(
                       visible: _showControls,
                       child: Positioned(
-                        bottom: 20.0, // Adjust the position as needed
+                        bottom: 20.0,
                         left: 25.0,
                         right: 0.0,
                         child: Container(
@@ -174,7 +255,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     //       }
                     //     });
                     //   },
-      
+
                     // ),
                   ],
                 );

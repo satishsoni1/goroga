@@ -437,7 +437,6 @@ class _DoctorCardState extends State<DoctorCard> {
                   final controller = Get.find<DoctorDataController>();
                   controller.confirmAppointment(
                       doctorId!, doctorName, formattedDateTime);
-               
 
                   showDialog(
                     context: context,
@@ -568,7 +567,7 @@ class _DoctorCardState extends State<DoctorCard> {
                       // });
                     },
                     child: Text(
-                      availabilityHour.day?.toUpperCase()?? '',
+                      availabilityHour.day?.toUpperCase() ?? '',
                       style: TextStyle(
                         color: ColorConstant.primary,
                       ),

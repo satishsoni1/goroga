@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/explore_page/models/program_model.dart';
+import 'package:goroga/widgets/config.dart';
+import 'package:http/http.dart' as http;
 
 class ExploreController extends GetxController {
   // ExploreController(this.exploreModelObj);
@@ -24,17 +26,43 @@ TextEditingController searchBarController = TextEditingController();
   }
 
   getData() async {
+    print('data');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'/programs');
     try {
-      final String jsonString =
-          await rootBundle.loadString('jsonfiles/program_thumbnails.json');
-    //  print(jsonString);
-      // final list = json.decode(jsonData) as List<dynamic>;
-// print(list);
-      // return list.map((e) => ProgramModel.fromJson(e)).toList();
-      Map<String, dynamic> decode = json.decode(jsonString);
-      ProgramModel programModel = ProgramModel.fromJson(decode);
-      // print(programModel);
-      return programModel;
+      final response = await http.get(apiUrl);
+      dynamic jsonData = jsonDecode(response.body);
+
+      print('Response status code: ${response.statusCode}');
+      print('Response body: $jsonData');
+
+      if (response.statusCode == 200) {
+        print('object');
+        ProgramModel programModel = ProgramModel.fromJson(jsonData);
+        print('Parsed doctorDataModel: ${programModel.toJson()}');
+// // 
+        if (programModel.status == true) {
+          print('Status is true');
+          return programModel;
+        } else {
+          print('Status is not true');
+        }
+      } else {
+        print('Failed to fetch data');
+      }
+    } catch (e) {
+      print('Network error: $e');
+    }
+    try {
+//       final String jsonString =
+//           await rootBundle.loadString('jsonfiles/program_thumbnails.json');
+//     //  print(jsonString);
+//       // final list = json.decode(jsonData) as List<dynamic>;
+// // print(list);
+//       // return list.map((e) => ProgramModel.fromJson(e)).toList();
+//       Map<String, dynamic> decode = json.decode(jsonString);
+//       ProgramModel programModel = ProgramModel.fromJson(decode);
+//       // print(programModel);
+//       return programModel;
       //     List<Programs>? programs = programModel.programs;
       //     if (programs != null) {
       //       for (Programs program in programs) {

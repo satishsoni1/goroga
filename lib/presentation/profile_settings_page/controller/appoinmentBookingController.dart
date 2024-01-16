@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:goroga/core/app_export.dart';
+import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -48,7 +49,7 @@ class AppoinmentbookingController extends GetxController {
     final apiToken = data['api_token'];
     print(apiToken);
     final apiUrl =
-        Uri.parse('https://api.goroga.in/api/bookings?api_token=' + apiToken);
+        Uri.parse(AppConfig.baseUrl+'/bookings?api_token=' + apiToken);
 
     try {
       final response = await http.get(apiUrl);
