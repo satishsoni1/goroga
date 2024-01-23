@@ -8,7 +8,15 @@ import 'package:goroga/presentation/profile_settings_page/profile_settings_page.
 import 'package:goroga/widgets/custom_bottom_bar.dart';
 
 class HomeContainerScreen extends GetWidget<HomeContainerController> {
+  
   @override
+   void initState() {
+    // super.initState();
+    
+    // Add your initialization logic here
+    // For example, you can fetch data, set up controllers, etc.
+    // This will be called once when the widget is first created.
+  }
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(

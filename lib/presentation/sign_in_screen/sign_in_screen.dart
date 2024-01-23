@@ -40,9 +40,9 @@ void getData()async{
                           height: MediaQuery.of(context).size.height / 5,
                           child: Column(children: [
                             CustomImageView(
-                              imagePath: ImageConstant.imageLogo,
-                              height: MediaQuery.of(context).size.height / 5,
-                              width: MediaQuery.of(context).size.width - 80,
+                              imagePath: ImageConstant.imgLogo,
+                              height: MediaQuery.of(context).size.height / 6,
+                              width: MediaQuery.of(context).size.width - 150,
                               fit: BoxFit.contain,
                             ),
                           ])),
@@ -56,7 +56,7 @@ void getData()async{
                       CustomTextFormField(
                           focusNode: FocusNode(),
                           controller: controller.usernameController,
-                          hintText: "lbl_email".tr,
+                          hintText: "Enter your Mobile No.".tr,
                           margin: getMargin(top: 27),
                           padding: TextFormFieldPadding.PaddingT21,
                           fontStyle:
@@ -65,8 +65,8 @@ void getData()async{
                           prefix: Container(
                               margin: getMargin(
                                   left: 20, top: 20, right: 12, bottom: 20),
-                              child: CustomImageView(
-                                  svgPath: ImageConstant.imgCheckmark)),
+                              child: Icon(
+                                  Icons.phone)),
                           prefixConstraints:
                               BoxConstraints(maxHeight: getVerticalSize(60))),
                      Obx(() =>   CustomTextFormField(
@@ -160,139 +160,139 @@ void getData()async{
                                       .copyWith(
                                           letterSpacing:
                                               getHorizontalSize(0.2))))),
-                      Padding(
-                          padding: getPadding(left: 10, top: 41, right: 10),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Padding(
-                                    padding: getPadding(top: 11, bottom: 9),
-                                    child: SizedBox(
-                                        width: getHorizontalSize(96),
-                                        child: Divider(
-                                            height: getVerticalSize(1),
-                                            thickness: getVerticalSize(1),
-                                            color: ColorConstant.blueGray100))),
-                                Text("msg_or_continue_wit".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: AppStyle.txtUrbanistSemiBold18
-                                        .copyWith(
-                                            letterSpacing:
-                                                getHorizontalSize(0.2))),
-                                Padding(
-                                    padding: getPadding(top: 11, bottom: 9),
-                                    child: SizedBox(
-                                        width: getHorizontalSize(96),
-                                        child: Divider(
-                                            height: getVerticalSize(1),
-                                            thickness: getVerticalSize(1),
-                                            color: ColorConstant.blueGray100)))
-                              ])),
-                      Padding(
-                          padding: getPadding(left: 38, top: 31, right: 38),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: EdgeInsets.all(0),
-                                    color: ColorConstant.whiteA700,
-                                    shape: RoundedRectangleBorder(
-                                        side: BorderSide(
-                                            color: ColorConstant.blueGray100,
-                                            width: getHorizontalSize(1)),
-                                        borderRadius:
-                                            BorderRadiusStyle.roundedBorder16),
-                                    child: Container(
-                                        height: getVerticalSize(60),
-                                        width: getHorizontalSize(88),
-                                        padding: getPadding(
-                                            left: 32,
-                                            top: 18,
-                                            right: 32,
-                                            bottom: 18),
-                                        decoration: AppDecoration
-                                            .outlineBluegray100
-                                            .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder16),
-                                        child: Stack(children: [
-                                          CustomImageView(
-                                              imagePath: ImageConstant
-                                                  .imgAutolayouthorizontal,
-                                              height: getSize(24),
-                                              width: getSize(24),
-                                              alignment: Alignment.center)
-                                        ]))),
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: getMargin(left: 20),
-                                    color: ColorConstant.whiteA700,
-                                    shape: RoundedRectangleBorder(
-                                        side: BorderSide(
-                                            color: ColorConstant.blueGray100,
-                                            width: getHorizontalSize(1)),
-                                        borderRadius:
-                                            BorderRadiusStyle.roundedBorder16),
-                                    child: Container(
-                                        height: getVerticalSize(60),
-                                        width: getHorizontalSize(87),
-                                        padding: getPadding(
-                                            left: 31,
-                                            top: 18,
-                                            right: 31,
-                                            bottom: 18),
-                                        decoration: AppDecoration
-                                            .outlineBluegray100
-                                            .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder16),
-                                        child: Stack(children: [
-                                          CustomImageView(
-                                              svgPath: ImageConstant.imgGoogle,
-                                              height: getVerticalSize(24),
-                                              width: getHorizontalSize(23),
-                                              alignment: Alignment.center,
-                                              onTap: () {
-                                                onTapImgGoogle();
-                                              })
-                                        ]))),
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: getMargin(left: 20),
-                                    color: ColorConstant.whiteA700,
-                                    shape: RoundedRectangleBorder(
-                                        side: BorderSide(
-                                            color: ColorConstant.blueGray100,
-                                            width: getHorizontalSize(1)),
-                                        borderRadius:
-                                            BorderRadiusStyle.roundedBorder16),
-                                    child: Container(
-                                        height: getVerticalSize(60),
-                                        width: getHorizontalSize(88),
-                                        padding: getPadding(
-                                            left: 32,
-                                            top: 18,
-                                            right: 32,
-                                            bottom: 18),
-                                        decoration: AppDecoration
-                                            .outlineBluegray100
-                                            .copyWith(
-                                                borderRadius: BorderRadiusStyle
-                                                    .roundedBorder16),
-                                        child: Stack(children: [
-                                          CustomImageView(
-                                              svgPath: ImageConstant.imgFire,
-                                              height: getSize(24),
-                                              width: getSize(24),
-                                              alignment: Alignment.center)
-                                        ])))
-                              ])),
+                      // Padding(
+                      //     padding: getPadding(left: 10, top: 41, right: 10),
+                      //     child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //         crossAxisAlignment: CrossAxisAlignment.end,
+                      //         children: [
+                      //           Padding(
+                      //               padding: getPadding(top: 11, bottom: 9),
+                      //               child: SizedBox(
+                      //                   width: getHorizontalSize(96),
+                      //                   child: Divider(
+                      //                       height: getVerticalSize(1),
+                      //                       thickness: getVerticalSize(1),
+                      //                       color: ColorConstant.blueGray100))),
+                      //           Text("msg_or_continue_wit".tr,
+                      //               overflow: TextOverflow.ellipsis,
+                      //               textAlign: TextAlign.left,
+                      //               style: AppStyle.txtUrbanistSemiBold18
+                      //                   .copyWith(
+                      //                       letterSpacing:
+                      //                           getHorizontalSize(0.2))),
+                      //           Padding(
+                      //               padding: getPadding(top: 11, bottom: 9),
+                      //               child: SizedBox(
+                      //                   width: getHorizontalSize(96),
+                      //                   child: Divider(
+                      //                       height: getVerticalSize(1),
+                      //                       thickness: getVerticalSize(1),
+                      //                       color: ColorConstant.blueGray100)))
+                      //         ])),
+                      // Padding(
+                      //     padding: getPadding(left: 38, top: 31, right: 38),
+                      //     child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.center,
+                      //         children: [
+                      //           Card(
+                      //               clipBehavior: Clip.antiAlias,
+                      //               elevation: 0,
+                      //               margin: EdgeInsets.all(0),
+                      //               color: ColorConstant.whiteA700,
+                      //               shape: RoundedRectangleBorder(
+                      //                   side: BorderSide(
+                      //                       color: ColorConstant.blueGray100,
+                      //                       width: getHorizontalSize(1)),
+                      //                   borderRadius:
+                      //                       BorderRadiusStyle.roundedBorder16),
+                      //               child: Container(
+                      //                   height: getVerticalSize(60),
+                      //                   width: getHorizontalSize(88),
+                      //                   padding: getPadding(
+                      //                       left: 32,
+                      //                       top: 18,
+                      //                       right: 32,
+                      //                       bottom: 18),
+                      //                   decoration: AppDecoration
+                      //                       .outlineBluegray100
+                      //                       .copyWith(
+                      //                           borderRadius: BorderRadiusStyle
+                      //                               .roundedBorder16),
+                      //                   child: Stack(children: [
+                      //                     CustomImageView(
+                      //                         imagePath: ImageConstant
+                      //                             .imgAutolayouthorizontal,
+                      //                         height: getSize(24),
+                      //                         width: getSize(24),
+                      //                         alignment: Alignment.center)
+                      //                   ]))),
+                      //           Card(
+                      //               clipBehavior: Clip.antiAlias,
+                      //               elevation: 0,
+                      //               margin: getMargin(left: 20),
+                      //               color: ColorConstant.whiteA700,
+                      //               shape: RoundedRectangleBorder(
+                      //                   side: BorderSide(
+                      //                       color: ColorConstant.blueGray100,
+                      //                       width: getHorizontalSize(1)),
+                      //                   borderRadius:
+                      //                       BorderRadiusStyle.roundedBorder16),
+                      //               child: Container(
+                      //                   height: getVerticalSize(60),
+                      //                   width: getHorizontalSize(87),
+                      //                   padding: getPadding(
+                      //                       left: 31,
+                      //                       top: 18,
+                      //                       right: 31,
+                      //                       bottom: 18),
+                      //                   decoration: AppDecoration
+                      //                       .outlineBluegray100
+                      //                       .copyWith(
+                      //                           borderRadius: BorderRadiusStyle
+                      //                               .roundedBorder16),
+                      //                   child: Stack(children: [
+                      //                     CustomImageView(
+                      //                         svgPath: ImageConstant.imgGoogle,
+                      //                         height: getVerticalSize(24),
+                      //                         width: getHorizontalSize(23),
+                      //                         alignment: Alignment.center,
+                      //                         onTap: () {
+                      //                           onTapImgGoogle();
+                      //                         })
+                      //                   ]))),
+                      //           Card(
+                      //               clipBehavior: Clip.antiAlias,
+                      //               elevation: 0,
+                      //               margin: getMargin(left: 20),
+                      //               color: ColorConstant.whiteA700,
+                      //               shape: RoundedRectangleBorder(
+                      //                   side: BorderSide(
+                      //                       color: ColorConstant.blueGray100,
+                      //                       width: getHorizontalSize(1)),
+                      //                   borderRadius:
+                      //                       BorderRadiusStyle.roundedBorder16),
+                      //               child: Container(
+                      //                   height: getVerticalSize(60),
+                      //                   width: getHorizontalSize(88),
+                      //                   padding: getPadding(
+                      //                       left: 32,
+                      //                       top: 18,
+                      //                       right: 32,
+                      //                       bottom: 18),
+                      //                   decoration: AppDecoration
+                      //                       .outlineBluegray100
+                      //                       .copyWith(
+                      //                           borderRadius: BorderRadiusStyle
+                      //                               .roundedBorder16),
+                      //                   child: Stack(children: [
+                      //                     CustomImageView(
+                      //                         svgPath: ImageConstant.imgFire,
+                      //                         height: getSize(24),
+                      //                         width: getSize(24),
+                      //                         alignment: Alignment.center)
+                      //                   ])))
+                      //         ])),
                       Padding(
                           padding: getPadding(top: 33, bottom: 5),
                           child: Row(

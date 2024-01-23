@@ -59,7 +59,7 @@ class Data {
   String? author;
   String? imageUrl;
   String? videoUrl;
-  Null? description;
+  Null description;
   String? duration;
   String? createdAt;
   String? updatedAt;

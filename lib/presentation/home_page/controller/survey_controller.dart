@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/models/survey_model.dart';
 import 'package:goroga/widgets/config.dart';
@@ -20,7 +19,7 @@ class SurveyController extends GetxController {
 
   var ansSurveyData = List<Data>.empty().obs;
   fetchSurveyData() async {
-    final apiUrl = Uri.parse('https://api.goroga.in/api/survey');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'survey');
 
     try {
       final response = await http.get(apiUrl);
@@ -49,15 +48,15 @@ class SurveyController extends GetxController {
   }
 
   Future<void> send_data(ansSurveyData) async {
-    print("this is send Data function");
-    print(ansSurveyData);
+    // print("this is send Data function");
+    // print(ansSurveyData);
     
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
     Map<String, dynamic> userDataMap = json.decode(userDataJson!);
     Map<String, dynamic> data = userDataMap['data'];
     var useId = data['id'];
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'/submit/$useId');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'submit/$useId');
 
     final requestBody = {"questions": ansSurveyData};
     // print(requestBody);
@@ -68,8 +67,9 @@ class SurveyController extends GetxController {
       final response = await http.post(apiUrl,
           body: encodedBody, headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
-        log('Response data: ${response.body}');
-        Get.offAll(AppRoutes.homeContainerScreen);
+        // log('Response data: ${response.body}');
+        
+        //  Get.toNamed(AppRoutes.homeContainerScreen);
       } else if (response.statusCode == 302) {
         print("302");
         final redirectionUrl = response.headers['location'];

@@ -19,22 +19,22 @@ class HomeController extends GetxController {
   }
 
   getData() async {
-    print('data');
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'/sessions');
+    // print('data');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'sessions');
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
 
-      print('Response status code: ${response.statusCode}');
-      print('Response body: $jsonData');
+      // print('Response status code: ${response.statusCode}');
+      // print('Response body: $jsonData');
 
       if (response.statusCode == 200) {
-        print('object');
+        // print('object');
         HomeModel homeModel = HomeModel.fromJson(jsonData);
-        print('Parsed doctorDataModel: ${homeModel.toJson()}');
+        // print('Parsed doctorDataModel: ${homeModel.toJson()}');
 
         if (homeModel.status == true) {
-          print('Status is true');
+          // print('Status is true');
           return homeModel;
         } else {
           print('Status is not true');

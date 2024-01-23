@@ -178,7 +178,7 @@ class SubQue {
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     if (this.subOpt != null) {
-      data['subOpt'] = this.subOpt!.map((v) => v!.toJson()).toList();
+      data['subOpt'] = this.subOpt!.map((v) => v.toJson()).toList();
     }
     return data;
   }

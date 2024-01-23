@@ -187,7 +187,7 @@ class _afterSessionState extends State<afterSession> {
               onPressed: (() {
                 _afterSessionController.afterSessionData(
                     stress_level, text, sessionId);
-                // Get.offNamedUntil(AppRoutes.homeContainerScreen, (route) => false);
+                Get.offNamedUntil(AppRoutes.homeContainerScreen, (route) => false);
                 // Get.to(() => VideoPlayerScreen(data: widget.data));
               }),
               style: ElevatedButton.styleFrom(

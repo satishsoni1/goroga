@@ -103,7 +103,7 @@ class SignUpController extends GetxController {
   Rx<bool> isShowPassword = true.obs;
 
   void signup(username, phone, email, password) async {
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'/register');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'register');
 
     final requestBody = {
       "email": email,
@@ -146,7 +146,7 @@ class SignUpController extends GetxController {
                 .toList()
                 .join(' ');
           } catch (e) {
-            messages = "Something went wrong !!";
+            messages = Userdata['message'];
           }
           Get.snackbar('Wrong', messages,
               mainButton: TextButton(

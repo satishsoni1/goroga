@@ -9,15 +9,17 @@ class SplashScreen extends GetWidget<SplashController> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             body: Container(
+
                 width: double.maxFinite,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CustomImageView(
-                          svgPath: ImageConstant.imgLogo,
-                          height: getVerticalSize(160),
-                          width: getHorizontalSize(192),
-                          margin: getMargin(bottom: 5))
-                    ]))));
+                  CustomImageView(
+                      imagePath: ImageConstant.imgLogo,
+                      height: getVerticalSize(80),
+                      width: getHorizontalSize(220),
+                      margin: getMargin())
+                ]))));
   }
 }

@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/explore_page/models/program_model.dart';
@@ -26,22 +25,21 @@ TextEditingController searchBarController = TextEditingController();
   }
 
   getData() async {
-    print('data');
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'/programs');
+    final apiUrl = Uri.parse(AppConfig.baseUrl+'programs');
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
 
-      print('Response status code: ${response.statusCode}');
-      print('Response body: $jsonData');
+      // print('Response status code: ${response.statusCode}');
+      // print('Response body: $jsonData');
 
       if (response.statusCode == 200) {
-        print('object');
+        // print('object');
         ProgramModel programModel = ProgramModel.fromJson(jsonData);
-        print('Parsed doctorDataModel: ${programModel.toJson()}');
+        // print('Parsed doctorDataModel: ${programModel.toJson()}');
 // // 
         if (programModel.status == true) {
-          print('Status is true');
+          // print('Status is true');
           return programModel;
         } else {
           print('Status is not true');

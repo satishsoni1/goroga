@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:flutter/material.dart';
 import 'package:goroga/widgets/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,14 +15,14 @@ class BeforeSessionController extends GetxController {
     var useId = data['id'];
     print(useId);
     final apiUrl =
-        Uri.parse('https://admin.goroga.in/public/api/track/stress/$useId');
+        Uri.parse(AppConfig.baseUrl+'track/stress/$useId');
 
     final requestBody = {
       "user_id": useId,
-      "session_id": sessionId,
+      "session_user_id": "",
       "stress_level_id": stressLevel,
       "type_id": 0,
-      "session_timing": 2,
+      "content_id":sessionId,
       "notes": text
     };
     print(requestBody);

@@ -140,7 +140,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                               ),
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    primary: Colors.black,
+                                    backgroundColor: Colors.black,
                                     textStyle: TextStyle(color: Colors.white),
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 20, vertical: 10),

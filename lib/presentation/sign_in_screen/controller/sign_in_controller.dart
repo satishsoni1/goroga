@@ -67,11 +67,8 @@ class SignInController extends GetxController {
 
   void checkLogIn(username, password) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'/login');
-    final requestBody = {
-      'email': username,
-      'password': password,
-    };
+    final apiUrl = Uri.parse(AppConfig.baseUrl + 'login');
+    final requestBody = {"phone_number": username, "password": password};
 
     try {
       final response = await http.post(apiUrl, body: requestBody);

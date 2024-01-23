@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/widgets/beforeSession.dart';
-import 'package:goroga/presentation/home_page/widgets/video_screen.dart';
 
 class DetailPage extends StatefulWidget {
   final dynamic data;

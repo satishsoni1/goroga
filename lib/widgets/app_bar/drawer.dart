@@ -1,13 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:goroga/presentation/profile_settings_page/bookedAppoinmets.dart';
 import 'package:goroga/widgets/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:http/http.dart' as http;
-import '../../presentation/profile_settings_page/appoinmentsPage.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -332,7 +330,7 @@ class _NavBarState extends State<NavBar> {
 
     try {
       final response = await http.get(
-        Uri.parse(AppConfig.baseUrl+'/logout?api_token=' + apiToken),
+        Uri.parse(AppConfig.baseUrl+'logout?api_token=' + apiToken),
       );
       if (response.statusCode == 200) {
         final responseData = json.decode(response.body);

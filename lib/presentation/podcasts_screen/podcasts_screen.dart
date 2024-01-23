@@ -391,7 +391,7 @@ class PodcastsScreen extends GetWidget<PodcastsController> {
                                     child: Text(
                                       "Session" +
                                           " " +
-                                          currentData.id.toString(),
+                                          index.toString(),
                                       textAlign: TextAlign.start,
                                       style: TextStyle(fontSize: 12),
                                     ),

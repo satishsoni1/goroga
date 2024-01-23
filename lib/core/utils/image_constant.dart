@@ -320,7 +320,7 @@ class ImageConstant {
 
   static String imgUserWhiteA700 = 'assets/images/img_user_white_a700.svg';
 
-  static String imgLogo = 'assets/images/Go-Roga-01.svg';
+  static String imgLogo = 'assets/images/go-roga.png';
 
   static String imgImage80x8032 = 'assets/images/img_image_80x80_32.png';
 

@@ -134,6 +134,7 @@ class _MyLibraryState extends State<MyLibraryPage> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
+              
                 height: getVerticalSize(80),
                 // leadingWidth: 56,
                 // leading: AppbarImage(
@@ -142,6 +143,7 @@ class _MyLibraryState extends State<MyLibraryPage> {
                 //     svgPath: ImageConstant.imgVectorRedA700102x102,
                 //     margin: getMargin(left: 24, top: 9, bottom: 10)),
                 title: AppbarTitle(
+
                     text: "lbl_my_library".tr, margin: getMargin(left: 16)),
                 actions: [
                   // AppbarImage(
