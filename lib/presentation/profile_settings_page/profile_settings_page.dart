@@ -138,9 +138,7 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: _buildSelectedContainer(),
-                  ),
+                 
                   Expanded(
                     child: Text(
                       "Session History",
