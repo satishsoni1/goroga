@@ -40,6 +40,8 @@ dependencies:
   readmore: ^2.2.0
   font_awesome_flutter: ^10.6.0
   toggle_switch: ^2.1.0
+  fl_chart: ^0.60.0 
+  syncfusion_flutter_charts: ^23.2.7
  
 dev_dependencies: 
   flutter_test: 

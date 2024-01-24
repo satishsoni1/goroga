@@ -147,19 +147,19 @@ void getData()async{
                             _SignInController.checkLogIn(controller.usernameController.text,
                               controller.passwordController.text);
                           }),
-                      GestureDetector(
-                          onTap: () {
-                            onTapTxtForgotthepassword();
-                          },
-                          child: Padding(
-                              padding: getPadding(top: 27),
-                              child: Text("msg_forgot_the_pass".tr,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtUrbanistSemiBold16
-                                      .copyWith(
-                                          letterSpacing:
-                                              getHorizontalSize(0.2))))),
+                      // GestureDetector(
+                      //     onTap: () {
+                      //       onTapTxtForgotthepassword();
+                      //     },
+                      //     child: Padding(
+                      //         padding: getPadding(top: 27),
+                      //         child: Text("msg_forgot_the_pass".tr,
+                      //             overflow: TextOverflow.ellipsis,
+                      //             textAlign: TextAlign.left,
+                      //             style: AppStyle.txtUrbanistSemiBold16
+                      //                 .copyWith(
+                      //                     letterSpacing:
+                      //                         getHorizontalSize(0.2))))),
                       // Padding(
                       //     padding: getPadding(left: 10, top: 41, right: 10),
                       //     child: Row(
