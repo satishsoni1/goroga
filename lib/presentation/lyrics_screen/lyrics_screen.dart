@@ -187,8 +187,8 @@ class LyricsScreen extends GetWidget<LyricsController> {
                                                               fontSize:
                                                                   getFontSize(
                                                                       24),
-                                                              fontFamily:
-                                                                  'Urbanist',
+                                                              
+                                                            
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w700)),
@@ -202,8 +202,7 @@ class LyricsScreen extends GetWidget<LyricsController> {
                                                               fontSize:
                                                                   getFontSize(
                                                                       24),
-                                                              fontFamily:
-                                                                  'Urbanist',
+                                                            
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w700))

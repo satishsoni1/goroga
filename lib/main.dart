@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 
@@ -28,7 +29,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.standard,
+        fontFamily: GoogleFonts.nunito().fontFamily,
       ),
+      
       translations: AppLocalization(),
       locale: Get.deviceLocale,
       //for setting localization strings

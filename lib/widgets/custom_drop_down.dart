@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class CustomDropDown extends StatelessWidget {
@@ -109,7 +110,7 @@ class CustomDropDown extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,

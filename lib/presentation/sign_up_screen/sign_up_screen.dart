@@ -1,3 +1,5 @@
+import 'package:goroga/widgets/app_bar/custom_app_bar.dart';
+
 import 'controller/sign_up_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
@@ -12,8 +14,18 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
+            // resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.whiteA700,
+            appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0,
+                leading: IconButton(
+                  icon:Icon( Icons.arrow_back,
+                  color: Colors.black,),
+                  onPressed: () {
+                    Get.back();
+                  },
+                )),
             body: SingleChildScrollView(
               child: Container(
                   width: double.maxFinite,
@@ -21,14 +33,14 @@ class SignUpScreen extends GetWidget<SignUpController> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        CustomImageView(
-                            svgPath: ImageConstant.imgArrowleft,
-                            height: getSize(28),
-                            width: getSize(28),
-                            alignment: Alignment.centerLeft,
-                            onTap: () {
-                              onTapImgArrowleft();
-                            }),
+                        // CustomImageView(
+                        //     svgPath: ImageConstant.imgArrowleft,
+                        //     height: getSize(28),
+                        //     width: getSize(28),
+                        //     alignment: Alignment.centerLeft,
+                        //     onTap: () {
+                        //       onTapImgArrowleft();
+                        //     }),
                         Container(
                             height: MediaQuery.of(context).size.height / 5,
                             child: Column(children: [
@@ -59,7 +71,10 @@ class SignUpScreen extends GetWidget<SignUpController> {
                             prefix: Container(
                                 margin: getMargin(
                                     left: 20, top: 20, right: 12, bottom: 20),
-                                child: Icon(Icons.person_2_sharp)),
+                                child: Icon(
+                                  Icons.person_2_sharp,
+                                  color: Colors.grey,
+                                )),
                             prefixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
 
@@ -71,7 +86,10 @@ class SignUpScreen extends GetWidget<SignUpController> {
                             prefix: Container(
                                 margin: getMargin(
                                     left: 20, top: 20, right: 12, bottom: 20),
-                                child: Icon(Icons.phone)),
+                                child: Icon(
+                                  Icons.phone,
+                                  color: Colors.grey,
+                                )),
                             // padding: TextFormFieldPadding.PaddingT21,
                             fontStyle:
                                 TextFormFieldFontStyle.UrbanistRegular14Gray500,
@@ -85,7 +103,6 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
                         CustomTextFormField(
                             focusNode: FocusNode(),
-                            
                             controller: controller.emailController,
                             hintText: "lbl_email".tr + " (optional)",
                             margin: getMargin(top: 20),

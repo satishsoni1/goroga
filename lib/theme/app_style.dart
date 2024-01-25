@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class AppStyle {
@@ -7,7 +8,7 @@ class AppStyle {
     fontSize: getFontSize(
       20,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -16,7 +17,7 @@ class AppStyle {
     fontSize: getFontSize(
       48,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -25,7 +26,7 @@ class AppStyle {
     fontSize: getFontSize(
       40,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -34,7 +35,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -43,7 +44,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -52,7 +53,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -61,7 +62,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -70,7 +71,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -79,7 +80,7 @@ class AppStyle {
     fontSize: getFontSize(
       12,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -88,7 +89,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -97,7 +98,8 @@ class AppStyle {
     fontSize: getFontSize(
       12,
     ),
-    fontFamily: 'Urbanist',
+        fontFamily: GoogleFonts.nunito().fontFamily,
+
     fontWeight: FontWeight.w400,
   );
 
@@ -106,7 +108,7 @@ class AppStyle {
     fontSize: getFontSize(
       32,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -115,7 +117,7 @@ class AppStyle {
     fontSize: getFontSize(
       20,
     ),
-    fontFamily: 'Roboto',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -124,7 +126,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -133,7 +135,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -142,7 +144,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -151,7 +153,7 @@ class AppStyle {
     fontSize: getFontSize(
       10,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -160,7 +162,7 @@ class AppStyle {
     fontSize: getFontSize(
       32,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -169,7 +171,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -178,7 +180,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -187,7 +189,8 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
+    
     fontWeight: FontWeight.w500,
   );
 
@@ -196,7 +199,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -205,7 +208,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -214,7 +217,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -223,7 +226,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -232,7 +235,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -241,7 +244,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -250,7 +253,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -259,7 +262,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -268,7 +271,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -277,7 +280,7 @@ class AppStyle {
     fontSize: getFontSize(
       20,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -286,7 +289,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -295,7 +298,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -304,7 +307,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -313,7 +316,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -322,7 +325,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -331,7 +334,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -340,7 +343,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -349,7 +352,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -358,7 +361,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -367,7 +370,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -376,7 +379,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -385,7 +388,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -394,16 +397,16 @@ class AppStyle {
     fontSize: getFontSize(
       12,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
   static TextStyle txtUrbanistRomanMedium10 = TextStyle(
     color: ColorConstant.gray500,
     fontSize: getFontSize(
-      10,
+      14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -412,16 +415,16 @@ class AppStyle {
     fontSize: getFontSize(
       12,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
   static TextStyle txtUrbanistRomanBold10 = TextStyle(
     color: ColorConstant.redA70002,
     fontSize: getFontSize(
-      10,
+      14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -430,7 +433,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -439,7 +442,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -448,7 +451,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w500,
   );
 
@@ -457,7 +460,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -466,7 +469,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -475,7 +478,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -484,7 +487,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -493,7 +496,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Roboto',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -502,7 +505,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w400,
   );
 
@@ -511,7 +514,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w600,
   );
 
@@ -520,7 +523,7 @@ class AppStyle {
     fontSize: getFontSize(
       48,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -529,7 +532,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -538,7 +541,7 @@ class AppStyle {
     fontSize: getFontSize(
       32,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 
@@ -547,7 +550,7 @@ class AppStyle {
     fontSize: getFontSize(
       24,
     ),
-    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
     fontWeight: FontWeight.w700,
   );
 }

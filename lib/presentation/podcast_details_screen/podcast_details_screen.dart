@@ -129,7 +129,6 @@ class PodcastDetailsScreen extends GetWidget<PodcastDetailsController> {
                               //                               .gray80001,
                               //                           fontSize:
                               //                               getFontSize(16),
-                              //                           fontFamily: 'Urbanist',
                               //                           fontWeight:
                               //                               FontWeight.w500,
                               //                           letterSpacing:
@@ -142,7 +141,7 @@ class PodcastDetailsScreen extends GetWidget<PodcastDetailsController> {
                               //                               .redA70002,
                               //                           fontSize:
                               //                               getFontSize(16),
-                              //                           fontFamily: 'Urbanist',
+                              //                           
                               //                           fontWeight:
                               //                               FontWeight.w500,
                               //                           letterSpacing:

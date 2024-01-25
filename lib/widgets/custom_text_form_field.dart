@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -79,6 +80,7 @@ class CustomTextFormField extends StatelessWidget {
         controller: controller,
         focusNode: focusNode,
         style: _setFontStyle(),
+        cursorColor: ColorConstant.primary,
         obscureText: isObscureText!,
         textInputAction: textInputAction,
         keyboardType: textInputType,
@@ -112,11 +114,11 @@ class CustomTextFormField extends StatelessWidget {
     switch (fontStyle) {
       case TextFormFieldFontStyle.UrbanistRegular14Gray500:
         return TextStyle(
-          color: ColorConstant.gray500,
+          color: ColorConstant.black900,
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.21,
@@ -124,11 +126,11 @@ class CustomTextFormField extends StatelessWidget {
         );
       default:
         return TextStyle(
-          color: ColorConstant.gray900,
+          color: ColorConstant.black900,
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -210,6 +212,7 @@ class CustomTextFormField extends StatelessWidget {
 enum TextFormFieldShape {
   RoundedBorder16,
 }
+
 enum TextFormFieldPadding {
   PaddingT21_1,
   PaddingAll18,
@@ -217,10 +220,12 @@ enum TextFormFieldPadding {
   PaddingT21,
   PaddingAll6,
 }
+
 enum TextFormFieldVariant {
   None,
   FillGray50,
 }
+
 enum TextFormFieldFontStyle {
   UrbanistSemiBold14Gray900,
   UrbanistRegular14Gray500,

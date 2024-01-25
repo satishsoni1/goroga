@@ -7,10 +7,11 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../widgets/config.dart';
+import '../models/stress_level_model.dart';
 
-class SessionHistoryController extends GetxController {
-  Rx<SessionHistoryModel> history =
-      Rx<SessionHistoryModel>(SessionHistoryModel());
+class StressLevelController extends GetxController {
+  Rx<StressLevelModel> stressLevel =
+      Rx<StressLevelModel>(StressLevelModel());
   fetchHistory() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
@@ -18,17 +19,20 @@ class SessionHistoryController extends GetxController {
     Map<String, dynamic> data = userDataMap['data'];
 
     final userId = data['id'];
-    final apiUrl = Uri.parse(AppConfig.baseUrl + 'session/history/$userId');
+    print(userId);
+    final apiUrl = Uri.parse(AppConfig.baseUrl + 'track/stress/$userId');
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
+      print(response.body);
 
       if (response.statusCode == 200) {
-        SessionHistoryModel sessionHistoryModel =
-            SessionHistoryModel.fromJson(jsonData);
+        StressLevelModel stressLevelModel =
+            StressLevelModel.fromJson(jsonData);
         // print(sessionHistoryModel);
-        if (sessionHistoryModel.status == true) {
-          history.value = sessionHistoryModel;
+        if (stressLevelModel.status == true) {
+          stressLevel.value =stressLevelModel ;
+          print( stressLevel.value);
         }
       } else {
         print('Failed to fetch data');

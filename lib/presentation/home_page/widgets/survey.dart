@@ -51,23 +51,21 @@ class _SurveyDialogState extends State<SurveyDialog> {
                     children: <Widget>[
                       Text(
                         "Keep track of your stress.\n",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Urbanist'),
+                        style: TextStyle(fontWeight: FontWeight.bold,),
                         textAlign: TextAlign.left,
                       ),
                       Text(
                         "This biweekly survey will help you track how your stress levels change over time, what causes your stress, and how it affects your life.",
-                        // style: TextStyle(fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.left,style: TextStyle(fontFamily: 'Urbanist'),
+                        textAlign: TextAlign.left,
                       ),
                       SizedBox(height: 20),
                       Text(
                         "Privacy\n",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Urbanist'),
+                        style: TextStyle(fontWeight: FontWeight.bold,),
                       ),
-                      // Text(
-                      //   "Your privacy is important to us, and your data kept confidential.",
-                      //   style: TextStyle(fontFamily: 'Urbanist'),
-                      // ),
+                      Text(
+                        "Your privacy is important to us, and your data kept confidential.",
+                      ),
                       TextButton(
                           onPressed: () {
                             launchUrl(_dataPrivacy);
@@ -78,7 +76,7 @@ class _SurveyDialogState extends State<SurveyDialog> {
                             style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 color: const Color.fromARGB(255, 33, 65, 243),
-                                fontFamily: 'Urbanist'),
+                                ),
                                 
                           )),
                     ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class CustomButton extends StatelessWidget {
@@ -222,7 +223,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -234,7 +235,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.25,
@@ -246,7 +247,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w700,
           height: getVerticalSize(
             1.38,
@@ -258,7 +259,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -270,7 +271,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             18,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w700,
           height: getVerticalSize(
             1.22,
@@ -282,7 +283,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.25,
@@ -294,7 +295,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -306,7 +307,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w700,
           height: getVerticalSize(
             1.38,
@@ -318,7 +319,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             18,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w700,
           height: getVerticalSize(
             1.22,
@@ -330,7 +331,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             16,
           ),
-          fontFamily: 'Urbanist',
+          fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w700,
           height: getVerticalSize(
             1.38,
@@ -347,6 +348,7 @@ enum ButtonShape {
   RoundedBorder22,
   CircleBorder19,
 }
+
 enum ButtonPadding {
   PaddingAll7,
   PaddingT18,
@@ -355,6 +357,7 @@ enum ButtonPadding {
   PaddingAll11,
   PaddingAll19,
 }
+
 enum ButtonVariant {
   FillGray800,
   OutlineBluegray100,
@@ -363,6 +366,7 @@ enum ButtonVariant {
   OutlineGray80002,
   FillWhiteA700,
 }
+
 enum ButtonFontStyle {
   UrbanistSemiBold14WhiteA700,
   UrbanistRomanBold16WhiteA700,

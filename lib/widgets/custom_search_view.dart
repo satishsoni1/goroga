@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class CustomSearchView extends StatelessWidget {
@@ -100,7 +101,7 @@ class CustomSearchView extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.21,
@@ -112,7 +113,7 @@ class CustomSearchView extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,

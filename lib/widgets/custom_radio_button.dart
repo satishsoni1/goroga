@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
 class CustomRadioButton extends StatelessWidget {
@@ -121,7 +122,7 @@ class CustomRadioButton extends StatelessWidget {
           fontSize: getFontSize(
             18,
           ),
-          fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.22,

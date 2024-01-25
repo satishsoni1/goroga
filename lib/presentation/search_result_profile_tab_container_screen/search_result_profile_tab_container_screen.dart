@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'controller/search_result_profile_tab_container_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
@@ -81,7 +83,7 @@ class SearchResultProfileTabContainerScreen
                     fontSize: getFontSize(
                       16,
                     ),
-                    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
                     fontWeight: FontWeight.w600,
                   ),
                   unselectedLabelColor: ColorConstant.redA70002,
@@ -89,7 +91,7 @@ class SearchResultProfileTabContainerScreen
                     fontSize: getFontSize(
                       16,
                     ),
-                    fontFamily: 'Urbanist',
+    fontFamily: GoogleFonts.nunito().fontFamily,
                     fontWeight: FontWeight.w600,
                   ),
                   indicator: BoxDecoration(

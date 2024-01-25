@@ -116,6 +116,7 @@ class CustomBottomBar extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtUrbanistRomanBold10.copyWith(
+                        
                         letterSpacing: getHorizontalSize(
                           0.2,
                         ),
