@@ -19,16 +19,7 @@ class totalSessions extends StatefulWidget {
 class _totalSessionsState extends State<totalSessions> {
   List<dynamic> weekdays = [];
   List<dynamic> sessions = [];
- List<String> no_of_sessions = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8"
-  ];
+  List<String> no_of_sessions = ["1", "2", "3", "4", "5", "6", "7", "8"];
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -71,7 +62,7 @@ class _totalSessionsState extends State<totalSessions> {
           Padding(
             padding: getPadding(all: 16),
             child: SizedBox(
-              width: 600,
+              width: double.maxFinite,
               child: Container(
                 alignment: Alignment.center,
                 child: AspectRatio(
@@ -93,22 +84,31 @@ class _totalSessionsState extends State<totalSessions> {
                     gridData: FlGridData(show: false),
                     titlesData: FlTitlesData(
                         show: true,
+
                         topTitles: AxisTitles(
                             sideTitles: SideTitles(showTitles: false)),
                         rightTitles: AxisTitles(
                             sideTitles: SideTitles(showTitles: false)),
                         bottomTitles: AxisTitles(
+                          
                             sideTitles: SideTitles(
-                          interval: 2,
                           showTitles: true,
+                         interval: 2, 
                           getTitlesWidget: (double value, TitleMeta meta) {
                             int intValue = value.toInt();
 
-                            if (intValue >=0 && intValue <= 7) {
-                              return Text(
-                                weekdays[intValue],
-                                style: TextStyle(
-                                    fontSize: 12, color: ColorConstant.primary),
+                            if (intValue >= 0 && intValue <= 7) {
+                              return Container(
+                                margin: EdgeInsets.only(
+                                    bottom:
+                                        8.0), // Adjust the bottom margin as needed
+                                child: Text(
+                                  weekdays[intValue],
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: ColorConstant.primary,
+                                  ),
+                                ),
                               );
                             }
 
@@ -136,10 +136,9 @@ class _totalSessionsState extends State<totalSessions> {
                             return SizedBox.shrink();
                           },
                         ))),
-                    barGroups:
-                        List.generate(sessions.length , (index) {
+                    barGroups: List.generate(sessions.length, (index) {
                       return BarChartGroupData(
-                        x: index , // Adding 1 to start x values from 1
+                        x: index, // Adding 1 to start x values from 1
                         barRods: [
                           BarChartRodData(
                             toY: sessions[index].toDouble(),

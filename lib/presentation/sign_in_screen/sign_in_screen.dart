@@ -1,4 +1,4 @@
-
+import 'package:flutter/services.dart';
 import 'package:goroga/presentation/sign_in_screen/controller/sign_in_controller.dart';
 
 import 'package:flutter/material.dart';
@@ -8,13 +8,12 @@ import 'package:goroga/widgets/custom_text_form_field.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends GetWidget<SignInController> {
-  
   SignInController _SignInController = Get.put(SignInController());
-void getData()async{
+  void getData() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     List<String>? data = sp.getStringList('userData');
     print(data);
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,59 +52,61 @@ void getData()async{
                             child: Text("msg_login_to_your_a".tr,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
-                                style: AppStyle.txtUrbanistRomanBold32
-                                )),
+                                style: AppStyle.txtUrbanistRomanBold32)),
                         CustomTextFormField(
-                            focusNode: FocusNode(),
+                            // focusNode: FocusNode(),
                             controller: controller.usernameController,
                             hintText: "Enter your Mobile No.".tr,
                             margin: getMargin(top: 27),
                             padding: TextFormFieldPadding.PaddingT21,
                             fontStyle:
                                 TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                            textInputType: TextInputType.emailAddress,
+                            textInputType: TextInputType.phone,
+                            formatter: LengthLimitingTextInputFormatter(10),
                             prefix: Container(
                                 margin: getMargin(
                                     left: 20, top: 20, right: 12, bottom: 20),
                                 child: Icon(
-                                    Icons.phone,color: Colors.grey,)),
+                                  Icons.phone,
+                                  color: Colors.grey,
+                                )),
                             prefixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
-                       Obx(() =>   CustomTextFormField(
-                          focusNode: FocusNode(),
-                          controller: controller.passwordController,
-                          hintText: "lbl_password".tr,
-                          margin: getMargin(top: 24),
-                          padding: TextFormFieldPadding.PaddingT21_1,
-                          fontStyle:
-                              TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                          textInputAction: TextInputAction.done,
-                          textInputType: TextInputType.visiblePassword,
-                          prefix: Container(
-                              margin: getMargin(
-                                  left: 20, top: 20, right: 12, bottom: 20),
-                              child: CustomImageView(
-                                  svgPath: ImageConstant.imgLock)),
-                          prefixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(60),
-                          ),
-                           
-                          suffix: InkWell(
-                              onTap: () {
-                                controller.isShowPassword.value =
-                                    !controller.isShowPassword.value;
-                              },
-                              child: Container(
-                                  margin: getMargin(
-                                      left: 30, right: 20,),
-                                  child: CustomImageView(
-                                      svgPath: controller.isShowPassword.value
-                                          ? ImageConstant.imgEye
-                                          : ImageConstant.imgDashboard))),
-                          suffixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(60)),
-                          isObscureText: controller.isShowPassword.value
-                        ),),
+                        CustomTextFormField(
+                            // focusNode: FocusNode(),
+                            controller: controller.passwordController,
+                            hintText: "lbl_password".tr,
+                            margin: getMargin(top: 24),
+                            padding: TextFormFieldPadding.PaddingT21_1,
+                            fontStyle:
+                                TextFormFieldFontStyle.UrbanistRegular14Gray500,
+                            textInputAction: TextInputAction.done,
+                            textInputType: TextInputType.visiblePassword,
+                            prefix: Container(
+                                margin: getMargin(
+                                    left: 20, top: 20, right: 12, bottom: 20),
+                                child: CustomImageView(
+                                    svgPath: ImageConstant.imgLock)),
+                            prefixConstraints: BoxConstraints(
+                              maxHeight: getVerticalSize(60),
+                            ),
+                            suffix: InkWell(
+                                onTap: () {
+                                  controller.isShowPassword.value =
+                                      !controller.isShowPassword.value;
+                                },
+                                child: Container(
+                                    margin: getMargin(
+                                      left: 30,
+                                      right: 20,
+                                    ),
+                                    child: CustomImageView(
+                                        svgPath: controller.isShowPassword.value
+                                            ? ImageConstant.imgEye
+                                            : ImageConstant.imgDashboard))),
+                            suffixConstraints:
+                                BoxConstraints(maxHeight: getVerticalSize(60)),
+                            isObscureText: controller.isShowPassword.value),
                         // Obx(() => CustomTextFormField(
                         //     focusNode: FocusNode(),
                         //     // controller: controller.statusDefaultOneController,
@@ -138,17 +139,27 @@ void getData()async{
                         //     suffixConstraints:
                         //         BoxConstraints(maxHeight: getVerticalSize(60)),
                         //     isObscureText: controller.isShowPassword.value)),
-            
+
+                        // CustomButton(
+                        //     height: getVerticalSize(58),
+                        //     text: "lbl_sign_in".tr,
+                        //     margin: getMargin(all: 24),
+                        //     padding: ButtonPadding.PaddingT18,
+                        //     onTap: () {
+
+                        //       _SignInController.checkLogIn(controller.usernameController.text,
+                        //         controller.passwordController.text);
+                        //     }),
                         CustomButton(
-                            height: getVerticalSize(58),
-                            text: "lbl_sign_in".tr,
-                            margin: getMargin(top: 24),
-                            padding: ButtonPadding.PaddingT18,
-                            onTap: () {
-                             
-                              _SignInController.checkLogIn(controller.usernameController.text,
+                          onTap: () {
+                            _SignInController.checkLogIn(
+                                controller.usernameController.text,
                                 controller.passwordController.text);
-                            }),
+                          },
+                          height: getVerticalSize(58),
+                          text: 'Sign in',
+                          margin: getMargin(top: 20),
+                        ),
                         // GestureDetector(
                         //     onTap: () {
                         //       onTapTxtForgotthepassword();
@@ -333,9 +344,7 @@ void getData()async{
     Get.back();
   }
 
-  onTapSignin() {
-   
-  }
+  onTapSignin() {}
 
   onTapTxtForgotthepassword() {
     Get.toNamed(
@@ -344,25 +353,25 @@ void getData()async{
   }
 
   onTapImgGoogle() async {
-  //    try {
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //   if (googleUser == null) {
-  //     // User canceled the sign-in process
-  //     return null;
-  //   }final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-  //   final AuthCredential credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth.accessToken,
-  //     idToken: googleAuth.idToken,
-  //   );
+    //    try {
+    //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    //   if (googleUser == null) {
+    //     // User canceled the sign-in process
+    //     return null;
+    //   }final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    //   final AuthCredential credential = GoogleAuthProvider.credential(
+    //     accessToken: googleAuth.accessToken,
+    //     idToken: googleAuth.idToken,
+    //   );
 
-  //   final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
-  //   final User? user = authResult.user;
-  //   return user;
-  // }catch (e) {
-  //   // Handle sign-in errors
-  //   print("Error: $e");
-  //   return null;
-  // }
+    //   final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+    //   final User? user = authResult.user;
+    //   return user;
+    // }catch (e) {
+    //   // Handle sign-in errors
+    //   print("Error: $e");
+    //   return null;
+    // }
 
     // await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
     //       print("google iside");

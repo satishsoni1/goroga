@@ -87,6 +87,15 @@ class _MyLibraryState extends State<MyLibraryPage> {
     setState(() {
       _status = "Connected";
     });
+
+    Timer.periodic(Duration(seconds: 5), (Timer timer) {
+      if (_status == "Connected") {
+        print(_status);
+        controller.fetchStatus(_status);
+      } else {
+        print(_status);
+      }
+    });
     return true;
   }
 
@@ -134,7 +143,6 @@ class _MyLibraryState extends State<MyLibraryPage> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-              
                 height: getVerticalSize(80),
                 // leadingWidth: 56,
                 // leading: AppbarImage(
@@ -143,7 +151,6 @@ class _MyLibraryState extends State<MyLibraryPage> {
                 //     svgPath: ImageConstant.imgVectorRedA700102x102,
                 //     margin: getMargin(left: 24, top: 9, bottom: 10)),
                 title: AppbarTitle(
-
                     text: "lbl_my_library".tr, margin: getMargin(left: 16)),
                 actions: [
                   // AppbarImage(
@@ -178,37 +185,37 @@ class _MyLibraryState extends State<MyLibraryPage> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text('Status: $_status\n'),
-                                  Text('info: ${_port.toString()}\n'),
-                                  ListTile(
-                                    title: TextField(
-                                      controller: _textController,
-                                      decoration: const InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        labelText: 'Text To Send',
-                                      ),
-                                    ),
-                                    trailing: ElevatedButton(
-                                      onPressed: _port == null
-                                          ? null
-                                          : () async {
-                                              if (_port == null) {
-                                                return;
-                                              }
-                                              String data =
-                                                  _textController.text + "\r";
-                                              await _port!.write(
-                                                  Uint8List.fromList(
-                                                      data.codeUnits));
-                                              _textController.text = "";
-                                            },
-                                      child: const Text("Send"),
-                                    ),
-                                  ),
-                                  Text("Result Data",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleLarge),
+                                  Text('Status: $_status\n',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                                  // Text('info: ${_port.toString()}\n'),
+                                  // ListTile(
+                                    // title: TextField(
+                                    //   controller: _textController,
+                                    //   decoration: const InputDecoration(
+                                    //     border: OutlineInputBorder(),
+                                    //     // labelText: 'Text To Send',
+                                    //   ),
+                                    // ),
+                                    // trailing: ElevatedButton(
+                                    //   onPressed: _port == null
+                                    //       ? null
+                                    //       : () async {
+                                    //           if (_port == null) {
+                                    //             return;
+                                    //           }
+                                    //           String data =
+                                    //               _textController.text + "\r";
+                                    //           await _port!.write(
+                                    //               Uint8List.fromList(
+                                    //                   data.codeUnits));
+                                    //           _textController.text = "";
+                                    //         },
+                                    //   child: const Text("Send"),
+                                    // ),
+                                  // ),
+                                  // Text("Result Data",
+                                  //     style: Theme.of(context)
+                                  //         .textTheme
+                                  //         .titleLarge),
                                   ..._serialData,
                                   // Text('Response from API:'),
                                   // SizedBox(height: 20),

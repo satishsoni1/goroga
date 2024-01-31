@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:goroga/core/app_export.dart';
 
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
       this.isObscureText = false,
       this.textInputAction = TextInputAction.next,
       this.textInputType = TextInputType.text,
+      this.formatter,
       this.maxLines,
       this.hintText,
       this.prefix,
@@ -47,6 +49,7 @@ class CustomTextFormField extends StatelessWidget {
   TextInputAction? textInputAction;
 
   TextInputType? textInputType;
+  TextInputFormatter? formatter;
 
   int? maxLines;
 
@@ -84,6 +87,11 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: isObscureText!,
         textInputAction: textInputAction,
         keyboardType: textInputType,
+        inputFormatters:  formatter !=null
+          ? [formatter!] // Use the provided formatter if not null
+          : [
+             
+            ],
         maxLines: maxLines ?? 1,
         decoration: _buildDecoration(),
         validator: validator,

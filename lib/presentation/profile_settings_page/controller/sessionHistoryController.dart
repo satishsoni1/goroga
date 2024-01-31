@@ -34,6 +34,8 @@ class SessionHistoryController extends GetxController {
         print('Failed to fetch data');
       }
     } catch (e) {
+      print("from session history controller");
+
       print('Network error 11: $e');
     }
   }

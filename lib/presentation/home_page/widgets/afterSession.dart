@@ -194,7 +194,7 @@ class _afterSessionState extends State<afterSession> {
                   backgroundColor: ColorConstant.primary),
               child: Text(
                 "Next",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
               )),
           SizedBox(
             height: 30,

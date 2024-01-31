@@ -12,7 +12,7 @@ import '../models/stress_level_model.dart';
 class StressLevelController extends GetxController {
   Rx<StressLevelModel> stressLevel =
       Rx<StressLevelModel>(StressLevelModel());
-  fetchHistory() async {
+  fetchlevel() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
     Map<String, dynamic> userDataMap = json.decode(userDataJson!);
@@ -21,6 +21,7 @@ class StressLevelController extends GetxController {
     final userId = data['id'];
     print(userId);
     final apiUrl = Uri.parse(AppConfig.baseUrl + 'track/stress/$userId');
+    print(apiUrl);
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
@@ -38,6 +39,7 @@ class StressLevelController extends GetxController {
         print('Failed to fetch data');
       }
     } catch (e) {
+      print("from stress level controller");
       print('Network error 11: $e');
     }
   }
@@ -45,7 +47,7 @@ class StressLevelController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    fetchHistory();
+    fetchlevel();
   }
 
   @override

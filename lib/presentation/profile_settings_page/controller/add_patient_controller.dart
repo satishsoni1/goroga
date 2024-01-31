@@ -2,28 +2,28 @@ import 'dart:convert';
 
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/config.dart';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
-class AfterSessionController extends GetxController {
-  void afterSessionData(stressLevel, text, sessionId) async {
+class addPatientController extends GetxController {
+  addpatient(name,phone,email,age,gender,address) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
     Map<String, dynamic> userDataMap = json.decode(userDataJson!);
     Map<String, dynamic> data = userDataMap['data'];
     var useId = data['id'];
-    var patientId = sp.getString('patientId');
-    print(patientId);
     print(useId);
-    final apiUrl = Uri.parse(AppConfig.baseUrl + 'track/stress/$useId');
+    final apiUrl = Uri.parse(AppConfig.baseUrl + 'session/user/register');
+
 
     final requestBody = {
       "user_id": useId,
-      "session_user_id": patientId,
-      "stress_level_id": stressLevel,
-      "type_id": 1,
-      "content_id": sessionId,
-      "notes": text
+      "name": name,
+      "mobile_no": phone,
+      "address": address,
+      "email": email,
+      "age": age,
+      "gender": gender
     };
     print(requestBody);
     final encodedBody = json.encode(requestBody);
@@ -34,9 +34,6 @@ class AfterSessionController extends GetxController {
           body: encodedBody, headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
         print('Response data: ${response.body}');
-        sp.remove('patientId');
-        print('PatientId cleared in SharedPreferences.');
-        Get.offNamed(AppRoutes.homeContainerScreen);
       } else if (response.statusCode == 302) {
         print("302");
         final redirectionUrl = response.headers['location'];

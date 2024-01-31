@@ -30,7 +30,7 @@ class _ExplorePageState extends State<ExplorePage> {
                 future: fetchData(),
                 builder: (context, AsyncSnapshot<ProgramModel> snapshot) {
                   if (snapshot.hasError) {
-                    return Center(child: Text("${snapshot.error}"));
+                    return Center(child: Text("No internet"));
                   } else if (snapshot.hasData) {
                     List<Programs>? programs = snapshot.data!.programs;
                     // print(items);
@@ -49,107 +49,121 @@ class _ExplorePageState extends State<ExplorePage> {
                                             ));
                                       },
                                       child: Container(
+                                          padding: EdgeInsets.all(5),
                                           child: SingleChildScrollView(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Stack(
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
                                               children: [
-                                                CustomImageView(
-                                                  url: programs![index]
-                                                      .imageUrl
-                                                      .toString(),
-                                                  fit: BoxFit.cover,
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .width /
-                                                      2,
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width -
-                                                      12,
-                                                  radius: BorderRadius.circular(
-                                                    getHorizontalSize(
-                                                      5,
-                                                    ),
-                                                  ),
-                                                  // fit: BoxFit.fill,
-                                                  margin: getMargin(
-                                                    left: 5,
-                                                    right: 5,
-                                                    top: 29,
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  top: 30,
-                                                  left: 10,
-                                                  child: Container(
-                                                    width: 300,
-                                                    alignment:
-                                                        Alignment.topLeft,
-                                                    padding: EdgeInsets.all(8),
-                                                    color: Colors.transparent,
-                                                    child: Text(
-                                                      programs[index]
-                                                          .title
+                                                Stack(
+                                                  children: [
+                                                    CustomImageView(
+                                                      url: programs![index]
+                                                          .imageUrl
                                                           .toString(),
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.bold),
+                                                      placeHolder: ImageConstant
+                                                          .imageNotFound,
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width /
+                                                              2,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                              .size
+                                                              .height/2.3,
+                                                      radius:
+                                                          BorderRadius.circular(
+                                                        getHorizontalSize(
+                                                          5,
+                                                        ),
+                                                      ),
+                                                      // fit: BoxFit.fill,
+                                                      margin: getMargin(
+                                                        // left: 5,
+                                                        // right: 5,
+                                                        top: 20,
+                                                      ),
+                                                      fit: BoxFit.cover,
                                                     ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom: 5,
-                                                  right: 10,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(5),
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5)),
-                                                    child: Text(
-                                                      programs[index]
-                                                          .duration
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                        color: Colors.black87,
-                                                        fontSize: 12,
+                                                    Positioned(
+                                                      top: 30,
+                                                      left: 10,
+                                                      child: Container(
+                                                        width: 300,
+                                                        alignment:
+                                                            Alignment.topLeft,
+                                                        padding:
+                                                            EdgeInsets.all(8),
+                                                        color:
+                                                            Colors.transparent,
+                                                        child: Text(
+                                                          programs[index]
+                                                              .title
+                                                              .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  top: 15,
-                                                  right: 0,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(8),
-                                                    color: Colors.transparent,
-                                                    child: IconButton(
-                                                      icon: Icon(
-                                                          Icons.arrow_forward),
-                                                      color: Colors.white,
-                                                      onPressed: () {
-                                                        Get.to(() =>
-                                                            PodcastsScreen(
-                                                              programsData:
-                                                                  program,
-                                                            ));
-                                                      },
+                                                    Positioned(
+                                                      bottom: 5,
+                                                      right: 10,
+                                                      child: Container(
+                                                        padding:
+                                                            EdgeInsets.all(5),
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        5)),
+                                                        child: Text(
+                                                          programs[index]
+                                                              .duration
+                                                              .toString(),
+                                                          style: TextStyle(
+                                                            color:
+                                                                Colors.black87,
+                                                            fontSize: 12,
+                                                          ),
+                                                        ),
+                                                      ),
                                                     ),
-                                                  ),
-                                                )
+                                                    Positioned(
+                                                      top: 15,
+                                                      right: 0,
+                                                      child: Container(
+                                                        padding:
+                                                            EdgeInsets.all(8),
+                                                        color:
+                                                            Colors.transparent,
+                                                        child: IconButton(
+                                                          icon: Icon(Icons
+                                                              .arrow_forward),
+                                                          color: Colors.white,
+                                                          onPressed: () {
+                                                            Get.to(() =>
+                                                                PodcastsScreen(
+                                                                  programsData:
+                                                                      program,
+                                                                ));
+                                                          },
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ],
                                             ),
-                                          ],
-                                        ),
-                                      ))))
+                                          ))))
                               : SizedBox.shrink();
                         }));
                   } else {

@@ -1,119 +1,57 @@
 class StressLevelModel {
   bool? status;
   String? message;
-  Data? data;
+  StressLevelData? data;
 
   StressLevelModel({this.status, this.message, this.data});
 
   StressLevelModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    data['message'] = this.message;
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
-    }
-    return data;
+    data = json['data'] != null ? StressLevelData.fromJson(json['data']) : null;
   }
 }
 
-class Data {
+class StressLevelData {
   List<String>? dates;
-  Stresslevels? stresslevels;
+  StressLevels? stresslevels;
 
-  Data({this.dates, this.stresslevels});
+  StressLevelData({this.dates, this.stresslevels});
 
-  Data.fromJson(Map<String, dynamic> json) {
-    dates = json['dates'].cast<String>();
+  StressLevelData.fromJson(Map<String, dynamic> json) {
+    dates = json['dates'] != null ? List<String>.from(json['dates']) : null;
     stresslevels = json['stresslevels'] != null
-        ? new Stresslevels.fromJson(json['stresslevels'])
+        ? StressLevels.fromJson(json['stresslevels'])
         : null;
   }
+}
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['dates'] = this.dates;
-    if (this.stresslevels != null) {
-      data['stresslevels'] = this.stresslevels!.toJson();
-    }
-    return data;
+class StressLevels {
+  List<StressLevelRecord>? beforeSessionStress;
+  List<StressLevelRecord>? afterSessionStress;
+
+  StressLevels({this.beforeSessionStress, this.afterSessionStress});
+
+  StressLevels.fromJson(Map<String, dynamic> json) {
+    beforeSessionStress = json['beforeSessionStress'] != null
+        ? List<StressLevelRecord>.from(json['beforeSessionStress']
+            .map((x) => StressLevelRecord.fromJson(x)))
+        : null;
+    afterSessionStress = json['afterSessionStress'] != null
+        ? List<StressLevelRecord>.from(json['afterSessionStress']
+            .map((x) => StressLevelRecord.fromJson(x)))
+        : null;
   }
 }
 
-class Stresslevels {
-  List<BeforeSessionStress>? beforeSessionStress;
-  List<AfterSessionStress>? afterSessionStress;
-
-  Stresslevels({this.beforeSessionStress, this.afterSessionStress});
-
-  Stresslevels.fromJson(Map<String, dynamic> json) {
-    if (json['beforeSessionStress'] != null) {
-      beforeSessionStress = <BeforeSessionStress>[];
-      json['beforeSessionStress'].forEach((v) {
-        beforeSessionStress!.add(new BeforeSessionStress.fromJson(v));
-      });
-    }
-    if (json['afterSessionStress'] != null) {
-      afterSessionStress = <AfterSessionStress>[];
-      json['afterSessionStress'].forEach((v) {
-        afterSessionStress!.add(new AfterSessionStress.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.beforeSessionStress != null) {
-      data['beforeSessionStress'] =
-          this.beforeSessionStress!.map((v) => v.toJson()).toList();
-    }
-    if (this.afterSessionStress != null) {
-      data['afterSessionStress'] =
-          this.afterSessionStress!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class BeforeSessionStress {
+class StressLevelRecord {
   int? id;
-  int? level;
+  dynamic level; // It could be int or String, change it based on your requirements
 
-  BeforeSessionStress({this.id, this.level});
+  StressLevelRecord({this.id, this.level});
 
-  BeforeSessionStress.fromJson(Map<String, dynamic> json) {
+  StressLevelRecord.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     level = json['level'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['level'] = this.level;
-    return data;
-  }
-}
-
-class AfterSessionStress {
-  int? id;
-  int? level;
-
-  AfterSessionStress({this.id, this.level});
-
-  AfterSessionStress.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    level = json['level'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['level'] = this.level;
-    return data;
   }
 }

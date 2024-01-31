@@ -11,8 +11,7 @@ import '../../../widgets/config.dart';
 import '../models/stress_level_model.dart';
 
 class TotalSessionController extends GetxController {
-  Rx<TotalSessionModel> sessions =
-      Rx<TotalSessionModel>(TotalSessionModel());
+  Rx<TotalSessionModel> sessions = Rx<TotalSessionModel>(TotalSessionModel());
   fetchHistory() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
@@ -25,18 +24,19 @@ class TotalSessionController extends GetxController {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        
         TotalSessionModel stressLevelModel =
             TotalSessionModel.fromJson(jsonData);
         // print(sessionHistoryModel);
         if (stressLevelModel.status == true) {
-          sessions.value =stressLevelModel ;
-          print( sessions.value);
+          sessions.value = stressLevelModel;
+          print(sessions.value);
         }
       } else {
         print('Failed to fetch data');
       }
     } catch (e) {
+      print("from total session controller");
+
       print('Network error 5: $e');
     }
   }

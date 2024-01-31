@@ -7,6 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:http/http.dart' as http;
 
+import '../../presentation/profile_settings_page/add_patient_page.dart';
+
 class NavBar extends StatefulWidget {
   @override
   State<NavBar> createState() => _NavBarState();
@@ -162,6 +164,37 @@ class _NavBarState extends State<NavBar> {
                     // ),
                     ElevatedButton(
                       onPressed: () {
+                        Get.to(() => addPatientPage());
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 224, 245, 243),
+                        backgroundColor: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius as needed
+                        ),
+                      ),
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width / 2,
+                        height: 50,
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.add_box_outlined,
+                            color: Color.fromRGBO(16, 106, 94, 1),
+                          ),
+                          title: Text(
+                            'Add Patient',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 12),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
                         launchUrl(_privacyPolicy);
                       },
                       style: ElevatedButton.styleFrom(
@@ -209,7 +242,7 @@ class _NavBarState extends State<NavBar> {
                         height: 50,
                         child: ListTile(
                           leading: Icon(
-                            Icons.file_copy_sharp,
+                            Icons.file_copy_outlined,
                             color: Color.fromRGBO(16, 106, 94, 1),
                           ),
                           title: Text('Terms',
@@ -330,7 +363,7 @@ class _NavBarState extends State<NavBar> {
 
     try {
       final response = await http.get(
-        Uri.parse(AppConfig.baseUrl+'logout?api_token=' + apiToken),
+        Uri.parse(AppConfig.baseUrl + 'logout?api_token=' + apiToken),
       );
       if (response.statusCode == 200) {
         final responseData = json.decode(response.body);
@@ -351,4 +384,3 @@ class _NavBarState extends State<NavBar> {
     }
   }
 }
-

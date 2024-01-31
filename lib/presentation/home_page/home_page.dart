@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage> {
       dynamic jsonData = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
+        // print(jsonData['surveyshowFlag']);
         if (jsonData['surveyshowFlag'] == 0) {
           print(jsonData['surveyshowFlag']);
           Future.delayed(Duration(milliseconds: 3000), () {
@@ -116,6 +117,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     launchUrl(_support);
                   },
+
                   width: getHorizontalSize(150),
                   // style: ElevatedButton.styleFrom(
                   //   foregroundColor: Colors.white,
@@ -137,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                       future: fetchData(),
                       builder: (context, AsyncSnapshot<HomeModel> snapshot) {
                         if (snapshot.hasError) {
-                          return Center(child: Text("${snapshot.error}"));
+                          return Center(child: Text("No internet"));
                         } else if (snapshot.hasData) {
                           List<Categories>? categories =
                               snapshot.data!.categories;

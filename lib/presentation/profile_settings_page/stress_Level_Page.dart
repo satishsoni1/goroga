@@ -27,7 +27,7 @@ class _stressLevelPageState extends State<stressLevelPage> {
 //     "Sat",
 //     "Sun"
 //   ];
-  List<String> weekdays = [];
+  List<dynamic> weekdays = [];
   List<dynamic> beforeSessionStress = [];
   List<dynamic> afterSessionStress = [];
 
@@ -100,7 +100,6 @@ class _stressLevelPageState extends State<stressLevelPage> {
                     groupsSpace: 10,
 
                     maxY: stressLevels.length.toDouble(),
-                    //   minY: 10,
                     gridData: FlGridData(show: false),
                     titlesData: FlTitlesData(
                         show: true,
@@ -139,7 +138,6 @@ class _stressLevelPageState extends State<stressLevelPage> {
                                 intValue <= stressLevels.length) {
                               return Text(
                                 stressLevels[intValue - 1],
-                                // textDirection: TextDirection.rtl,
                                 style: TextStyle(
                                     fontSize: 12, color: ColorConstant.primary),
                               );

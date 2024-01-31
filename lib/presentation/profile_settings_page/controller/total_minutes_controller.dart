@@ -11,8 +11,7 @@ import '../models/stress_level_model.dart';
 import '../models/total_minutes_model.dart';
 
 class TotalMinutesController extends GetxController {
-  Rx<TotalMinutesModel> minutes =
-      Rx<TotalMinutesModel>(TotalMinutesModel());
+  Rx<TotalMinutesModel> minutes = Rx<TotalMinutesModel>(TotalMinutesModel());
   fetchHistory() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
@@ -31,13 +30,15 @@ class TotalMinutesController extends GetxController {
             TotalMinutesModel.fromJson(jsonData);
         // print(sessionHistoryModel);
         if (stressLevelModel.status == true) {
-          minutes.value =stressLevelModel ;
-          print( minutes.value);
+          minutes.value = stressLevelModel;
+          print(minutes.value);
         }
       } else {
         print('Failed to fetch data');
       }
     } catch (e) {
+      print("from minutes level controller");
+
       print('Network error 11: $e');
     }
   }

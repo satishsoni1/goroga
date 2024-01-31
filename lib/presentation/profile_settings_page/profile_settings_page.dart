@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:goroga/presentation/profile_settings_page/controller/gad_controller.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/sessionHistoryController.dart';
 import 'package:goroga/presentation/profile_settings_page/global_key.dart';
@@ -34,8 +36,7 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
       Get.put(TotalSessionController());
   TotalMinutesController _totalMinutesController =
       Get.put(TotalMinutesController());
-      GADController _GADController =
-      Get.put(GADController());
+  GADController _GADController = Get.put(GADController());
 
   List<dynamic> History = [];
 
@@ -45,22 +46,38 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
     fetchData();
   }
 
+  String totalsessions = "0";
+  String totalMinutesVal = "0";
   Future<void> fetchData() async {
     try {
       var categoriesList = await _historyController.fetchHistory();
+      if (_totalSessionController.sessions.value.data != null) {
+        totalsessions = _totalSessionController
+            .sessions.value.data!.totalContentPlayed
+            .toString();
+      } else {
+        totalsessions = "0";
+      }
+      if (_totalMinutesController.minutes.value.data != null) {
+        totalMinutesVal =
+            _totalMinutesController.minutes.value.data!.totalMinutes.toString();
+      } else {
+        totalMinutesVal = "0";
+      }
       return categoriesList;
+
     } catch (e) {
       print("error:$e");
       throw e;
     }
   }
-
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorConstant.whiteA700,
-        key: MyGlobalKeys.ScaffoldKey,
+        key: scaffoldKey,
         drawer: NavBar(),
         appBar: CustomAppBar(
           height: getVerticalSize(80),
@@ -74,7 +91,7 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
               margin: getMargin(left: 24, top: 2, right: 24, bottom: 2),
               onTap: () {
                 print("menu tapped");
-                MyGlobalKeys.ScaffoldKey.currentState?.openDrawer();
+                scaffoldKey.currentState?.openDrawer();
               },
             )
           ],
@@ -128,10 +145,7 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                       },
                       child: ListTile(
                         title: Text(
-                          'Total Sessions | ' +
-                              _totalSessionController
-                                  .sessions.value.data!.totalContentPlayed
-                                  .toString(),
+                          'Total Sessions | ' + totalsessions,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text('Total number of sessions'),
@@ -155,10 +169,7 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                       },
                       child: ListTile(
                         title: Text(
-                          'Total Minutes | ' +
-                              _totalMinutesController
-                                  .minutes.value.data!.totalMinutes
-                                  .toString(),
+                          'Total Minutes | ' + totalMinutesVal,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text('Total minutes spent in sessions'),
@@ -174,7 +185,8 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => lastGAD(data:_GADController.GAD.value.las4monthdata));
+                        Get.to(() => lastGAD(
+                            data: _GADController.GAD.value.las4monthdata));
                         // setState(() {
                         //   _currentBody = LastGADPageContent();
                         // });
@@ -195,140 +207,130 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: Text(
-                        "Session History",
-                        style: TextStyle(
-                            fontSize: getFontSize(25),
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    Text(
+                      "Session History",
+                      style: TextStyle(
+                          fontSize: getFontSize(25),
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.bold),
                     ),
-                    Expanded(
-                      child: SizedBox(
-                        height: size.height / 6,
-                        width: size.height / 3,
-                        child: Container(
-                          margin: getMargin(top: 10),
-                          child: Obx(
-                            () {
-                              if (_historyController
-                                      .history.value.data!.content !=
-                                  null) {
-                                List<dynamic>? history = _historyController
-                                    .history.value.data!.content;
-
-                                return ListView.builder(
-                                  itemCount: history!.length,
-                                  itemBuilder: (context, index) {
-                                    return Row(
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Stack(
-                                            children: [
-                                              CustomImageView(
-                                                url: history[index]
-                                                    .imageUrl
-                                                    .toString()
-                                                    .toString(),
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    3,
-                                                width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
-                                                        2 +
-                                                    10,
-                                                margin: getMargin(
-                                                    left: 0, right: 5),
-                                                radius: BorderRadius.circular(
-                                                  getHorizontalSize(5),
-                                                ),
+                    SizedBox(
+                      height: size.height / 6,
+                      width: size.height / 3,
+                      child: Container(
+                        margin: getMargin(top: 10),
+                        child: Obx(
+                          () {
+                            if (_historyController
+                                    .history.value.data?.content !=
+                                null) {
+                              List<dynamic> history = _historyController
+                                  .history.value.data?.content as List<dynamic>;
+                              return ListView.builder(
+                                itemCount: history.length,
+                                itemBuilder: (context, index) {
+                                  return Row(
+                                    children: [
+                                      Expanded(
+                                        child: Stack(
+                                          children: [
+                                            CustomImageView(
+                                              url: history[index]
+                                                  .imageUrl
+                                                  .toString()
+                                                  .toString(),
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  3,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2 +
+                                                  10,
+                                              margin:
+                                                  getMargin(left: 0, right: 5),
+                                              radius: BorderRadius.circular(
+                                                getHorizontalSize(5),
                                               ),
-                                              Positioned(
-                                                bottom: 20,
-                                                right: 10,
-                                                child: Container(
-                                                  padding: EdgeInsets.all(5),
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                  child: Text(
-                                                    history[index]
-                                                        .duration
-                                                        .toString(), // Assuming duration is present in history[index]
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
+                                            ),
+                                            Positioned(
+                                              bottom: 20,
+                                              right: 10,
+                                              child: Container(
+                                                padding: EdgeInsets.all(5),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Text(
+                                                  history[index]
+                                                      .duration
+                                                      .toString(), // Assuming duration is present in history[index]
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
                                               ),
-                                              Positioned(
-                                                top: 45,
-                                                right: 50,
-                                                left: 50,
-                                                child: GestureDetector(
-                                                  onTap: () {
-                                                    // Your onTap logic
-                                                  },
-                                                  child: Icon(
-                                                    Icons
-                                                        .play_circle_fill_sharp,
-                                                    color: Colors.white,
-                                                    size: 40,
-                                                  ),
+                                            ),
+                                            Positioned(
+                                              top: 45,
+                                              right: 50,
+                                              left: 50,
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  // Your onTap logic
+                                                },
+                                                child: Icon(
+                                                  Icons.play_circle_fill_sharp,
+                                                  color: Colors.white,
+                                                  size: 40,
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Wrap(
-                                            runSpacing: 5,
-                                            children: [
-                                              Text(
-                                                _historyController.history.value
-                                                        .data!.duration
-                                                        .toString() +
-                                                    " Days ago", // Assuming duration is present in history[index]
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Text(
-                                                history[index].name,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              ),
-                                              Text(
-                                                history[index].authorName,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              ),
-                                            ],
-                                          ),
+                                      ),
+                                      Expanded(
+                                        child: Wrap(
+                                          runSpacing: 5,
+                                          children: [
+                                            Text(
+                                              _historyController.history.value
+                                                          .data!.duration ==
+                                                      null
+                                                  ? "--:--"
+                                                  : _historyController.history
+                                                          .value.data!.duration
+                                                          .toString() +
+                                                      " Days ago", // Assuming duration is present in history[index]
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              history[index].name,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            Text(
+                                              history[index].authorName,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              } else {
-                                return Center(
-                                    child: CircularProgressIndicator());
-                              }
-                            },
-                          ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            } else {
+                              return Center(child: CircularProgressIndicator());
+                            }
+                          },
                         ),
                       ),
                     )

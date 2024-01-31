@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
       this.height,
       this.text,
       this.prefixWidget,
+      
       this.suffixWidget});
 
   ButtonShape? shape;
@@ -131,7 +132,7 @@ class CustomButton extends StatelessWidget {
         );
       default:
         return getPadding(
-          all: 7,
+          all: 0,
         );
     }
   }
