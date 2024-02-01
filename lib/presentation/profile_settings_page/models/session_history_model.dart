@@ -56,7 +56,7 @@ class Data {
 
 class Content {
   int? id;
-  String? name;
+  String? title;
   String? imageUrl;
   String? authorName;
   String? videoUrl;
@@ -68,7 +68,7 @@ class Content {
 
   Content(
       {this.id,
-      this.name,
+      this.title,
       this.imageUrl,
       this.authorName,
       this.videoUrl,
@@ -80,10 +80,10 @@ class Content {
 
   Content.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    name = json['name'];
-    imageUrl = json['image_url'];
-    authorName = json['author_name'];
-    videoUrl = json['video_url'];
+    title = json['title'];
+    imageUrl = json['imageUrl'];
+    authorName = json['author'];
+    videoUrl = json['videoUrl'];
     description = json['description'];
     duration = json['duration'];
     createdAt = json['created_at'];
@@ -94,10 +94,10 @@ class Content {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['name'] = this.name;
-    data['image_url'] = this.imageUrl;
-    data['author_name'] = this.authorName;
-    data['video_url'] = this.videoUrl;
+    data['title'] = this.title;
+    data['imageUrl'] = this.imageUrl;
+    data['author'] = this.authorName;
+    data['videoUrl'] = this.videoUrl;
     data['description'] = this.description;
     data['duration'] = this.duration;
     data['created_at'] = this.createdAt;

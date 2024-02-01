@@ -16,6 +16,11 @@ class _DetailPageState extends State<DetailPage> {
   bool isFavorite = false;
   int _isFvoritedCount = 0;
   List<dynamic> favoriteDataList = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   void _toggleFavorite() {
     setState(() {

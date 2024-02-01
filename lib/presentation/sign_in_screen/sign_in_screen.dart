@@ -29,14 +29,7 @@ class SignInScreen extends GetWidget<SignInController> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        // CustomImageView(
-                        //     svgPath: ImageConstant.imgArrowleft,
-                        //     height: getSize(28),
-                        //     width: getSize(28),
-                        //     alignment: Alignment.centerLeft,
-                        //     onTap: () {
-                        //       onTapImgArrowleft();
-                        //     }),
+                       
                         Container(
                             height: MediaQuery.of(context).size.height / 5,
                             child: Column(children: [
@@ -72,7 +65,42 @@ class SignInScreen extends GetWidget<SignInController> {
                                 )),
                             prefixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
-                        CustomTextFormField(
+                        // CustomTextFormField(
+                        //     // focusNode: FocusNode(),
+                        //     controller: controller.passwordController,
+                        //     hintText: "lbl_password".tr,
+                        //     margin: getMargin(top: 24),
+                        //     padding: TextFormFieldPadding.PaddingT21_1,
+                        //     fontStyle:
+                        //         TextFormFieldFontStyle.UrbanistRegular14Gray500,
+                        //     textInputAction: TextInputAction.done,
+                        //     textInputType: TextInputType.visiblePassword,
+                        //     prefix: Container(
+                        //         margin: getMargin(
+                        //             left: 20, top: 20, right: 12, bottom: 20),
+                        //         child: CustomImageView(
+                        //             svgPath: ImageConstant.imgLock)),
+                        //     prefixConstraints: BoxConstraints(
+                        //       maxHeight: getVerticalSize(60),
+                        //     ),
+                        //     suffix: InkWell(
+                        //         onTap: () {
+                        //           controller.isShowPassword.value =
+                        //               !controller.isShowPassword.value;
+                        //         },
+                        //         child: Container(
+                        //             margin: getMargin(
+                        //               left: 30,
+                        //               right: 20,
+                        //             ),
+                        //             child: CustomImageView(
+                        //                 svgPath: controller.isShowPassword.value
+                        //                     ? ImageConstant.imgEye
+                        //                     : ImageConstant.imgDashboard))),
+                        //     suffixConstraints:
+                        //         BoxConstraints(maxHeight: getVerticalSize(60)),
+                        //     isObscureText: controller.isShowPassword.value),
+                        Obx(() => CustomTextFormField(
                             // focusNode: FocusNode(),
                             controller: controller.passwordController,
                             hintText: "lbl_password".tr,
@@ -87,9 +115,8 @@ class SignInScreen extends GetWidget<SignInController> {
                                     left: 20, top: 20, right: 12, bottom: 20),
                                 child: CustomImageView(
                                     svgPath: ImageConstant.imgLock)),
-                            prefixConstraints: BoxConstraints(
-                              maxHeight: getVerticalSize(60),
-                            ),
+                            prefixConstraints:
+                                BoxConstraints(maxHeight: getVerticalSize(60)),
                             suffix: InkWell(
                                 onTap: () {
                                   controller.isShowPassword.value =
@@ -97,48 +124,14 @@ class SignInScreen extends GetWidget<SignInController> {
                                 },
                                 child: Container(
                                     margin: getMargin(
-                                      left: 30,
-                                      right: 20,
-                                    ),
+                                        left: 30, right: 20,),
                                     child: CustomImageView(
                                         svgPath: controller.isShowPassword.value
                                             ? ImageConstant.imgEye
                                             : ImageConstant.imgDashboard))),
                             suffixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60)),
-                            isObscureText: controller.isShowPassword.value),
-                        // Obx(() => CustomTextFormField(
-                        //     focusNode: FocusNode(),
-                        //     // controller: controller.statusDefaultOneController,
-                        //     hintText: "lbl_password".tr,
-                        //     margin: getMargin(top: 24),
-                        //     padding: TextFormFieldPadding.PaddingT21_1,
-                        //     fontStyle:
-                        //         TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                        //     textInputAction: TextInputAction.done,
-                        //     textInputType: TextInputType.visiblePassword,
-                        //     prefix: Container(
-                        //         margin: getMargin(
-                        //             left: 20, top: 20, right: 12, bottom: 20),
-                        //         child: CustomImageView(
-                        //             svgPath: ImageConstant.imgLock)),
-                        //     prefixConstraints:
-                        //         BoxConstraints(maxHeight: getVerticalSize(60)),
-                        //     suffix: InkWell(
-                        //         onTap: () {
-                        //           controller.isShowPassword.value =
-                        //               !controller.isShowPassword.value;
-                        //         },
-                        //         child: Container(
-                        //             margin: getMargin(
-                        //                 left: 30, right: 20,),
-                        //             child: CustomImageView(
-                        //                 svgPath: controller.isShowPassword.value
-                        //                     ? ImageConstant.imgDashboard
-                        //                     : ImageConstant.imgDashboard))),
-                        //     suffixConstraints:
-                        //         BoxConstraints(maxHeight: getVerticalSize(60)),
-                        //     isObscureText: controller.isShowPassword.value)),
+                            isObscureText: controller.isShowPassword.value)),
 
                         // CustomButton(
                         //     height: getVerticalSize(58),

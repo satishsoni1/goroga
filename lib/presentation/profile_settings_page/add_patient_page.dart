@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/add_patient_controller.dart';
 import 'package:goroga/widgets/custom_button.dart';
@@ -28,7 +29,7 @@ class _addPatientPageState extends State<addPatientPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            // backgroundColor: Colors.grey,
+            backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
                 height: getVerticalSize(80),
                 title: AppbarTitle(
@@ -58,6 +59,7 @@ class _addPatientPageState extends State<addPatientPage> {
                                   textAlign: TextAlign.left,
                                   style: AppStyle.txtUrbanistRomanBold32)),
                           CustomTextFormField(
+
                               // focusNode: FocusNode(),
                               controller: nameController,
                               hintText: "Enter Patient Name..".tr,
@@ -90,7 +92,9 @@ class _addPatientPageState extends State<addPatientPage> {
                               // padding: TextFormFieldPadding.PaddingT21,
                               fontStyle: TextFormFieldFontStyle
                                   .UrbanistRegular14Gray500,
-                              textInputType: TextInputType.number,
+                              textInputType: TextInputType.phone,
+                              formatter: LengthLimitingTextInputFormatter(10),
+
                               // prefix: Container(
                               //     margin: getMargin(
                               //         left: 20, top: 20, right: 12, bottom: 20),
@@ -115,47 +119,42 @@ class _addPatientPageState extends State<addPatientPage> {
                               prefixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(60))),
                           Container(
-                            width: getHorizontalSize(300),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
+                                  margin:
+                                      getMargin(top: 20, right: 12, bottom: 20),
                                   width: getHorizontalSize(100),
+                                  height: getVerticalSize(60),
                                   child: TextFormField(
-                                    // focusNode: FocusNode(),
+                                    textAlign: TextAlign.center,
                                     controller: ageController,
                                     cursorColor: ColorConstant.primary,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
-                                        hintText: 'Age',
-                                        hintStyle: TextStyle(
-                                          fontSize: getFontSize(16),
-                                          color: Colors.black,
-                                        ),
-                                        border: UnderlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                        )),
-                                    // hintText: "Age".tr,
-                                    // margin: getMargin(top: 20),
-                                    // padding: TextFormFieldPadding.PaddingT21,
-                                    // fontStyle: TextFormFieldFontStyle
-                                    // .UrbanistRegular14Gray500,
-                                    // textInputType: TextInputType.number,
-                                    // prefix: Container(
-                                    //     margin: getMargin(
-                                    //         left: 20, top: 20, right: 12, bottom: 20),
-                                    //     // child: Icon(Icons.person)
-                                    //     ),
-                                    // prefixConstraints: BoxConstraints(
-                                    //   maxHeight: getVerticalSize(60),
-                                    // )
+                                      filled: true,
+                                      hintText: 'Age',
+                                      hintStyle: TextStyle(
+                                        fontSize: getFontSize(16),
+                                        color: Colors.black,
+                                      ),
+                                      alignLabelWithHint:
+                                          true, // Align hint text with the center
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Container(
+                                  height: getVerticalSize(60),
                                   width: getHorizontalSize(200),
                                   child: DropdownButtonFormField<dynamic>(
                                       icon: Icon(Icons.arrow_drop_down),
                                       value: selectedGender,
+                                      focusColor: Colors.grey,
                                       hint: Text(
                                         'Select Gender',
                                         textAlign: TextAlign.center,
@@ -180,7 +179,7 @@ class _addPatientPageState extends State<addPatientPage> {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             borderSide: BorderSide.none),
-                                        filled: false,
+                                        filled: true,
                                       ),
                                       onChanged: (item) {
                                         setState(() {
@@ -196,7 +195,7 @@ class _addPatientPageState extends State<addPatientPage> {
                               // focusNode: FocusNode(),
                               controller: addressController,
                               hintText: "Patient Address",
-                              margin: getMargin(top: 20),
+                              // margin: getMargin(top: 20),
                               padding: TextFormFieldPadding.PaddingT21,
                               fontStyle: TextFormFieldFontStyle
                                   .UrbanistRegular14Gray500,
@@ -212,7 +211,9 @@ class _addPatientPageState extends State<addPatientPage> {
                               prefixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(60))),
                           CustomButton(
+
                               onTap: () {
+
                                 _addPatientController.addpatient(
                                     nameController.text,
                                     phoneController.text,
@@ -220,6 +221,10 @@ class _addPatientPageState extends State<addPatientPage> {
                                     ageController.text,
                                     selectedGender,
                                     addressController.text);
+                                Get.snackbar(
+                                    'Success', 'Patient added successfully !!',
+                                    backgroundColor: ColorConstant.primary,
+                                    colorText: Colors.white);
 
                                 nameController.clear();
                                 phoneController.clear();
@@ -234,6 +239,7 @@ class _addPatientPageState extends State<addPatientPage> {
                                 });
                               },
                               height: getVerticalSize(58),
+
                               text: "Add".tr,
                               margin: getMargin(top: 20),
                               padding: ButtonPadding.PaddingT18)

@@ -22,7 +22,7 @@ class SessionHistoryController extends GetxController {
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
-
+      print(jsonData);
       if (response.statusCode == 200) {
         SessionHistoryModel sessionHistoryModel =
             SessionHistoryModel.fromJson(jsonData);

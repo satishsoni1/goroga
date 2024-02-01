@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:goroga/presentation/home_page/details.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/gad_controller.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/sessionHistoryController.dart';
 import 'package:goroga/presentation/profile_settings_page/global_key.dart';
@@ -267,7 +268,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                                 child: Text(
                                                   history[index]
                                                       .duration
-                                                      .toString(), // Assuming duration is present in history[index]
+                                                      .toString(), 
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 12,
@@ -282,7 +283,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                               left: 50,
                                               child: GestureDetector(
                                                 onTap: () {
-                                                  // Your onTap logic
+                                                  print(_historyController);
                                                 },
                                                 child: Icon(
                                                   Icons.play_circle_fill_sharp,
@@ -306,12 +307,12 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                                   : _historyController.history
                                                           .value.data!.duration
                                                           .toString() +
-                                                      " Days ago", // Assuming duration is present in history[index]
+                                                      " Days ago", 
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold),
                                             ),
                                             Text(
-                                              history[index].name,
+                                              history[index].title,
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w500),
                                             ),

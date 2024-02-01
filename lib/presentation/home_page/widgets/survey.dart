@@ -51,7 +51,9 @@ class _SurveyDialogState extends State<SurveyDialog> {
                     children: <Widget>[
                       Text(
                         "Keep track of your stress.\n",
-                        style: TextStyle(fontWeight: FontWeight.bold,),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                         textAlign: TextAlign.left,
                       ),
                       Text(
@@ -61,7 +63,9 @@ class _SurveyDialogState extends State<SurveyDialog> {
                       SizedBox(height: 20),
                       Text(
                         "Privacy\n",
-                        style: TextStyle(fontWeight: FontWeight.bold,),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Text(
                         "Your privacy is important to us, and your data kept confidential.",
@@ -71,13 +75,11 @@ class _SurveyDialogState extends State<SurveyDialog> {
                             launchUrl(_dataPrivacy);
                           },
                           child: Text(
-                            
                             "Read our Privacy Policy",
                             style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: const Color.fromARGB(255, 33, 65, 243),
-                                ),
-                                
+                              decoration: TextDecoration.underline,
+                              color: const Color.fromARGB(255, 33, 65, 243),
+                            ),
                           )),
                     ],
                   ),
@@ -93,11 +95,9 @@ class _SurveyDialogState extends State<SurveyDialog> {
                       onTap: () {
                         Get.back();
                         Get.to(() => Questions());
-                       
                       },
                       width: getSize(120),
                     ),
-                  
                     SizedBox(width: 10),
                     CustomButton(
                       text: "Skip survey",
@@ -755,6 +755,9 @@ class _QuestionsState extends State<Questions> {
                       // print(otherOptionControllers.length);
                       // print(ansSurveyData);
                       _surveyController.send_data(ansSurveyData);
+                      Get.snackbar('Success', 'Survey Submited Successfully ',
+                      backgroundColor: ColorConstant.primary,colorText: Colors.white);
+
                       Get.back();
                       // Get.offAll(()=>HomeContainerScreen());
                       //  Navigator.of(context).pop();

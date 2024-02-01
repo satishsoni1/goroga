@@ -24,10 +24,15 @@ class _lastGADState extends State<lastGAD> {
     // TODO: implement initState
     super.initState();
     print(widget.data);
-    days = widget.data.data;
-    labels = widget.data.labels;
-    print("beforeSessionStress: ${days[1].month}");
-    print(labels);
+    if (widget.data == null) {
+      print("empty data");
+      days = [];
+    } else {
+      days = widget.data.data;
+      labels = widget.data.labels;
+      print("beforeSessionStress: ${days[1].month}");
+      print(labels);
+    }
   }
 
   @override
@@ -48,7 +53,7 @@ class _lastGADState extends State<lastGAD> {
               Get.back();
             },
           )),
-      body:Column(
+      body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -56,7 +61,6 @@ class _lastGADState extends State<lastGAD> {
             alignment: Alignment.centerRight,
             width: 250,
             child: ListTile(
-              
               minLeadingWidth: 23,
               title: Text(
                 'Last GAD7 score | 0',
@@ -87,7 +91,7 @@ class _lastGADState extends State<lastGAD> {
                   width: 300,
                   child: Container(
                     alignment: Alignment.center,
-                    child: AspectRatio(
+                    child: days.isEmpty?Text("No data found") : AspectRatio(
                       aspectRatio: 1,
                       child: LineChart(LineChartData(
                         // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),

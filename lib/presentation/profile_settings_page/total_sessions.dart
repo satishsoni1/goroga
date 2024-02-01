@@ -23,9 +23,15 @@ class _totalSessionsState extends State<totalSessions> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    weekdays = widget.data.labels;
-    sessions = widget.data.data;
-    print("${weekdays}${sessions}");
+    if (widget.data == null) {
+      print("empty data");
+      weekdays = [];
+    } else {
+      weekdays = widget.data.labels;
+      sessions = widget.data.data;
+      print("${weekdays}${sessions}");
+    }
+
     // beforeSessionStress = widget.data.stresslevels.beforeSessionStress;
     // afterSessionStress = widget.data.stresslevels.afterSessionStress;
 
@@ -65,7 +71,7 @@ class _totalSessionsState extends State<totalSessions> {
               width: double.maxFinite,
               child: Container(
                 alignment: Alignment.center,
-                child: AspectRatio(
+                child:weekdays.isEmpty?Text("No data found") : AspectRatio(
                   aspectRatio: 1,
                   child: BarChart(BarChartData(
                     // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),
@@ -84,16 +90,14 @@ class _totalSessionsState extends State<totalSessions> {
                     gridData: FlGridData(show: false),
                     titlesData: FlTitlesData(
                         show: true,
-
                         topTitles: AxisTitles(
                             sideTitles: SideTitles(showTitles: false)),
                         rightTitles: AxisTitles(
                             sideTitles: SideTitles(showTitles: false)),
                         bottomTitles: AxisTitles(
-                          
                             sideTitles: SideTitles(
                           showTitles: true,
-                         interval: 2, 
+                          interval: 2,
                           getTitlesWidget: (double value, TitleMeta meta) {
                             int intValue = value.toInt();
 

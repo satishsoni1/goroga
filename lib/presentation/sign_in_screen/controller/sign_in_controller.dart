@@ -72,9 +72,10 @@ class SignInController extends GetxController {
 
     try {
       final response = await http.post(apiUrl, body: requestBody);
-
+print(response.body);
       if (response.statusCode == 200) {
         var Userdata = jsonDecode(response.body);
+        print("object");
         SignInModel signInModel = SignInModel.fromJson(Userdata);
 
         String signInModelJson = jsonEncode(signInModel);
@@ -90,7 +91,7 @@ class SignInController extends GetxController {
       }
     } catch (e) {
       print('Network error: $e');
-      Get.snackbar('Error', 'Network error occurred');
+      Get.snackbar('Error', 'Something went wrong ');
     }
   }
 

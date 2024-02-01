@@ -9,8 +9,6 @@ import 'package:goroga/widgets/custom_text_form_field.dart';
 import 'package:goroga/domain/googleauth/google_auth_helper.dart';
 
 class SignUpScreen extends GetWidget<SignUpController> {
-  // SignUpController _signUpController = Get.put(SignUpController());
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -121,42 +119,45 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                     svgPath: ImageConstant.imgCheckmark)),
                             prefixConstraints:
                                 BoxConstraints(maxHeight: getVerticalSize(60))),
-                        CustomTextFormField(
-                            // focusNode: FocusNode(),
-                            controller: controller.passwordController,
-                            hintText: "lbl_password".tr,
-                            margin: getMargin(top: 20),
-                            padding: TextFormFieldPadding.PaddingT21_1,
-                            fontStyle:
-                                TextFormFieldFontStyle.UrbanistRegular14Gray500,
-                            textInputAction: TextInputAction.done,
-                            textInputType: TextInputType.visiblePassword,
-                            prefix: Container(
-                                margin: getMargin(
-                                    left: 20, top: 20, right: 12, bottom: 20),
-                                child: CustomImageView(
-                                    svgPath: ImageConstant.imgLock)),
-                            prefixConstraints:
-                                BoxConstraints(maxHeight: getVerticalSize(60)),
-                            suffix: InkWell(
-                                onTap: () {
-                                  controller.isShowPassword.value =
-                                      !controller.isShowPassword.value;
-                                  // _signUpController.isShowPassword.toggle();
-                                },
-                                child: Container(
-                                    margin: getMargin(
-                                        left: 30,
-                                        top: 20,
-                                        right: 20,
-                                        bottom: 20),
-                                    child: CustomImageView(
-                                        svgPath: controller.isShowPassword.value
-                                            ? ImageConstant.imgEye
-                                            : ImageConstant.imgDashboard))),
-                            suffixConstraints:
-                                BoxConstraints(maxHeight: getVerticalSize(60)),
-                            isObscureText: controller.isShowPassword.value),
+                        Obx(
+                          () => CustomTextFormField(
+                              // focusNode: FocusNode(),
+                              controller: controller.passwordController,
+                              hintText: "lbl_password".tr,
+                              margin: getMargin(top: 20),
+                              padding: TextFormFieldPadding.PaddingT21_1,
+                              fontStyle: TextFormFieldFontStyle
+                                  .UrbanistRegular14Gray500,
+                              textInputAction: TextInputAction.done,
+                              textInputType: TextInputType.visiblePassword,
+                              prefix: Container(
+                                  margin: getMargin(
+                                      left: 20, top: 20, right: 12, bottom: 20),
+                                  child: CustomImageView(
+                                      svgPath: ImageConstant.imgLock)),
+                              prefixConstraints: BoxConstraints(
+                                  maxHeight: getVerticalSize(60)),
+                              suffix: InkWell(
+                                  onTap: () {
+                                    controller.isShowPassword.value =
+                                        !controller.isShowPassword.value;
+                                    // _signUpController.isShowPassword.toggle();
+                                  },
+                                  child: Container(
+                                      margin: getMargin(
+                                          left: 30,
+                                          top: 20,
+                                          right: 20,
+                                          bottom: 20),
+                                      child: CustomImageView(
+                                          svgPath: controller
+                                                  .isShowPassword.value
+                                              ? ImageConstant.imgEye
+                                              : ImageConstant.imgDashboard))),
+                              suffixConstraints: BoxConstraints(
+                                  maxHeight: getVerticalSize(60)),
+                              isObscureText: controller.isShowPassword.value),
+                        ),
 
                         // CustomTextFormField(
                         //   focusNode: FocusNode(),
@@ -210,17 +211,17 @@ class SignUpScreen extends GetWidget<SignUpController> {
                         //           controller.isCheckbox.value = value;
                         //         }))),
                         CustomButton(
-                            onTap: () {
-                              controller.signup(
-                                  controller.usernameController.text,
-                                  controller.mobileController.text,
-                                  controller.emailController.text,
-                                  controller.passwordController.text);
-                            },
-                            height: getVerticalSize(58),
-                            text: "lbl_sign_up".tr,
-                            margin: getMargin(top: 20),
-                            ),
+                          onTap: () {
+                            controller.signup(
+                                controller.usernameController.text,
+                                controller.mobileController.text,
+                                controller.emailController.text,
+                                controller.passwordController.text);
+                          },
+                          height: getVerticalSize(58),
+                          text: "lbl_sign_up".tr,
+                          margin: getMargin(top: 20),
+                        ),
                         // Padding(
                         //     padding: getPadding(left: 10, top: 54, right: 10),
                         //     child: Row(

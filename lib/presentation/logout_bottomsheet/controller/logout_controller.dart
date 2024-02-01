@@ -4,6 +4,8 @@ import 'package:goroga/presentation/logout_bottomsheet/models/logout_model.dart'
 class LogoutController extends GetxController {
   Rx<LogoutModel> logoutModelObj = LogoutModel().obs;
 
+  get logOut => null;
+
   @override
   void onReady() {
     super.onReady();

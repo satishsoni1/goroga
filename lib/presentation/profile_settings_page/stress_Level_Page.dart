@@ -45,12 +45,17 @@ class _stressLevelPageState extends State<stressLevelPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    weekdays = widget.data.dates;
-    beforeSessionStress = widget.data.stresslevels.beforeSessionStress;
-    afterSessionStress = widget.data.stresslevels.afterSessionStress;
+    if (widget.data == null) {
+      print("empty data");
+      weekdays = [];
+    } else {
+      weekdays = widget.data.dates;
+      beforeSessionStress = widget.data.stresslevels.beforeSessionStress;
+      afterSessionStress = widget.data.stresslevels.afterSessionStress;
 
-    print("beforeSessionStress: ${beforeSessionStress}");
-    print(afterSessionStress);
+      print("beforeSessionStress: ${beforeSessionStress}");
+      print(afterSessionStress);
+    }
   }
 
   @override
@@ -85,10 +90,10 @@ class _stressLevelPageState extends State<stressLevelPage> {
               width: 600,
               child: Container(
                 alignment: Alignment.center,
-                child: AspectRatio(
+                child:weekdays.isEmpty?Text("No data found") : AspectRatio(
                   aspectRatio: 1,
                   child: BarChart(BarChartData(
-                  // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),
+                    // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),
                     borderData: FlBorderData(
                         border: Border(
                       top: BorderSide.none,
@@ -108,17 +113,15 @@ class _stressLevelPageState extends State<stressLevelPage> {
                         rightTitles: AxisTitles(
                             sideTitles: SideTitles(showTitles: false)),
                         bottomTitles: AxisTitles(
-                          
                             sideTitles: SideTitles(
-                              
-                              interval: 2,
+                          interval: 2,
                           showTitles: true,
                           getTitlesWidget: (double value, TitleMeta meta) {
                             int intValue = value.toInt();
 
                             if (intValue > 0 && intValue <= 7) {
                               return Text(
-                                weekdays[intValue ],
+                                weekdays[intValue],
                                 style: TextStyle(
                                     fontSize: 12, color: ColorConstant.primary),
                               );
@@ -147,7 +150,7 @@ class _stressLevelPageState extends State<stressLevelPage> {
                           },
                         ))),
                     barGroups:
-                        List.generate(beforeSessionStress.length-1, (index) {
+                        List.generate(beforeSessionStress.length - 1, (index) {
                       return BarChartGroupData(
                         x: index + 1, // Adding 1 to start x values from 1
                         barRods: [
@@ -160,7 +163,6 @@ class _stressLevelPageState extends State<stressLevelPage> {
                         ],
                       );
                     }),
-                    
                   )),
                 ),
               ),
