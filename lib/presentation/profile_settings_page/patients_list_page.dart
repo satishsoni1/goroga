@@ -48,7 +48,7 @@ class _PatiensListPageState extends State<PatiensListPage> {
         appBar: CustomAppBar(
             height: getVerticalSize(80),
             title: AppbarTitle(
-                text: "Add Patient".tr, margin: getMargin(left: 16)),
+                text: "Patients List".tr, margin: getMargin(left: 16)),
             leadingWidth: 52,
             leading: AppbarImage(
               height: getSize(28),

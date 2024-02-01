@@ -152,7 +152,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                     // Get.back();
                                     Get.offAll(()=>afterSession(data: widget.data));
                                   },
-                                  child: Text("End Session")),
+                                  child: Text("End Session",style: TextStyle(color: Colors.white),)),
                             ],
                           ),
                         ),

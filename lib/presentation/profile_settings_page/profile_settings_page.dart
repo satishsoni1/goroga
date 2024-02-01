@@ -328,7 +328,13 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                   );
                                 },
                               );
-                            } else {
+                            }else if (_historyController
+                                    .history.value.data ==
+                                null)
+                                {
+                                  return Center(child: Text("Data not found"),);
+                                }
+                             else {
                               return Center(child: CircularProgressIndicator());
                             }
                           },
