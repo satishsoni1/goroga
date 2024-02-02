@@ -78,7 +78,6 @@ class _addPatientPageState extends State<addPatientPage> {
                               prefixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(60))),
                           CustomTextFormField(
-                              // focusNode: FocusNode(),
                               controller: phoneController,
                               hintText: "Enter Patient Mobile No.".tr,
                               margin: getMargin(top: 20),
@@ -89,21 +88,13 @@ class _addPatientPageState extends State<addPatientPage> {
                                     Icons.phone,
                                     color: Colors.grey,
                                   )),
-                              // padding: TextFormFieldPadding.PaddingT21,
                               fontStyle: TextFormFieldFontStyle
                                   .UrbanistRegular14Gray500,
                               textInputType: TextInputType.phone,
                               formatter: LengthLimitingTextInputFormatter(10),
-
-                              // prefix: Container(
-                              //     margin: getMargin(
-                              //         left: 20, top: 20, right: 12, bottom: 20),
-                              //     child: CustomImageView(
-                              //         svgPath: ImageConstant.imgCheckmark)),
                               prefixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(60))),
                           CustomTextFormField(
-                              // focusNode: FocusNode(),
                               controller: emailController,
                               hintText: "Enter patient email address".tr,
                               margin: getMargin(top: 20),
@@ -134,13 +125,13 @@ class _addPatientPageState extends State<addPatientPage> {
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       filled: true,
+                                      fillColor: ColorConstant.gray50,
                                       hintText: 'Age',
                                       hintStyle: TextStyle(
                                         fontSize: getFontSize(16),
                                         color: Colors.black,
                                       ),
-                                      alignLabelWithHint:
-                                          true, // Align hint text with the center
+                                      alignLabelWithHint: true,
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide.none,
@@ -162,8 +153,6 @@ class _addPatientPageState extends State<addPatientPage> {
                                             fontSize: getFontSize(16),
                                             color: Colors.black),
                                       ),
-
-                                      // value: dropvalue,
                                       items: Gender.map((item) {
                                         return DropdownMenuItem<dynamic>(
                                           value: item,
@@ -180,6 +169,7 @@ class _addPatientPageState extends State<addPatientPage> {
                                                 BorderRadius.circular(10),
                                             borderSide: BorderSide.none),
                                         filled: true,
+                                        fillColor: ColorConstant.gray50
                                       ),
                                       onChanged: (item) {
                                         setState(() {
@@ -192,10 +182,8 @@ class _addPatientPageState extends State<addPatientPage> {
                             ),
                           ),
                           CustomTextFormField(
-                              // focusNode: FocusNode(),
                               controller: addressController,
                               hintText: "Patient Address",
-                              // margin: getMargin(top: 20),
                               padding: TextFormFieldPadding.PaddingT21,
                               fontStyle: TextFormFieldFontStyle
                                   .UrbanistRegular14Gray500,
@@ -211,9 +199,7 @@ class _addPatientPageState extends State<addPatientPage> {
                               prefixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(60))),
                           CustomButton(
-
                               onTap: () {
-
                                 _addPatientController.addpatient(
                                     nameController.text,
                                     phoneController.text,
@@ -239,7 +225,6 @@ class _addPatientPageState extends State<addPatientPage> {
                                 });
                               },
                               height: getVerticalSize(58),
-
                               text: "Add".tr,
                               margin: getMargin(top: 20),
                               padding: ButtonPadding.PaddingT18)

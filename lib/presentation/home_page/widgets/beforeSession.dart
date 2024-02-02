@@ -112,6 +112,7 @@ class _beforeSessionState extends State<beforeSession> {
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none),
                   filled: true,
+                  fillColor: Colors.brown.shade50
                 ),
                 onChanged: (item) {
                   setState(() {
