@@ -18,6 +18,7 @@ class BeforeSessionController extends GetxController {
         Uri.parse("https://admin.goroga.in/public/api/session/user/$useId");
     var response = await http.get(apiUrl);
     dynamic jsonData = jsonDecode(response.body);
+    print(useId);
     print(jsonData);
     try {
       if (response.statusCode == 200) {

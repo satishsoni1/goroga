@@ -423,5 +423,5 @@ class ImageConstant {
 
   static String imageNotFound = 'assets/images/image_not_found.png';
   
-  static String imageLogo ='assets/gorogaLogo.png';
+  static String imageLogo ='assets/images/imageLogo.svg';
 }

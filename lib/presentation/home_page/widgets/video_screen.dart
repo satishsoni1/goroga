@@ -3,11 +3,15 @@ import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/widgets/afterSession.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter/services.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   final dynamic data;
 
-  VideoPlayerScreen({Key? key, required this.data,}) : super(key: key);
+  VideoPlayerScreen({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
 
   @override
   State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
@@ -21,24 +25,52 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   String _videoPosition = '0:00 / 0:00';
   bool _showControls = true;
   bool isConnected = true;
+  bool _isPlaying = false;
 
   @override
   void initState() {
     super.initState();
-    checkNetworkConnectivity();
+    playVideo();
+    // _controller.play();
+  }
 
-    _controller = VideoPlayerController.network(
-      widget.data.videoUrl.toString(),
+  playVideo() async {
+    print('Before enabling wakelock');
+
+    print('After enabling wakelock');
+    checkNetworkConnectivity();
+    // Wakelockplus.enable();
+    // var isEnable = await Wakelock.enabled;
+    // if (isEnable) {
+    //   print("awake");
+    // } else {
+    //   print("not awake");
+    // }
+
+    print(widget.data.videoUrl);
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(widget.data.videoUrl),
     );
-    _initializeVideoPlayerFuture = _controller.initialize();
-    _controller.setLooping(true);
+        WakelockPlus.enable();
+    _initializeVideoPlayerFuture = _controller.initialize().then((value) {
+      setState() {
+        print("after video play");
+      }
+    });
+    // _controller.setLooping(true);
     // Set up listener for video position changes.
     _controller.addListener(() {
       setState(() {
         _sliderValue = _controller.value.position.inSeconds.toDouble();
         _videoPosition =
             '${_formatDuration(_controller.value.position)} / ${_formatDuration(_controller.value.duration)}';
+        _isPlaying = _controller.value.isPlaying;
       });
+      // if (_isPlaying) {
+      //   Wakelock.enable();
+      // } else {
+      //   Wakelock.disable();
+      // }
     });
     _controller.addListener(() {
       setState(() {
@@ -58,8 +90,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
-
-    _controller.play();
   }
 
   void checkNetworkConnectivity() async {
@@ -79,6 +109,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     super.dispose();
+    WakelockPlus.disable();
   }
 
   @override
@@ -150,9 +181,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                   ),
                                   onPressed: () {
                                     // Get.back();
-                                    Get.offAll(()=>afterSession(data: widget.data));
+                                    Get.offAll(
+                                        () => afterSession(data: widget.data));
                                   },
-                                  child: Text("End Session",style: TextStyle(color: Colors.white),)),
+                                  child: Text(
+                                    "End Session",
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             ],
                           ),
                         ),

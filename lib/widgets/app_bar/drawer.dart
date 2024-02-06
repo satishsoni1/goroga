@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:goroga/presentation/profile_settings_page/models/settings_data_model.dart';
 import 'package:goroga/presentation/sign_in_screen/controller/logoutController.dart';
 import 'package:goroga/presentation/sign_in_screen/controller/sign_in_controller.dart';
 import 'package:goroga/widgets/config.dart';
@@ -10,6 +11,7 @@ import 'package:goroga/core/app_export.dart';
 import 'package:http/http.dart' as http;
 
 import '../../presentation/profile_settings_page/add_patient_page.dart';
+import '../../presentation/profile_settings_page/controller/settingController.dart';
 import '../../presentation/profile_settings_page/patients_list_page.dart';
 
 class NavBar extends StatefulWidget {
@@ -21,15 +23,24 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   LogOutController _logoutController = Get.put(LogOutController());
-  final Uri _privacyPolicy =
+  // SettingController _settingController = Get.put(SettingController());
+  // late Future<SettingDataModel> _settingDataFuture;
+
+  Uri _privacyPolicy =
       Uri.parse('https://goroga.in/policies/terms-of-service.php');
 
-  final Uri _terms = Uri.parse('https://goroga.in/pages/terms-conditions.php');
+  Uri _terms = Uri.parse('https://goroga.in/pages/terms-conditions.php');
 
-  final Uri _dataPrivacy =
-      Uri.parse('https://goroga.in/pages/privacy-policy.php');
+  Uri _dataPrivacy = Uri.parse('https://goroga.in/pages/privacy-policy.php');
 
-  final Uri _support = Uri.parse('https://goroga.in/pages/faq.php');
+  Uri _support = Uri.parse('https://goroga.in/pages/faq.php');
+  var settingData;
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   _settingDataFuture = _settingController.getSettingData();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +64,6 @@ class _NavBarState extends State<NavBar> {
                       color: Color.fromRGBO(16, 106, 94, 1),
                     ),
                     onPressed: () {
-                      // Handle close button tap
                       Navigator.pop(context); // Close the drawer
                     },
                   ),

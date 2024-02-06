@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/models/survey_model.dart';
 import 'package:goroga/widgets/config.dart';
@@ -19,13 +21,11 @@ class SurveyController extends GetxController {
 
   var ansSurveyData = List<Data>.empty().obs;
   fetchSurveyData() async {
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'survey');
+    final apiUrl = Uri.parse(AppConfig.baseUrl + 'survey');
 
     try {
       final response = await http.get(apiUrl);
       dynamic jsonData = jsonDecode(response.body);
-
-      
 
       if (response.statusCode == 200) {
         // print('object');
@@ -47,16 +47,16 @@ class SurveyController extends GetxController {
     }
   }
 
-  Future<void> send_data(ansSurveyData) async {
+  Future send_data(ansSurveyData) async {
     // print("this is send Data function");
     // print(ansSurveyData);
-    
+
     SharedPreferences sp = await SharedPreferences.getInstance();
     var userDataJson = sp.getString('userData');
     Map<String, dynamic> userDataMap = json.decode(userDataJson!);
     Map<String, dynamic> data = userDataMap['data'];
     var useId = data['id'];
-    final apiUrl = Uri.parse(AppConfig.baseUrl+'submit/$useId');
+    final apiUrl = Uri.parse(AppConfig.baseUrl + 'submit/$useId');
 
     final requestBody = {"questions": ansSurveyData};
     // print(requestBody);
@@ -67,8 +67,20 @@ class SurveyController extends GetxController {
       final response = await http.post(apiUrl,
           body: encodedBody, headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
-        // log('Response data: ${response.body}');
-        
+        print('Response data: ${response.body}');
+        var data = jsonDecode(response.body);
+
+        if (data['status'] == true) {
+          Get.snackbar('Success', data['message'],
+              backgroundColor: ColorConstant.primary, colorText: Colors.white);
+          return 1;
+        } else {
+          Get.snackbar('Wrong', data['message'],
+              backgroundColor: ColorConstant.primary, colorText: Colors.white);
+          return 0;
+        }
+
+        // exit(0);
         //  Get.toNamed(AppRoutes.homeContainerScreen);
       } else if (response.statusCode == 302) {
         print("302");

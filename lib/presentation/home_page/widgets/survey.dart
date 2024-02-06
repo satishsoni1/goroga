@@ -14,6 +14,7 @@ class SurveyDialog extends StatefulWidget {
 class _SurveyDialogState extends State<SurveyDialog> {
   final Uri _dataPrivacy =
       Uri.parse('https://goroga.in/pages/privacy-policy.php');
+      
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,10 @@ class _SurveyDialogState extends State<SurveyDialog> {
             children: <Widget>[
               Container(
                 child: CustomImageView(
-                  imagePath: ImageConstant.imageLogo,
+                  svgPath: ImageConstant.imageLogo,
                   height: MediaQuery.of(context).size.height / 5,
                   width: MediaQuery.of(context).size.width / 2,
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                 ),
               ),
               Container(
@@ -221,9 +222,9 @@ class _QuestionsState extends State<Questions> {
           children: <Widget>[
             Container(
               child: CustomImageView(
-                imagePath: ImageConstant.imageLogo,
-                height: MediaQuery.of(context).size.height / 9,
-                width: MediaQuery.of(context).size.width / 2,
+                svgPath: ImageConstant.imageLogo,
+                height: MediaQuery.of(context).size.height / 5,
+                width: MediaQuery.of(context).size.width ,
                 fit: BoxFit.contain,
               ),
             ),
@@ -750,17 +751,22 @@ class _QuestionsState extends State<Questions> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       // print("this is submit button ");
                       // print(otherOptionControllers.length);
-                      // print(ansSurveyData);
-                      _surveyController.send_data(ansSurveyData);
-                      Get.snackbar('Success', 'Survey Submited Successfully ',
-                      backgroundColor: ColorConstant.primary,colorText: Colors.white);
+                      print(ansSurveyData);
+                      var isSave =
+                          await _surveyController.send_data(ansSurveyData);
+                          print(isSave);
+                      if (isSave == 1) {
+                        Navigator.of(context).pop();
+                      }else{
+                        print("something went wrong");
+                      }
+                      print("back");
 
-                      Get.back();
+                      // Get.back();
                       // Get.offAll(()=>HomeContainerScreen());
-                      //  Navigator.of(context).pop();
                       // Get.toNamed(AppRoutes.homeContainerScreen);
                       // Navigator.push(context, MaterialPageRoute(
                       //   builder: (context) {

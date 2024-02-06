@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:goroga/presentation/home_page/details.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/gad_controller.dart';
@@ -17,6 +16,7 @@ import 'package:goroga/widgets/app_bar/appbar_image.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
 import 'package:goroga/widgets/app_bar/custom_app_bar.dart';
 
+import 'controller/settingController.dart';
 import 'controller/stress_level_controller.dart';
 import 'controller/total_minutes_controller.dart';
 import 'controller/total_sessions_controller.dart';
@@ -28,6 +28,7 @@ class ProfileSettingsPage extends StatefulWidget {
 }
 
 class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
+
   // Widget _currentBody = Container();
   SessionHistoryController _historyController =
       Get.put(SessionHistoryController());

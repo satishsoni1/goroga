@@ -4,6 +4,7 @@ import 'package:goroga/presentation/explore_page/models/program_model.dart';
 import 'package:goroga/presentation/home_page/controller/beforesessionController.dart';
 import 'package:goroga/presentation/home_page/widgets/video_screen.dart';
 import 'package:goroga/widgets/app_bar/custom_app_bar.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../../widgets/app_bar/appbar_image.dart';
 
@@ -51,6 +52,7 @@ class _beforeSessionState extends State<beforeSession> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     fetchData();
   }
 
@@ -108,12 +110,11 @@ class _beforeSessionState extends State<beforeSession> {
                   );
                 }).toList(),
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none),
-                  filled: true,
-                  fillColor: Colors.brown.shade50
-                ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none),
+                    filled: true,
+                    fillColor: Colors.brown.shade50),
                 onChanged: (item) {
                   setState(() {
                     patientId = item;
@@ -243,7 +244,7 @@ class _beforeSessionState extends State<beforeSession> {
                   onPressed: (() {
                     print(patientId);
                     _controller.beforeSessionData(
-                        stress_level, text, sessionId,patientId);
+                        stress_level, text, sessionId, patientId);
 
                     Get.to(() => VideoPlayerScreen(
                           data: widget.data,
@@ -253,7 +254,10 @@ class _beforeSessionState extends State<beforeSession> {
                       backgroundColor: ColorConstant.primary),
                   child: Text(
                     "Next",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white),
                   )),
               SizedBox(
                 height: 30,
