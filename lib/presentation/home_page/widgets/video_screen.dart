@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
+import 'package:goroga/presentation/home_page/controller/videoController.dart';
 import 'package:goroga/presentation/home_page/widgets/afterSession.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter/services.dart';
@@ -7,10 +8,12 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   final dynamic data;
+  dynamic user;
 
   VideoPlayerScreen({
     Key? key,
     required this.data,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -19,6 +22,7 @@ class VideoPlayerScreen extends StatefulWidget {
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   late VideoPlayerController _controller;
+  VideoController _videoController = Get.put(VideoController());
   late Future<void> _initializeVideoPlayerFuture;
   double _sliderValue = 0.0;
   double customAspectRatio = 16 / 9;
@@ -27,11 +31,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   bool isConnected = true;
   bool _isPlaying = false;
 
+  var start_at;
+  var end_at;
+  var duration;
+
   @override
   void initState() {
     super.initState();
     playVideo();
-    // _controller.play();
+    start_at = DateTime.now(); // _controller.play();
   }
 
   playVideo() async {
@@ -51,7 +59,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     _controller = VideoPlayerController.networkUrl(
       Uri.parse(widget.data.videoUrl),
     );
-        WakelockPlus.enable();
+    WakelockPlus.enable();
     _initializeVideoPlayerFuture = _controller.initialize().then((value) {
       setState() {
         print("after video play");
@@ -103,13 +111,24 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void dispose() {
+    endSession();
+
+    super.dispose();
+  }
+
+  endSession() {
     _controller.dispose();
 
     // Reset the preferred orientation to portrait when the page is disposed.
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
-    super.dispose();
     WakelockPlus.disable();
+    end_at = DateTime.now();
+    print('start:${start_at} end:${end_at}');
+    duration = _controller.value.position.inSeconds;
+    print('duration: ${duration}');
+
+    _videoController.sentSesionData(start_at.toIso8601String(),
+        end_at.toIso8601String(), duration, widget.data.id, widget.user);
   }
 
   @override
@@ -183,6 +202,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                     // Get.back();
                                     Get.offAll(
                                         () => afterSession(data: widget.data));
+                                    // print('start:${start_at} end:${end_at}');
                                   },
                                   child: Text(
                                     "End Session",

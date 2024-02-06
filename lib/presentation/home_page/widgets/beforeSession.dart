@@ -243,12 +243,16 @@ class _beforeSessionState extends State<beforeSession> {
               ElevatedButton(
                   onPressed: (() {
                     print(patientId);
-                    _controller.beforeSessionData(
-                        stress_level, text, sessionId, patientId);
+                    if (patientId != null) {
+                      _controller.beforeSessionData(
+                          stress_level, text, sessionId, patientId);
 
-                    Get.to(() => VideoPlayerScreen(
-                          data: widget.data,
-                        ));
+                      Get.to(() => VideoPlayerScreen(
+                          data: widget.data, user: patientId));
+                    }else{
+                       Get.snackbar('Wrong', 'Please select petient ',
+              backgroundColor: ColorConstant.red700, colorText: Colors.white);
+                    }
                   }),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorConstant.primary),

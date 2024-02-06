@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/models/patient_model.dart';
@@ -63,8 +64,17 @@ class BeforeSessionController extends GetxController {
       if (response.statusCode == 200) {
         print('Response data: ${response.body}');
         // Get.offNamed(AppRoutes.homeContainerScreen);
-        sp.setString('patientId', patientId);
-        print( sp.setString('patientId', patientId));
+        var data = jsonDecode(response.body);
+
+        if (data['status'] == true) {
+          sp.setString('patientId', patientId);
+          print(sp.setString('patientId', patientId));
+          Get.snackbar('Success', data['message'],
+              backgroundColor: ColorConstant.primary, colorText: Colors.white);
+        } else {
+          Get.snackbar('Wrong', data['message'],
+              backgroundColor: ColorConstant.primary, colorText: Colors.white);
+        }
       } else if (response.statusCode == 302) {
         print("302");
         final redirectionUrl = response.headers['location'];
