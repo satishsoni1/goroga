@@ -39,7 +39,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   void initState() {
     super.initState();
     playVideo();
-    start_at = DateTime.now(); // _controller.play();
+    start_at = DateTime.now();
+    // _controller.play();
   }
 
   playVideo() async {
@@ -47,13 +48,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     print('After enabling wakelock');
     checkNetworkConnectivity();
-    // Wakelockplus.enable();
-    // var isEnable = await Wakelock.enabled;
-    // if (isEnable) {
-    //   print("awake");
-    // } else {
-    //   print("not awake");
-    // }
 
     print(widget.data.videoUrl);
     _controller = VideoPlayerController.networkUrl(
@@ -66,7 +60,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       }
     });
     // _controller.setLooping(true);
-    // Set up listener for video position changes.
     _controller.addListener(() {
       setState(() {
         _sliderValue = _controller.value.position.inSeconds.toDouble();
@@ -74,11 +67,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             '${_formatDuration(_controller.value.position)} / ${_formatDuration(_controller.value.duration)}';
         _isPlaying = _controller.value.isPlaying;
       });
-      // if (_isPlaying) {
-      //   Wakelock.enable();
-      // } else {
-      //   Wakelock.disable();
-      // }
     });
     _controller.addListener(() {
       setState(() {
@@ -93,7 +81,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       });
     });
 
-    // Set the preferred orientation to landscape when the video starts playing.
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
@@ -175,39 +162,45 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Column(
-                                children: [
-                                  Text(
-                                    widget.data.author.toString(),
-                                    style: TextStyle(color: Colors.white),
-                                    textAlign: TextAlign.start,
-                                  ),
-                                  Text(
-                                    widget.data.title.toString(),
-                                    style: TextStyle(color: Colors.white),
-                                  )
-                                ],
-                              ),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.black,
-                                    textStyle: TextStyle(color: Colors.white),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
+                              Expanded(
+                                flex: 1,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      widget.data.author.toString(),
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.start,
                                     ),
-                                  ),
-                                  onPressed: () {
-                                    // Get.back();
-                                    Get.offAll(
-                                        () => afterSession(data: widget.data));
-                                    // print('start:${start_at} end:${end_at}');
-                                  },
-                                  child: Text(
-                                    "End Session",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
+                                    Text(
+                                      widget.data.title.toString(),
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.black,
+                                      textStyle: TextStyle(color: Colors.white),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      // Get.back();
+                                      Get.offAll(
+                                          () => afterSession(data: widget.data));
+                                      // print('start:${start_at} end:${end_at}');
+                                    },
+                                    child: Text(
+                                      "End Session",
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                              ),
                             ],
                           ),
                         ),
@@ -262,7 +255,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         ),
                       ),
                     ),
-
                     Visibility(
                       visible: _showControls,
                       child: Positioned(
@@ -285,7 +277,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         ),
                       ),
                     ),
-
                     Visibility(
                       visible: _showControls,
                       child: Positioned(
@@ -300,18 +291,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         ),
                       ),
                     ),
-                    // floatingActionButton: FloatingActionButton(
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       if (_controller.value.isPlaying) {
-                    //         _controller.pause();
-                    //       } else {
-                    //         _controller.play();
-                    //       }
-                    //     });
-                    //   },
-
-                    // ),
                   ],
                 );
               },
