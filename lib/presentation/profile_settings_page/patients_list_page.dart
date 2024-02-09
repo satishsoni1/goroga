@@ -2,16 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/controller/beforesessionController.dart';
 import 'package:goroga/presentation/home_page/models/patient_model.dart';
-import 'package:goroga/presentation/profile_settings_page/controller/DoctorDataController.dart';
-import 'package:goroga/presentation/profile_settings_page/global_key.dart';
-import 'package:goroga/presentation/profile_settings_page/models/doctor_Data_Model.dart';
-import 'package:intl/intl.dart';
 import '../../widgets/app_bar/appbar_image.dart';
 import '../../widgets/app_bar/appbar_title.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
-import '../../widgets/custom_search_view.dart';
-import 'controller/search_controller.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class PatiensListPage extends StatefulWidget {
   @override
@@ -76,14 +69,54 @@ class _PatiensListPageState extends State<PatiensListPage> {
                         itemCount: patients?.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Card(
-                            elevation: 5,
-                            margin: EdgeInsets.all(10.0),
+                            // elevation: 5,
+                            // margin: EdgeInsets.all(10.0),
                             child: Container(
                                 padding: getPadding(all: 10),
-                                height: 50,
-                                child: Text(
-                                  '${(index + 1).toString()}.  ${patients![index].name.toString()}',
-                                  style: TextStyle(fontSize: 16),
+                                alignment: Alignment.topLeft,
+                                // height: 50,
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: ColorConstant.primary,
+                                      child: patients != null &&
+                                              patients.isNotEmpty &&
+                                              patients[index].name != null &&
+                                              patients[index].name.isNotEmpty
+                                          ? Text(
+                                              patients[index]
+                                                  .name[0][0]
+                                                  .toString()
+                                                  .toUpperCase(),
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            )
+                                          : Text(''),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          patients![index].name.toString(),
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          'Mobile No.  ${patients[index].mobileNo.toString()}',
+                                          style: TextStyle(fontSize: 16),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 )),
                           );
                         },

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:goroga/presentation/explore_page/models/program_model.dart';
 import 'package:goroga/presentation/home_page/controller/beforesessionController.dart';
 import 'package:goroga/presentation/home_page/widgets/video_screen.dart';
 import 'package:goroga/widgets/app_bar/custom_app_bar.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../../widgets/app_bar/appbar_image.dart';
 
@@ -243,16 +241,12 @@ class _beforeSessionState extends State<beforeSession> {
               ElevatedButton(
                   onPressed: (() {
                     print(patientId);
-                    if (patientId != null) {
-                      _controller.beforeSessionData(
-                          stress_level, text, sessionId, patientId);
 
-                      Get.to(() => VideoPlayerScreen(
-                          data: widget.data, user: patientId));
-                    }else{
-                       Get.snackbar('Wrong', 'Please select petient ',
-              backgroundColor: ColorConstant.red700, colorText: Colors.white);
-                    }
+                    _controller.beforeSessionData(
+                        stress_level, text, sessionId, patientId);
+
+                    Get.to(() =>
+                        VideoPlayerScreen(data: widget.data, user: patientId));
                   }),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorConstant.primary),

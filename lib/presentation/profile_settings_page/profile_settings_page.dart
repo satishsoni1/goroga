@@ -1,10 +1,6 @@
-
-import 'package:goroga/presentation/home_page/details.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/gad_controller.dart';
 import 'package:goroga/presentation/profile_settings_page/controller/sessionHistoryController.dart';
-import 'package:goroga/presentation/profile_settings_page/global_key.dart';
 import 'package:goroga/presentation/profile_settings_page/last_GAD_page.dart';
-import 'package:goroga/presentation/profile_settings_page/models/session_history_model.dart';
 import 'package:goroga/presentation/profile_settings_page/stress_Level_Page.dart';
 import 'package:goroga/presentation/profile_settings_page/total_minutes.dart';
 import 'package:goroga/presentation/profile_settings_page/total_sessions.dart';
@@ -16,7 +12,6 @@ import 'package:goroga/widgets/app_bar/appbar_image.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
 import 'package:goroga/widgets/app_bar/custom_app_bar.dart';
 
-import 'controller/settingController.dart';
 import 'controller/stress_level_controller.dart';
 import 'controller/total_minutes_controller.dart';
 import 'controller/total_sessions_controller.dart';
@@ -28,7 +23,6 @@ class ProfileSettingsPage extends StatefulWidget {
 }
 
 class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
-
   // Widget _currentBody = Container();
   SessionHistoryController _historyController =
       Get.put(SessionHistoryController());
@@ -39,6 +33,8 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
   TotalMinutesController _totalMinutesController =
       Get.put(TotalMinutesController());
   GADController _GADController = Get.put(GADController());
+  String totalsessions = "0";
+  String totalMinutesVal = "0";
 
   List<dynamic> History = [];
 
@@ -46,17 +42,21 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
   void initState() {
     super.initState();
     fetchData();
+    print("this is profile page");
   }
 
-  String totalsessions = "0";
-  String totalMinutesVal = "0";
   Future<void> fetchData() async {
     try {
       var categoriesList = await _historyController.fetchHistory();
+      await _totalSessionController.fetchHistory();
+      print(
+          "this is total session ${_totalSessionController.sessions.value.data?.totalContentPlayed}");
       if (_totalSessionController.sessions.value.data != null) {
-        totalsessions = _totalSessionController
-            .sessions.value.data!.totalContentPlayed
-            .toString();
+        setState(() {
+          totalsessions = _totalSessionController
+              .sessions.value.data!.totalContentPlayed
+              .toString();
+        });
       } else {
         totalsessions = "0";
       }
@@ -67,13 +67,13 @@ class _ProfileSettingsPageState extends State<ProfileSettingsPage> {
         totalMinutesVal = "0";
       }
       return categoriesList;
-
     } catch (e) {
       print("error:$e");
       throw e;
     }
   }
-final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -147,7 +147,8 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                       },
                       child: ListTile(
                         title: Text(
-                          'Total Sessions | ' + totalsessions,
+                          'Total Sessions | ' +
+                              totalsessions,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text('Total number of sessions'),
@@ -269,7 +270,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                                 child: Text(
                                                   history[index]
                                                       .duration
-                                                      .toString(), 
+                                                      .toString(),
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 12,
@@ -308,7 +309,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                                   : _historyController.history
                                                           .value.data!.duration
                                                           .toString() +
-                                                      " Days ago", 
+                                                      " Days ago",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold),
                                             ),
@@ -329,13 +330,12 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
                                   );
                                 },
                               );
-                            }else if (_historyController
-                                    .history.value.data ==
-                                null)
-                                {
-                                  return Center(child: Text("Data not found"),);
-                                }
-                             else {
+                            } else if (_historyController.history.value.data ==
+                                null) {
+                              return Center(
+                                child: Text("Data not found"),
+                              );
+                            } else {
                               return Center(child: CircularProgressIndicator());
                             }
                           },

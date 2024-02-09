@@ -1,13 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:goroga/presentation/profile_settings_page/models/session_history_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../widgets/config.dart';
-import '../models/stress_level_model.dart';
 import '../models/total_minutes_model.dart';
 
 class TotalMinutesController extends GetxController {

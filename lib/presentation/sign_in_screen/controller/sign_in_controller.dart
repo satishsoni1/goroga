@@ -72,22 +72,24 @@ class SignInController extends GetxController {
 
     try {
       final response = await http.post(apiUrl, body: requestBody);
-print(response.body);
+      var Userdata = jsonDecode(response.body);
+      print("object");
+      SignInModel signInModel = SignInModel.fromJson(Userdata);
+
+      String signInModelJson = jsonEncode(signInModel);
+      print(response.statusCode);
       if (response.statusCode == 200) {
-        var Userdata = jsonDecode(response.body);
-        print("object");
-        SignInModel signInModel = SignInModel.fromJson(Userdata);
-
-        String signInModelJson = jsonEncode(signInModel);
-
         sp.setString('userData', signInModelJson);
         if (signInModel.success == true) {
           await sp.setBool('isLogin', true);
           Get.offNamed(AppRoutes.homeContainerScreen);
         } else {
           print('Login failed');
-          Get.snackbar('Error', 'Invalid username or password');
+          Get.snackbar('Error', '${signInModel.message}');
         }
+      } else {
+          print('Login failed');
+          Get.snackbar('Error', 'Invalid username or password');
       }
     } catch (e) {
       print('Network error: $e');

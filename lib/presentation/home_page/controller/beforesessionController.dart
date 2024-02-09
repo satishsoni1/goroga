@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/home_page/models/patient_model.dart';
 import 'package:goroga/widgets/config.dart';

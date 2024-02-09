@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/presentation/profile_settings_page/models/session_history_model.dart';
 import 'package:http/http.dart' as http;

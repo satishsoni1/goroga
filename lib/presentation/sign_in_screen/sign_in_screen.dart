@@ -29,7 +29,6 @@ class SignInScreen extends GetWidget<SignInController> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                       
                         Container(
                             height: MediaQuery.of(context).size.height / 5,
                             child: Column(children: [
@@ -64,7 +63,10 @@ class SignInScreen extends GetWidget<SignInController> {
                                   color: Colors.grey,
                                 )),
                             prefixConstraints:
-                                BoxConstraints(maxHeight: getVerticalSize(60))),
+                                BoxConstraints(maxHeight: getVerticalSize(60)),
+                                validator: (value) {
+                                  print("no value");
+                                },),
                         // CustomTextFormField(
                         //     // focusNode: FocusNode(),
                         //     controller: controller.passwordController,
@@ -124,7 +126,9 @@ class SignInScreen extends GetWidget<SignInController> {
                                 },
                                 child: Container(
                                     margin: getMargin(
-                                        left: 30, right: 20,),
+                                      left: 30,
+                                      right: 20,
+                                    ),
                                     child: CustomImageView(
                                         svgPath: controller.isShowPassword.value
                                             ? ImageConstant.imgEye

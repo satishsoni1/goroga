@@ -80,6 +80,7 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
+    
         controller: controller,
         focusNode: focusNode,
         style: _setFontStyle(),
@@ -87,16 +88,22 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: isObscureText!,
         textInputAction: textInputAction,
         keyboardType: textInputType,
-        inputFormatters:  formatter !=null
-          ? [formatter!] // Use the provided formatter if not null
-          : [
-             
-            ],
+        inputFormatters: _getInputFormatters(),
         maxLines: maxLines ?? 1,
         decoration: _buildDecoration(),
         validator: validator,
       ),
     );
+  }
+
+  List<TextInputFormatter> _getInputFormatters() {
+    return formatter != null
+        ? [
+            FilteringTextInputFormatter.digitsOnly,
+            LengthLimitingTextInputFormatter(10),
+            // Add more formatters if needed
+          ]
+        : [];
   }
 
   _buildDecoration() {

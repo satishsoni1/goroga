@@ -1,7 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/app_bar/appbar_image.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
@@ -30,7 +29,7 @@ class _lastGADState extends State<lastGAD> {
     } else {
       days = widget.data.data;
       labels = widget.data.labels;
-      print("beforeSessionStress: ${days[1].month}");
+      print("beforeSessionStress: ${days[0].month}");
       print(labels);
     }
   }

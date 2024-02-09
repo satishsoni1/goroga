@@ -1,14 +1,11 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:goroga/presentation/profile_settings_page/models/session_history_model.dart';
 import 'package:goroga/presentation/profile_settings_page/models/total_sessions_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../widgets/config.dart';
-import '../models/stress_level_model.dart';
 
 class TotalSessionController extends GetxController {
   Rx<TotalSessionModel> sessions = Rx<TotalSessionModel>(TotalSessionModel());
@@ -30,6 +27,8 @@ class TotalSessionController extends GetxController {
         if (stressLevelModel.status == true) {
           sessions.value = stressLevelModel;
           print(sessions.value);
+        }else{
+          print('Data not found');
         }
       } else {
         print('Failed to fetch data');
@@ -44,7 +43,7 @@ class TotalSessionController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    fetchHistory();
+    // fetchHistory();
   }
 
   @override

@@ -192,8 +192,56 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                     ),
                                     onPressed: () {
                                       // Get.back();
-                                      Get.offAll(
-                                          () => afterSession(data: widget.data));
+
+                                      // AlertDialog(
+                                      //   actions: [
+                                      //     ElevatedButton(
+                                      //         onPressed: () {
+                                      //           Get.offAll(() => afterSession(
+                                      //               data: widget.data));
+                                      //         },
+                                      //         child: Text('Ok'))
+                                      //   ],
+                                      // );
+                                      showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Text('End Session'),
+                                              content: Text(
+                                                  'Are you sure you want to end the session?'),
+                                              actions: [
+                                                ElevatedButton(
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                          backgroundColor:
+                                                              ColorConstant
+                                                                  .primary),
+                                                  onPressed: () {
+                                                    Navigator.of(context)
+                                                        .pop(); // Close the dialog
+                                                    Get.offAll(() =>
+                                                        afterSession(
+                                                            data: widget.data));
+                                                  },
+                                                  child: Text('Yes'),
+                                                ),
+                                                ElevatedButton(
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                          backgroundColor:
+                                                              ColorConstant
+                                                                  .primary),
+                                                  onPressed: () {
+                                                    Navigator.of(context)
+                                                        .pop(); // Close the dialog
+                                                  },
+                                                  child: Text('No'),
+                                                ),
+                                              ],
+                                            );
+                                          });
+
                                       // print('start:${start_at} end:${end_at}');
                                     },
                                     child: Text(
@@ -291,6 +339,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         ),
                       ),
                     ),
+                    if (_controller.value.isBuffering)
+                      Center(
+                        child: CircularProgressIndicator(
+                          color: ColorConstant.primary,
+                        ),
+                      ),
                   ],
                 );
               },

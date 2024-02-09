@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:goroga/core/app_export.dart';
 import 'package:goroga/widgets/app_bar/appbar_image.dart';
 import 'package:goroga/widgets/app_bar/appbar_title.dart';
@@ -30,6 +29,11 @@ class _totalSessionsState extends State<totalSessions> {
       weekdays = widget.data.labels;
       sessions = widget.data.data;
       print("${weekdays}${sessions}");
+      if (weekdays.length > 7) {
+        weekdays = weekdays.sublist(weekdays.length - 7);
+        sessions = sessions.sublist(sessions.length - 7);
+        print("${weekdays}${sessions}");
+      }
     }
 
     // beforeSessionStress = widget.data.stresslevels.beforeSessionStress;
@@ -57,106 +61,143 @@ class _totalSessionsState extends State<totalSessions> {
               Get.back();
             },
           )),
-      body: Stack(
+      body: Column(
         children: [
-          // Image.network(
-          //   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJctbIxhrOV2WWwf9f4TAT3DVgPLiS2NNvPCordwDJApTF89IT5H-753N2HCpR_1bx0w&usqp=CAU',
-          //   fit: BoxFit.cover,
-          //   width: double.infinity,
-          //   height: double.infinity,
-          // ),
-          Padding(
-            padding: getPadding(all: 16),
-            child: SizedBox(
-              width: double.maxFinite,
-              child: Container(
-                alignment: Alignment.center,
-                child:weekdays.isEmpty?Text("No data found") : AspectRatio(
-                  aspectRatio: 1,
-                  child: BarChart(BarChartData(
-                    // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),
-                    borderData: FlBorderData(
-                        border: Border(
-                      top: BorderSide.none,
-                      right: BorderSide.none,
-                      left: BorderSide(width: 2, color: ColorConstant.primary),
-                      bottom:
-                          BorderSide(width: 2, color: ColorConstant.primary),
-                    )),
-                    groupsSpace: 10,
+          Container(
+            alignment: Alignment.centerRight,
+            width: 250,
+            child: ListTile(
+              minLeadingWidth: 23,
+              title: Text(
+                'Total Sessions | ' + "0",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text('Total number of sessions'),
+              leading: Icon(
+                Icons.play_arrow_sharp,
+                color: ColorConstant.primary,
+              ),
+              // trailing: Icon(
+              //   Icons.arrow_forward_ios,
+              //   color: ColorConstant.primary,
+              // ),
+            ),
+          ),
+          Stack(
+            children: [
+              // Image.network(
+              //   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJctbIxhrOV2WWwf9f4TAT3DVgPLiS2NNvPCordwDJApTF89IT5H-753N2HCpR_1bx0w&usqp=CAU',
+              //   fit: BoxFit.cover,
+              //   width: double.infinity,
+              //   height: double.infinity,
+              // ),
+              Padding(
+                padding: getPadding(all: 16),
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: weekdays.isEmpty
+                        ? Text("No data found")
+                        : AspectRatio(
+                            aspectRatio: 1,
+                            child: BarChart(BarChartData(
+                              // extraLinesData: ExtraLinesData(horizontalLines: List.filled(10, HorizontalLine(y: ))),
+                              borderData: FlBorderData(
+                                  border: Border(
+                                top: BorderSide.none,
+                                right: BorderSide.none,
+                                left: BorderSide(
+                                    width: 2, color: ColorConstant.primary),
+                                bottom: BorderSide(
+                                    width: 2, color: ColorConstant.primary),
+                              )),
+                              groupsSpace: 10,
+                              maxY: 100,
+                              // maxY: no_of_sessions.length.toDouble(),
+                              //   minY: 10,
+                              gridData: FlGridData(show: false),
+                              titlesData: FlTitlesData(
+                                  show: true,
+                                  topTitles: AxisTitles(
+                                      sideTitles:
+                                          SideTitles(showTitles: false)),
+                                  rightTitles: AxisTitles(
+                                      sideTitles:
+                                          SideTitles(showTitles: false)),
+                                  bottomTitles: AxisTitles(
+                                      sideTitles: SideTitles(
+                                    showTitles: true,
+                                    interval: 2,
+                                    getTitlesWidget:
+                                        (double value, TitleMeta meta) {
+                                      int intValue = value.toInt();
 
-                    maxY: no_of_sessions.length.toDouble(),
-                    //   minY: 10,
-                    gridData: FlGridData(show: false),
-                    titlesData: FlTitlesData(
-                        show: true,
-                        topTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false)),
-                        rightTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false)),
-                        bottomTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                          showTitles: true,
-                          interval: 2,
-                          getTitlesWidget: (double value, TitleMeta meta) {
-                            int intValue = value.toInt();
+                                      if (intValue >= 0 && intValue <= 7) {
+                                        return Transform.rotate(
+                                            angle:
+                                                -50, // Rotate text 45 degrees counter-clockwise
 
-                            if (intValue >= 0 && intValue <= 7) {
-                              return Container(
-                                margin: EdgeInsets.only(
-                                    bottom:
-                                        8.0), // Adjust the bottom margin as needed
-                                child: Text(
-                                  weekdays[intValue],
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: ColorConstant.primary,
-                                  ),
-                                ),
-                              );
-                            }
+                                            child: Container(
+                                              margin: EdgeInsets.only(
+                                                  top:
+                                                      8.0), // Adjust the top margin as needed
+                                              child: Text(
+                                                weekdays[intValue],
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: ColorConstant.primary,
+                                                ),
+                                              ),
+                                            ));
+                                      }
 
-                            return SizedBox.shrink();
-                          },
-                        )),
-                        leftTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                          showTitles: true,
-                          reservedSize: 60,
-                          getTitlesWidget: (double value, TitleMeta meta) {
-                            int intValue = value.toInt();
+                                      return SizedBox.shrink();
+                                    },
+                                  )),
+                                  leftTitles: AxisTitles(
+                                      sideTitles: SideTitles(
+                                    showTitles: true,
+                                    reservedSize: 60,
+                                    // getTitlesWidget:
+                                    //     (double value, TitleMeta meta) {
+                                    //   int intValue = value.toInt();
 
-                            if (intValue > 0 &&
-                                intValue <= no_of_sessions.length) {
-                              return Text(
-                                no_of_sessions[intValue - 1],
-                                // textDirection: TextDirection.rtl,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 12, color: ColorConstant.primary),
-                              );
-                            }
+                                    //   if (intValue > 0 &&
+                                    //       intValue <= no_of_sessions.length) {
+                                    //     return Text(
+                                    //       no_of_sessions[intValue - 1],
+                                    //       // textDirection: TextDirection.rtl,
+                                    //       textAlign: TextAlign.center,
+                                    //       style: TextStyle(
+                                    //           fontSize: 12,
+                                    //           color: ColorConstant.primary),
+                                    //     );
+                                    //   }
 
-                            return SizedBox.shrink();
-                          },
-                        ))),
-                    barGroups: List.generate(sessions.length, (index) {
-                      return BarChartGroupData(
-                        x: index, // Adding 1 to start x values from 1
-                        barRods: [
-                          BarChartRodData(
-                            toY: sessions[index].toDouble(),
-                            fromY: 0,
-                            width: 15,
-                            color: ColorConstant.primary,
+                                    //   return SizedBox.shrink();
+                                    // },
+                                  ))),
+                              barGroups:
+                                  List.generate(sessions.length, (index) {
+                                return BarChartGroupData(
+                                  x: index, // Adding 1 to start x values from 1
+                                  barRods: [
+                                    BarChartRodData(
+                                      toY: sessions[index].toDouble(),
+                                      fromY: 0,
+                                      width: 15,
+                                      color: ColorConstant.primary,
+                                    ),
+                                  ],
+                                );
+                              }),
+                            )),
                           ),
-                        ],
-                      );
-                    }),
-                  )),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ],
       ),

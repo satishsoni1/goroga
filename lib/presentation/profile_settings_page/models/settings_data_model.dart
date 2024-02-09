@@ -40,8 +40,8 @@ class Data {
   String? privacyTextData;
   String? appName;
   String? appLogo;
-  Null? createdAt;
-  Null? updatedAt;
+  Null createdAt;
+  Null updatedAt;
 
   Data(
       {this.id,

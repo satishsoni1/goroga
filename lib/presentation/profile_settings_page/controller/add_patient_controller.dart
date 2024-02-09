@@ -34,7 +34,17 @@ class addPatientController extends GetxController {
           body: encodedBody, headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
         print('Response data: ${response.body}');
-       
+       var data = jsonDecode(response.body);
+
+        if (data['status'] == true) {
+          Get.snackbar('Success', data['message'],
+              backgroundColor: ColorConstant.primary, colorText: Colors.white);
+          return 1;
+        } else {
+          Get.snackbar('Wrong', data['message'],
+              backgroundColor: ColorConstant.red700, colorText: Colors.white);
+          return 0;
+        }
       } else if (response.statusCode == 302) {
         print("302");
         final redirectionUrl = response.headers['location'];

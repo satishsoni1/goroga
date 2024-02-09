@@ -1,3 +1,4 @@
+
 import 'controller/home_container_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:goroga/core/app_export.dart';
@@ -17,6 +18,7 @@ class HomeContainerScreen extends GetWidget<HomeContainerController> {
     // For example, you can fetch data, set up controllers, etc.
     // This will be called once when the widget is first created.
   }
+ 
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(

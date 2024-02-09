@@ -1,17 +1,10 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:goroga/presentation/profile_settings_page/models/settings_data_model.dart';
 import 'package:goroga/presentation/sign_in_screen/controller/logoutController.dart';
-import 'package:goroga/presentation/sign_in_screen/controller/sign_in_controller.dart';
-import 'package:goroga/widgets/config.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:goroga/core/app_export.dart';
-import 'package:http/http.dart' as http;
 
 import '../../presentation/profile_settings_page/add_patient_page.dart';
-import '../../presentation/profile_settings_page/controller/settingController.dart';
 import '../../presentation/profile_settings_page/patients_list_page.dart';
 
 class NavBar extends StatefulWidget {
